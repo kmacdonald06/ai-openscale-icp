@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-12-13"
+lastupdated: "2018-12-14"
 
 ---
 
@@ -47,39 +47,32 @@ Here's how you will implement {{site.data.keyword.aios_short}}:
 
 - Currently, explanations cannot be generated for images which are greater than 1 MB in size.
 
+
 ## Supported model types
 
 Table 1. Model support details
 
-| Algorithms | **Fairness** | **Auto-debias** | **Explain** | **Accuracy** | **Fully-supported frameworks** | **Partially-supported frameworks on WML** | **[Supported as Custom environment](connect-other.html#custom-works)** |
-|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Structured Classification** | Yes | Yes<sup>1 | Yes | Yes | Spark mllib on WML, AWS Sagemaker Native, Azure ML Studio Native | scikit-learn, spss, xgboost <sup>2 | Keras, Tensorflow, Pytorch, Caffe, and most others |
-| **Structured Regression**     | Yes | Coming soon | Yes | Yes | Spark mllib on WML, AWS Sagemaker Native, Azure ML Studio Native | scikit-learn, spss, xgboost<sup>2 | Keras, Tensorflow, Pytorch, Caffe, and most others |
-| **Text Classification**       | Ongoing active research | Ongoing active research | Limited support<sup>3 | Coming soon | No | spark mllib<sup>2 | Coming soon: Keras, Tensorflow, Pytorch, Caffe, and most others |
-| **Image Classification**      | Ongoing active research | Ongoing active research | Limited support<sup>4 | Coming soon | No | Keras<sup>2 | Coming soon: Keras, Tensorflow, Pytorch, Caffe, and most others ||
+| Algorithms | **Fairness** | **Auto-debias** | **Explain** | **Accuracy** |
+|:---|:---:|:---:|:---:|:---:|
+| **Structured Classification** | Yes | Yes<sup>1 | Yes | Yes |
+| **Structured Regression**     | Yes | Coming soon | Yes<sup>1 | Yes |
+| **Text Classification**       | No - active research topic | No - active research topic | Yes | Yes |
+| **Image Classification**      | No - active research topic | No - active research topic | Yes | Yes ||
 {: caption="Model support details" caption-side="top"}
 
 <sup>1</sup> If your model / framework outputs prediction probabilities
 
-<sup>2</sup> Accuracy only
+## Supported frameworks
 
-<sup>3</sup> Sparkmllib
+Table 1. Framework support details
 
-<sup>4</sup> Keras, Tensorflow
-
-## Supported machine learning engines
-
-Table 1. Feature support details
-
-| ML engine | **Payload logging** | **Performance monitoring** | **Accuracy monitoring** | **Bias detection** | **De-bias** | **Explainability**
-|:---|:---:|:---:|:---:|:---:|:---|:---|
-| **Watson Machine Learning**  | Yes | Yes | Yes | Yes | Yes | Yes |
-| **SPSS**  | Yes | Yes | Yes (structured data only) | No | No | No |
-| **SAS**  | No | No | No | No | No | No |
-| **MS Azure**  | Yes | Yes | Yes (structured data only) | Yes | Yes | Yes |
-| **AWS SageMaker**  | Yes | Yes | Yes (structured data only) | Yes | Yes | Yes |
-| **Generic Machine Learning service**  | Yes | Yes | Yes (structured data only) | No | No | No ||
-{: caption="Feature support details" caption-side="top"}
+| Algorithms | **Out-of-the-box support** | **[Custom environment](connect-other.html#custom-works) or Python function support** |
+|:---|:---:|:---:|
+| **Structured Classification** | Spark mllib on WML, AWS Sagemaker Native, Azure ML Studio Native | Scikit-Learn, XGboost, SPSS, Keras, Tensorflow,  Pytorch, Caffe,  or any other framework of your choice |
+| **Structured Regression**     | Spark mllib on WML, AWS Sagemaker Native, Azure ML Studio Native | Scikit-Learn, XGboost, SPSS, Keras, Tensorflow,  Pytorch, Caffe,  or any other framework of your choice |
+| **Text Classification**       | spark mllib | Coming soon: Keras, Tensorflow, Pytorch, Caffe, and most others |
+| **Image Classification**      | Keras | Coming soon: Keras, Tensorflow, Pytorch, Caffe, and most others ||
+{: caption="Framework support details" caption-side="top"}
 
 <!---
 ## Supported Watson machine learning frameworks and functions

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-12-13"
+lastupdated: "2018-12-14"
 
 ---
 
@@ -84,6 +84,11 @@ There are two ways to configure kubectl client.
       - Terminate unneeded pods to make room for pending pods.
       ```bash
       kubectl -n [namespace] delete pod [pod name]
+      ```
+
+      If the command does not delete the pod, run:
+      ```bash
+      kubectl -n [namespace] delete pod [pod name] --grace-period=0 --force
       ```
 
       - Check that the pod is not larger than your nodes. For example, if all nodes have a capacity of cpu:1, then a pod with a request of cpu: 1.1 will never be scheduled.
@@ -190,6 +195,11 @@ There are two ways to configure kubectl client.
         kubectl -n [namespace] delete pod [pod name]
         ```
 
+        If the command does not delete the pod, run:
+        ```bash
+        kubectl -n [namespace] delete pod [pod name] --grace-period=0 --force
+        ```
+
         - Check that the pod is not larger than your nodes. For example, if all nodes have a capacity of cpu:1, then a pod with a request of cpu: 1.1 will never be scheduled.
 
       You can check node capacities with the kubectl get nodes -o `<format>` command. Here are some example command lines that extract just the necessary information:
@@ -289,6 +299,11 @@ If cloudctl is available on your laptop, run the following command to configure 
       kubectl -n [namespace] delete pod [pod name]
       ```
 
+      If the command does not delete the pod, run:
+      ```bash
+      kubectl -n [namespace] delete pod [pod name] --grace-period=0 --force
+      ```
+
       - Check that the pod is not larger than your nodes. For example, if all nodes have a capacity of cpu:1, then a pod with a request of cpu: 1.1 will never be scheduled.
 
       You can check node capacities with the kubectl get nodes -o `<format>` command. Here are some example command lines that extract just the necessary information:
@@ -384,6 +399,11 @@ There are two ways to configure kubectl client.
       - Terminate unneeded pods to make room for pending pods.
       ```bash
       kubectl -n [namespace] delete pod [pod name]
+      ```
+
+      If the command does not delete the pod, run:
+      ```bash
+      kubectl -n [namespace] delete pod [pod name] --grace-period=0 --force
       ```
 
       - Check that the pod is not larger than your nodes. For example, if all nodes have a capacity of cpu:1, then a pod with a request of cpu: 1.1 will never be scheduled.
@@ -482,6 +502,11 @@ There are two ways to configure kubectl client.
       kubectl -n [namespace] delete pod [pod name]
       ```
 
+      If the command does not delete the pod, run:
+      ```bash
+      kubectl -n [namespace] delete pod [pod name] --grace-period=0 --force
+      ```
+
       - Check that the pod is not larger than your nodes. For example, if all nodes have a capacity of cpu:1, then a pod with a request of cpu: 1.1 will never be scheduled.
 
       You can check node capacities with the kubectl get nodes -o `<format>` command. Here are some example command lines that extract just the necessary information:
@@ -577,6 +602,11 @@ There are two ways to configure kubectl client.
       - Terminate unneeded pods to make room for pending pods.
       ```bash
       kubectl -n [namespace] delete pod [pod name]
+      ```
+
+      If the command does not delete the pod, run:
+      ```bash
+      kubectl -n [namespace] delete pod [pod name] --grace-period=0 --force
       ```
 
       - Check that the pod is not larger than your nodes. For example, if all nodes have a capacity of cpu:1, then a pod with a request of cpu: 1.1 will never be scheduled.
@@ -683,6 +713,11 @@ There are two ways to configure kubectl client.
       kubectl -n [namespace] delete pod [pod name]
       ```
 
+      If the command does not delete the pod, run:
+      ```bash
+      kubectl -n [namespace] delete pod [pod name] --grace-period=0 --force
+      ```
+
       - Check that the pod is not larger than your nodes. For example, if all nodes have a capacity of cpu:1, then a pod with a request of cpu: 1.1 will never be scheduled.
 
       You can check node capacities with the kubectl get nodes -o `<format>` command. Here are some example command lines that extract just the necessary information:
@@ -787,6 +822,11 @@ There are two ways to configure kubectl client.
       kubectl -n [namespace] delete pod [pod name]
       ```
 
+      If the command does not delete the pod, run:
+      ```bash
+      kubectl -n [namespace] delete pod [pod name] --grace-period=0 --force
+      ```
+
       - Check that the pod is not larger than your nodes. For example, if all nodes have a capacity of cpu:1, then a pod with a request of cpu: 1.1 will never be scheduled.
 
       You can check node capacities with the kubectl get nodes -o `<format>` command. Here are some example command lines that extract just the necessary information:
@@ -882,6 +922,11 @@ There are two ways to configure kubectl client.
       - Terminate unneeded pods to make room for pending pods.
       ```bash
       kubectl -n [namespace] delete pod [pod name]
+      ```
+
+      If the command does not delete the pod, run:
+      ```bash
+      kubectl -n [namespace] delete pod [pod name] --grace-period=0 --force
       ```
 
       - Check that the pod is not larger than your nodes. For example, if all nodes have a capacity of cpu:1, then a pod with a request of cpu: 1.1 will never be scheduled.
@@ -981,6 +1026,11 @@ There are two ways to configure kubectl client.
       kubectl -n [namespace] delete pod [pod name]
       ```
 
+      If the command does not delete the pod, run:
+      ```bash
+      kubectl -n [namespace] delete pod [pod name] --grace-period=0 --force
+      ```
+
       - Check that the pod is not larger than your nodes. For example, if all nodes have a capacity of cpu:1, then a pod with a request of cpu: 1.1 will never be scheduled.
 
       You can check node capacities with the kubectl get nodes -o <format> command. Here are some example command lines that extract just the necessary information:
@@ -1075,6 +1125,11 @@ There are two ways to configure kubectl client.
       - Terminate unneeded pods to make room for pending pods.
       ```bash
       kubectl -n [namespace] delete pod [pod name]
+      ```
+
+      If the command does not delete the pod, run:
+      ```bash
+      kubectl -n [namespace] delete pod [pod name] --grace-period=0 --force
       ```
 
       - Check that the pod is not larger than your nodes. For example, if all nodes have a capacity of cpu:1, then a pod with a request of cpu: 1.1 will never be scheduled.
@@ -1172,6 +1227,11 @@ There are two ways to configure kubectl client.
       - Terminate unneeded pods to make room for pending pods.
       ```bash
       kubectl -n [namespace] delete pod [pod name]
+      ```
+
+      If the command does not delete the pod, run:
+      ```bash
+      kubectl -n [namespace] delete pod [pod name] --grace-period=0 --force
       ```
 
       - Check that the pod is not larger than your nodes. For example, if all nodes have a capacity of cpu:1, then a pod with a request of cpu: 1.1 will never be scheduled.
@@ -1276,6 +1336,11 @@ There are two ways to configure kubectl client.
       kubectl -n [namespace] delete pod [pod name]
       ```
 
+      If the command does not delete the pod, run:
+      ```bash
+      kubectl -n [namespace] delete pod [pod name] --grace-period=0 --force
+      ```
+
       - Check that the pod is not larger than your nodes. For example, if all nodes have a capacity of cpu:1, then a pod with a request of cpu: 1.1 will never be scheduled.
 
       You can check node capacities with the kubectl get nodes -o <format> command. Here are some example command lines that extract just the necessary information:
@@ -1375,6 +1440,11 @@ There are two ways to configure kubectl client.
       - Terminate unneeded pods to make room for pending pods.
       ```bash
       kubectl -n [namespace] delete pod [pod name]
+      ```
+
+      If the command does not delete the pod, run:
+      ```bash
+      kubectl -n [namespace] delete pod [pod name] --grace-period=0 --force
       ```
 
       - Check that the pod is not larger than your nodes. For example, if all nodes have a capacity of cpu:1, then a pod with a request of cpu: 1.1 will never be scheduled.
