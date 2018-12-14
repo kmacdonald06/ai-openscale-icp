@@ -88,7 +88,7 @@ Download the appropriate package, by part number, from [IBM Passport Advantage](
 
 1.  IBM Event Streams V2018.3.0 for Linux on x86 64-bit Multilingual
 
-    - Download part number *CNXJ8ML*. This is a `tar.gz` file.
+    - Download part number *CNW2CML*. This is a `tar.gz` file.
 
 1.  IBM Db2 Warehouse package for {{site.data.keyword.icpfull_notm}} for Data 1.2 (Optional)
 
