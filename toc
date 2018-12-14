@@ -1,0 +1,56 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="ai-openscale-icp" audience="service" href="/docs/services/ai-openscale-icp/getting-started.html" path="services/ai-openscale-icp"}
+AI OpenScale for ICP for Data
+
+    {: .navgroup id="learn"}
+    install-icp.md
+    getting-started.md
+    alt-setup.md
+    index.md
+    tutorial-adv.md
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    {: .topicgroup}
+    Configuring AI OpenScale
+        creds.md
+        connect-wml.md
+        connect-azureml.md
+        connect-sagemaker.md
+        connect-other.md
+        connect-ml.md
+        connect-deploy.md
+        connect-db.md
+
+    {: .topicgroup}
+    Working with monitors
+        monitor-overview.md
+        monitor-fairness.md
+        monitor-accuracy.md
+
+    {: .topicgroup}
+    Viewing and editing monitor data
+        insight-overview.md
+        insight-timechart.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    [API reference](https://cloud.ibm.com/apidocs/ai-openscale)
+    [ModelOps CLI](https://github.com/IBM-Watson/aiopenscale-modelops-cli)
+    [Python Client](http://ai-openscale-python-client.mybluemix.net/)
+    activity-tracker.md
+    information-security.md
+    [Watson GitHub repos](https://github.com/watson-developer-cloud/)
+    {: .navgroup-end}
+
+    {: .navgroup id="help"}
+    release-notes.md
+    troubleshoot-icp.md
+    logs-icp.md
+    
+    {: .topicgroup}
+    Developer community
+        [StackOverflow](https://stackoverflow.com/questions/tagged/ai-openscale)
+    {: .navgroup-end}
