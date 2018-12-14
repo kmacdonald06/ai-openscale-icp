@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-12-13"
+lastupdated: "2018-12-14"
 
 ---
 
@@ -57,6 +57,10 @@ Your first step in the {{site.data.keyword.aios_short}} tool is to specify a ser
       ![Enter service credentials](images/connect-custom-apiendpoint.png)
 
       Click **Next**.
+
+      Then select from the list of deployments:
+
+      ![Enter service credentials](images/connect-custom-apiendpoint2.png)
 
 1.  Review your selected deployments.
 
