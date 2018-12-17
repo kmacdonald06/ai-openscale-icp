@@ -47,7 +47,6 @@ Here's how you will implement {{site.data.keyword.aios_short}}:
 
 - Currently, explanations cannot be generated for images which are greater than 1 MB in size.
 
-
 ## Supported model types
 
 Table 1. Model support details
@@ -70,51 +69,9 @@ Table 1. Framework support details
 |:---|:---:|:---:|
 | **Structured Classification** | Spark mllib on WML, AWS Sagemaker Native, Azure ML Studio Native | Scikit-Learn, XGboost, SPSS, Keras, Tensorflow,  Pytorch, Caffe,  or any other framework of your choice |
 | **Structured Regression**     | Spark mllib on WML, AWS Sagemaker Native, Azure ML Studio Native | Scikit-Learn, XGboost, SPSS, Keras, Tensorflow,  Pytorch, Caffe,  or any other framework of your choice |
-| **Text Classification**       | spark mllib | Coming soon: Keras, Tensorflow, Pytorch, Caffe, and most others |
-| **Image Classification**      | Keras | Coming soon: Keras, Tensorflow, Pytorch, Caffe, and most others ||
+| **Text Classification**       | Spark mllib on WML | Coming soon: Keras, Tensorflow, Pytorch, Caffe, and most others |
+| **Image Classification**      | Keras on WML | Coming soon: Keras, Tensorflow, Pytorch, Caffe, and most others ||
 {: caption="Framework support details" caption-side="top"}
-
-<!---
-## Supported Watson machine learning frameworks and functions
-
-Table 1. Feature support details
-
-| Framework | **Performance** | **Accuracy monitoring** | **Fairness detection** | **Payload logging** | **Explainability**
-|:---|:---:|:---:|:---:|:---:|:---:|
-| **spark mllib**        | Yes | Yes | Yes* | Yes | Yes* |
-| **scikit-learn**       | Yes | No | No | No | No |
-| **xgboost**            | Yes | No | No | No | No |
-| **pmml**               | Yes | No | No | No | No |
-| **spss**               | Yes | No | No | No | No |
-| **keras**              | Yes | Yes** | No | Yes | Yes* |
-| **tensorflow**         | Yes | Yes** | No | Yes | Yes* |
-| **caffe**              | Yes | No | No | No | No |
-| **pytorch**            | Yes | No | No | No | No |
-| **python functions**   | Yes | No | Yes* | Yes | No ||
-{: caption="Feature support details" caption-side="top"}
-
-`*` Fairness detection and explainability require payload logging to be supported; they also need a WML scoring endpoint to be available.
-
-`**` New version of model only, no evaluation.
---->
-
-<!---
-## Supported model fairness
-
-Table 1. Fairness support details
-
-| Model / Function  | **Runtime bias detection** |
-|:---|:---:|
-| **Classification models (Models which generate categorical output, for example, a model whose output is "Loan Granted" or "Loan Denied")** | Yes |
-| **Regression models (Models which generate continuous output, for example, a model that predicts the stock price of a company)** | Yes |
-| **Python function whose output is categorical** | Yes |
-| **Python function whose output is numeric** | Yes |
-| **Spark ML classification models which expect some structured data as input** | Yes |
-| **Spark ML models which do not take structured data as input, for example, text or images** | Yes |
-| **Deep learning classification models which expect some structured data as input** | Yes |
-| **Deep learning models which do not take structured data as input, for example, text or images** | Yes ||
-{: caption="Fairness support details" caption-side="top"}
---->
 
 ## Browser support
 
