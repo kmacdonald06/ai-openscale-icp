@@ -7,7 +7,6 @@ AI OpenScale for ICP for Data
     {: .navgroup id="learn"}
     install-icp.md
     getting-started.md
-    alt-setup.md
     index.md
     tutorial-adv.md
     {: .navgroup-end}
