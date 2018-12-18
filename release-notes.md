@@ -44,7 +44,7 @@ The following new features and changes to the service are available.
 
         - __*Explainability*__: Support for regression models, Python functions, and complementary contrastive explanations. See [Monitoring explainability](/docs/services/ai-openscale-icp/insight-timechart.html#insight-explain) for more information.
 
-        - __*Data Store*__: Quality monitoring without reliance on Watson Machine Learning, and the ability to use your own custom database, whether or not its on Db2 or IBM Cloud. See [Specify your Custom service](/docs/services/ai-openscale-icp/connect-other.html) for more information.
+        - __*Data Store*__: Quality monitoring without reliance on Watson Machine Learning, and the ability to use your own custom database, whether or not its on Db2 or IBM Cloud.
 
 ### Known issues
 
