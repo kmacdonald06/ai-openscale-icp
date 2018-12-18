@@ -25,21 +25,26 @@ The following new features and changes to the service are available.
 
 ### New features and changes
 
+
 - **GA release**
 
     - Welcome to the General Availability (GA) release of {{site.data.keyword.aios_full_notm}}. This release contains the following features:
 
-        - __*Releases*__: {{site.data.keyword.aios_short}} is available as an IBM Cloud Standard (paid) plan, and on IBM Cloud Private for Data V1.2
+        - __*Releases*__: {{site.data.keyword.aios_short}} is available as an IBM Cloud Standard (paid) plan, and on IBM Cloud Private for Data V1.2.
 
-          The IBM Neural Network Synthesizer (NeuNetS) is also available as a beta release (public cloud only). See the [NeuNetS documentation](https://dataplatform.cloud.ibm.com/ml/neunets) for more information
+          An internal "lite" database provides everything you need to begin using {{site.data.keyword.aios_short}}. See the [{{site.data.keyword.aios_short}} pricing plans ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/catalog/services/ai-openscale) for details.
 
-        - __*Enhanced UI*__: The {{site.data.keyword.aios_short}} UI now includes a runtime histogram distribution with toggle, Model ID & Versioning, and a Transaction ID table from the histogram
+          In addition to AI model deployments in Watson Machine Learning, {{site.data.keyword.aios_short}} supports model deployments in Microsoft Azure, Amazon SageMaker, and Custom environments.
 
-        - __*Bias*__: Support for protected attributes of type `float` and `double`, bias detection on linear regression models, and bias remediation
+          The IBM Neural Network Synthesizer (NeuNetS) is also available as a beta release (public cloud only). See the [NeuNetS documentation](https://dataplatform.cloud.ibm.com/ml/neunets) for more information.
 
-        - __*Explainability*__: Support for regression models, Python functions, and IBM Explainer, along with LIME, algorithms
+        - __*Enhanced UI*__: The {{site.data.keyword.aios_short}} UI now includes a runtime histogram distribution with toggle for training data, Model ID & Versioning, and a Transaction ID table from the histogram. See [Data visualization](/docs/services/ai-openscale-icp/insight-timechart.html#insight-data-visual) for more information.
 
-        - __*Data Store*__: Quality monitoring without reliance on Watson Machine Learning, and Db2 support
+        - __*Bias*__: Support for protected attributes of type `float` and `double`, bias detection on linear regression models, and bias remediation. And {{site.data.keyword.aios_short}} can automatically de-bias your AI model for you. See [Understanding fairness](/docs/services/ai-openscale-icp/monitor-fairness.html#understand-fair) for more information.
+
+        - __*Explainability*__: Support for regression models, Python functions, and complementary contrastive explanations. See [Monitoring explainability](/docs/services/ai-openscale-icp/insight-timechart.html#insight-explain) for more information.
+
+        - __*Data Store*__: Quality monitoring without reliance on Watson Machine Learning, and the ability to use your own custom database, whether or not its on Db2 or IBM Cloud. See [Specify your Custom service](/docs/services/ai-openscale-icp/connect-other.html) for more information.
 
 ### Known issues
 
