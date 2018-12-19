@@ -66,7 +66,7 @@ The following new features and changes to the service are available.
 
 - **Code snippets invalid**
 
-    - Both cURL and Python code snippets provided for monitor configuration are invalid. Correct code snippets are provided here:
+    - Both cURL and Python code snippets provided for monitor configuration are invalid. Correct code snippets for cURL are provided here:
 
       *Payload logging*
 
