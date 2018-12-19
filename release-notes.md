@@ -131,6 +131,21 @@ The following new features and changes to the service are available.
       --header 'Content-Type: application/json' --header 'Accept: application/json' --header "Authorization: Bearer $ICP_TOKEN"
       ```
 
+      *Bias Remediation*
+
+      ```cURL
+      # Generate an ICP access token by replacing ICP username as <USERNAME>, and ICP password as <PASSWORD> in the request below. Also replace the <HOSTNAME>:<PORT>
+
+      curl -k -X GET --user "<USERNAME>:<PASSWORD>" "https://<HOSTNAME>:<PORT>/v1/preauth/validateAuth"
+
+      # the above CURL request will return an auth token under "accessToken", use this value for <TOKEN> in the below request
+
+      # Replace "fields" - list of features column from payload logging - replace sample values with proper ones
+      # Replace "values" - payload logging data records - replace sample values with proper ones
+
+      curl -X POST "https://<HOSTNAME>:<PORT>/v1/data_marts/<DATA_MART_ID>/service_bindings/<SERVICE_BINDING_ID>/subscriptions/<ASSET_ID>/deployments/<DEPLOYMENT_ID>/online" -H "accept: application/json" -H "Authorization: bearer <TOKEN>" -H "X-Global-Transaction-Id: " -H "Content-Type: application/json" -d "{ \"fields\": [ \"field1\", \"field2\", \"field3\" ], \"values\": [ [ \"field1Value1\", \"field2Value1\", \"field3Value1\" ], [ \"field1Value2\", \"field2Value2\", \"field3Value2\" ] ]}"
+      ```
+
 ## 17 September 2018
 {: #17September2018}
 
