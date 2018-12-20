@@ -30,7 +30,7 @@ It is mandatory to specify the output schema for a model or function in Watson M
 
 ### How it works
 
-Before configuring the Fairness monitor, there a few key concepts that are critical to understand:
+Before configuring the Fairness monitor, there are a few key concepts that are critical to understand:
 
 - *Fairness attributes*: These are the model attributes for which the model is likely to exhibit bias. As an example, for the fairness attribute **`Gender`**, the model could be biased against specific gender values (`Female`, `Transgender`, etc.) Another example of a fairness attribute is **`Age`**, where the model could exhibit bias against people in an age group, like `18 to 25`.
   
