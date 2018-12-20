@@ -10,7 +10,7 @@ takeaways:
 
 copyright:
   years: 2018
-lastupdated: "2018-12-18"
+lastupdated: "2018-12-19"
 
 ---
 
@@ -136,7 +136,7 @@ From the {{site.data.keyword.aios_short}} dashboard click the **Insights** tab, 
 {: #monitoring}
 
 1.  From the Insights page, click the `DrugSelectionModel` tile to view details about the monitored data.
-1.  Slide the marker across the chart to view a day and time period that show data and then click the **View details** link.
+1.  Click and drag the marker across the chart to view a day and time period that shows data and then click the **View details** link. Alternatively, you can click different time periods in the chart to change the data that you see.
 
      - For example, the following screen shows data for a specific date and time. The dates and times vary, depending on when you run the module.
 
@@ -152,7 +152,7 @@ From the {{site.data.keyword.aios_short}} dashboard click the **Insights** tab, 
 
     - For information about interpreting the visualization of the data points at a specifc hour, see [Working with monitored data > Data visualization](/docs/services/ai-openscale-icp/insight-timechart.html#insight-data-visual).
 
-      ![Age details](images/setup03.png)
+      ![Age details](images/setup03-19dec.png)
 
 ### View explainability
 {: #explain}
