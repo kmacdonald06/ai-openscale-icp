@@ -21,30 +21,27 @@ This document outlines new features and known issues for {{site.data.keyword.aio
 ## 14 December 2018
 {: #14December2018}
 
-The following new features and changes to the service are available.
+The following new features, changes, and known issues with the service are available.
 
 ### New features and changes
 
+{{site.data.keyword.aios_short}} features that have been added or enhanced since the beta release include:
 
-- **GA release**
+- __*General availability*__: The General Availability (GA) release of {{site.data.keyword.aios_full_notm}} on IBM Cloud Private for Data V1.2, See the [installation instructions](/docs/services/ai-openscale-icp/install-icp.html#install) for more information.
 
-    - Welcome to the General Availability (GA) release of {{site.data.keyword.aios_full_notm}}. This release contains the following features:
+- __*Support for your model type*__: In addition to AI model deployments in Watson Machine Learning, {{site.data.keyword.aios_short}} supports model deployments in Microsoft Azure, Amazon SageMaker, and Custom environments. See [Supported model types](/docs/services/ai-openscale-icp/index.html#supported-model-types) for more information.
 
-        - __*Releases*__: {{site.data.keyword.aios_short}} is available as an IBM Cloud Standard (paid) plan, and on IBM Cloud Private for Data V1.2.
+- __*Bias monitoring*__: Support for protected attributes of type `float` and `double`, and bias detection on linear regression models. And {{site.data.keyword.aios_short}} can automatically de-bias your AI model for you. See [Understanding fairness](/docs/services/ai-openscale-icp/monitor-fairness.html#understand-fair) for more information.
 
-          An internal "lite" database provides everything you need to begin using {{site.data.keyword.aios_short}}. See the [{{site.data.keyword.aios_short}} pricing plans ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/catalog/services/ai-openscale) for details.
+- __*Explainability*__: Support for regression models, Python functions, and complementary contrastive explanations. See [Monitoring explainability](/docs/services/ai-openscale-icp/insight-timechart.html#insight-explain) for more information.
 
-          In addition to AI model deployments in Watson Machine Learning, {{site.data.keyword.aios_short}} supports model deployments in Microsoft Azure, Amazon SageMaker, and Custom environments.
+- __*Data Store*__: Quality monitoring without reliance on Watson Machine Learning, and the ability to use your own database, whether it's Db2, Postgres or Db2 on Cloud.
 
-          The IBM Neural Network Synthesizer (NeuNetS) is also available as a beta release (public cloud only). See the [NeuNetS documentation](https://dataplatform.cloud.ibm.com/ml/neunets) for more information.
+- __*NeuNetS (Beta)*__: The IBM Neural Network Synthesizer (NeuNetS) is available as a beta release (public cloud only). See the [NeuNetS documentation](https://dataplatform.cloud.ibm.com/ml/neunets) for more information.
 
-        - __*Enhanced UI*__: The {{site.data.keyword.aios_short}} UI now includes a runtime histogram distribution with toggle for training data, Model ID & Versioning, and a Transaction ID table from the histogram. See [Data visualization](/docs/services/ai-openscale-icp/insight-timechart.html#insight-data-visual) for more information.
+- __*Enhanced UI*__: The {{site.data.keyword.aios_short}} UI has been improved to include a runtime histogram distribution with toggle for training data, Model ID & Versioning, and a Transaction ID table from the histogram. See [Data visualization](/docs/services/ai-openscale-icp/insight-timechart.html#insight-data-visual) for more information.
 
-        - __*Bias*__: Support for protected attributes of type `float` and `double`, bias detection on linear regression models, and bias remediation. And {{site.data.keyword.aios_short}} can automatically de-bias your AI model for you. See [Understanding fairness](/docs/services/ai-openscale-icp/monitor-fairness.html#understand-fair) for more information.
-
-        - __*Explainability*__: Support for regression models, Python functions, and complementary contrastive explanations. See [Monitoring explainability](/docs/services/ai-openscale-icp/insight-timechart.html#insight-explain) for more information.
-
-        - __*Data Store*__: Quality monitoring without reliance on Watson Machine Learning, and the ability to use your own database, whether it's Db2, Postgres or Db2 on Cloud.
+- __*Tutorial module*__: To automate provisioning and configuration, and to see an {{site.data.keyword.aios_full_notm}} instance, including sample data, you can install and run a Python module. See [Automated setup](/docs/services/ai-openscale-icp/getting-started.html#module)
 
 ### Known issues
 
