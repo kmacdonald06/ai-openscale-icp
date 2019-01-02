@@ -53,10 +53,10 @@ Table 1. Model support details
 
 | Algorithms | **Fairness** | **Auto-debias** | **Explain** | **Accuracy** |
 |:---|:---:|:---:|:---:|:---:|
-| **Structured Classification** | Yes | Yes<sup>1 | Yes | Yes |
+| **Structured Classification** | Yes | Yes<sup>1</sup> | Yes | Yes |
 | **Structured Regression**     | Yes | Coming soon | Yes | Yes |
-| **Text Classification**       | No - active research topic | No - active research topic | Yes | No |
-| **Image Classification**      | No - active research topic | No - active research topic | Yes | No ||
+| **Text Classification**       | No - active research topic | No - active research topic | Yes<sup>1</sup> | No |
+| **Image Classification**      | No - active research topic | No - active research topic | Yes<sup>1</sup> | No ||
 {: caption="Model support details" caption-side="top"}
 
 <sup>1</sup> If your model / framework outputs prediction probabilities
