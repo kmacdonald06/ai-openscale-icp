@@ -763,7 +763,7 @@ When configuring this package, Db2 **must** have the non-SSL port enabled.
 
 ### Post-installation
 
-- Log into the {{site.data.keyword.icpfull_notm}} for Data [Web Console](https://Load_Balancer_IP:31843), then go to the *Add-ons* page by clicking the icon in the upper-right corner of the screen.
+- Log into the {{site.data.keyword.icpfull_notm}} for Data [Management Console](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.3/manage_cluster/cfc_gui.html), then go to the *Add-ons* page by clicking the icon in the upper-right corner of the screen.
 
   OR
   
