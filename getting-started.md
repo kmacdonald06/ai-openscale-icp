@@ -9,8 +9,8 @@ takeaways:
 - Understand how IBM Cloud services and Watson Studio technologies can provide a seamless, AI-driven customer experience
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-19"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -150,9 +150,9 @@ From the {{site.data.keyword.aios_short}} dashboard click the **Insights** tab, 
 
     - The next section describes how to view the factors that contribute to bias.
 
-    - For information about interpreting the visualization of the data points at a specifc hour, see [Working with monitored data > Data visualization](/docs/services/ai-openscale-icp/insight-timechart.html#insight-data-visual).
+    - For information about interpreting the visualization of the data points at a specific hour, see [Working with monitored data > Data visualization](/docs/services/ai-openscale-icp/insight-timechart.html#insight-data-visual).
 
-      ![Age details](images/setup03-19dec.png)
+      ![Age details](images/setup03-jan02.png)
 
 ### View explainability
 {: #explain}
