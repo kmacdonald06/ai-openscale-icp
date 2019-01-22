@@ -75,7 +75,7 @@ Note the three filters at the top of the page (Feature, Date, and Hour) that let
 
   ![Transaction list](images/transaction_list.png)
 
-  Click any of the transaction IDs to get details about that transaction in the Explainability tab. See [Monitoring Explainability](insight-timechart.html#insight-explain) below.
+  Click the **Explain** link for any of the transaction IDs to get details about that transaction in the Explainability tab. See [Monitoring Explainability](insight-timechart.html#insight-explain) below.
 
 
 - *Production model and De-biased model*
