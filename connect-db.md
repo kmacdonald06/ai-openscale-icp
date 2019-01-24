@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-13"
+  years: 2018, 2019
+lastupdated: "2018-01-24"
 
 ---
 
@@ -46,22 +46,27 @@ To proceed with using the free Lite plan database, simply select that option, th
 
 1.  Once you have selected the "Use existing or purchase new database" option, {{site.data.keyword.aios_short}} checks your {{site.data.keyword.Bluemix_notm}} account to locate any existing databases.
 
-    For the current release, only a Db2 database is supported.
-  {: note}
+    For the current release, only a PostgreSQL or Db2 database is supported.
+    {: note}
 
-1.  Select your existing database type (Db2), then a database from the **Database** drop-down menu, and then a **Schema**:
+1.  Select your existing database type (PostgreSQL or Db2), then a database from the **Database** drop-down menu, and then a **Schema**:
 
     ![Select database](images/gs-config-database3.png)
 
-    You can also click **Select a different location** to specify a database location outside of your {{site.data.keyword.Bluemix_notm}} account.
+1.  You can also click **Select a different location** to specify a database location outside of your {{site.data.keyword.Bluemix_notm}} account.
 
-1.  Select the **Database Type**, then fill in the connection information for your database location and click **Connect**:
+    - Select the **Database Type**, then fill in the connection information for your database location and click **Connect**:
 
-    ![Select database](images/gs-config-database4.png)
+       If you are using a Db2 database with a self-signed certificate, select the optional "Use SSL" checkbox and enter the content of the certificate in the "Certificate Code" field to properly configure the SSL connection.
+       {: note}
 
-1.  Once you have successfully connected, you can select a schema.
+      ![Select database SSL off](images/gs-config-database4.png)
 
-    ![Select database](images/gs-config-database5.png)
+      ![Select database SSL on](images/gs-config-database4a.png)
+
+    - Once you have successfully connected, you can select a schema.
+
+      ![Select schema](images/gs-config-database5.png)
 
 Click **Next** to review the summary data and click **Save**.
 
@@ -77,7 +82,7 @@ Select a deployment, in this case "Fraud Detector", and then use the provided `c
 The fields and values in the code snippets need to be substituted with your real values, as the ones provided are only examples.
 {: important}
 
-![Select database](images/config-send-scoring.png)
+![Send scoring request](images/config-send-scoring.png)
 
 Once you have run your payload logging, you will see a checkmark in the "Ready to Monitor" column for the selected deployment. Click **Configure Monitors** to continue.
 
