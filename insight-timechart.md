@@ -71,9 +71,9 @@ Note the three filters at the top of the page (Feature, Date, and Hour) that let
 
   ![View transactions](images/view_transactions.png)
 
-  a list of transactions for the past hour is listed.
+  a list of transactions is listed.
 
-  ![Transaction list](images/transaction_list.png)
+  ![Transaction list](images/transaction_list0.png)
 
   Click the **Explain** link for any of the transaction IDs to get details about that transaction in the Explainability tab. See [Monitoring Explainability](insight-timechart.html#insight-explain) below.
 
