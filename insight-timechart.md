@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-14"
+  years: 2018, 2019
+lastupdated: "2019-01-28"
 
 ---
 
@@ -15,20 +15,24 @@ lastupdated: "2018-12-14"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# Monitoring fairness, accuracy, and explainability
-{: #insight-deploy-detail}
-
-Select a deployment from the dashboard to see monitoring data for that deployment.
-{: shortdesc}
-
-## Monitoring Fairness, Average Requests per Minute, and Accuracy
+# Monitoring Fairness, Average Requests per Minute, and Accuracy
 {: #insight-time-chart}
 
 Monitoring data for individual deployments are displayed in a time series chart. The chart tracks Fairness, Average Requests per Minute, and Accuracy over the last seven days.
+{: shortdesc}
 
-  ![Time series chart](images/insight-time-chart.png)
+## Viewing data for a deployment
+{: #view}
 
-Move the marker across the chart to see statistics for an individual hour. In this example, the time selected is 1:00 PM CST on September 18, which reveals the following statistics:
+Select a deployment from the dashboard to see monitoring data for that deployment. The top of the monitoring data chart displays information about the deployed model, including when the model was last evaluated for Fairness and Accuracy, and when it will be evaluated next.
+
+![Time series chart](images/insight-time-chart.png)
+
+Because the algorithm checks are only run every hour, there are also buttons provided to allow you to check Fairness and Accuracy on-demand. If you have not provided enough payload records (Fairness) or feedback records (Accuracy), you will see the following message, for example:
+
+![Accuracy button](images/accuracy-button.png)
+
+Next, move the marker across the chart to see statistics for an individual hour. In this example, the time selected is 1:00 PM CST on September 18, which reveals the following statistics:
 
   ![Time series chart detail](images/insight-time-detail.png)
 
