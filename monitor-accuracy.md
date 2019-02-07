@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-05"
+  years: 2018, 2019
+lastupdated: "2019-02-04"
 
 ---
 
@@ -16,13 +16,13 @@ lastupdated: "2018-12-05"
 {:screen: .screen}
 
 # Accuracy
-{: #monitor-accuracy}
+{: #acc-monitor}
 
 Accuracy lets you know how well your model predicts outcomes.
 {: shortdesc}
 
 ## Understanding Accuracy
-{: #understand-accuracy}
+{: #acc-understand}
 
 Accuracy can mean different things depending on the type of the algorithm:
 
@@ -45,7 +45,7 @@ You can create a performance monitoring system for your predictive models by cre
 Use the available [REST API](https://watson-ml-api.mybluemix.net/) end-points directly to provide feedback data and kick off evaluation activities. For more information, see the [WML documentation](https://dataplatform.cloud.ibm.com/docs/content/analyze-data/ml-continuous-learning.html?audience=wdp&context=wdp).
 
 ## Configuring the Accuracy monitor
-{: #config-accuracy}
+{: #acc-config}
 
 1.  From the *What is Accuracy?* page, click **Next** to start the configuration process.
 
@@ -104,7 +104,7 @@ The fields and values in the code snippets need to be substituted with your real
 
 You can also choose **Exit** to skip this optional step; you will still be able to upload a CSV file for evaluation at a later time.
 
-### Next steps
-{: #accuracy-next}
+## Next steps
+{: #acc-next}
 
 From the *Configure monitors* page, you can select another monitoring category.

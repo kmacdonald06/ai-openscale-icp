@@ -9,16 +9,18 @@ Watson OpenScale for ICP for Data
     getting-started.md
     index.md
     tutorial-adv.md
+    addl-rsc.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
     {: .topicgroup}
-    Configuring Watson OpenScale
+    Configuring AI OpenScale
         creds.md
         connect-wml.md
+        connect-other.md
+        connect-spss.md        
         connect-azureml.md
         connect-sagemaker.md
-        connect-other.md
         connect-ml.md
         connect-deploy.md
         connect-db.md

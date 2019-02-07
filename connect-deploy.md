@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-11-13"
+  years: 2018, 2019
+lastupdated: "2019-02-04"
 
 ---
 
@@ -14,13 +14,13 @@ lastupdated: "2018-11-13"
 {:screen: .screen}
 
 # Select deployments to monitor
-{: #connect-deploy}
+{: #dpl-select}
 
 Select from a list of deployments to monitor.
 {: shortdesc}
 
 ## Choosing deployments
-{: #connect-config-deploys}
+{: #dpl-config}
 
 1.  {{site.data.keyword.aios_short}} checks your selected Machine Learning instance to locate a list of deployments stored in that instance. From the list of deployments, select which ones you will monitor.
 
@@ -31,7 +31,7 @@ Select from a list of deployments to monitor.
 
 You have successfully configured {{site.data.keyword.aios_short}}.
 
-### Next steps
-{: #connect-next}
+## Next steps
+{: #dpl-next}
 
-{{site.data.keyword.aios_short}} is now ready for you to [specify your database](connect-db.html).
+{{site.data.keyword.aios_short}} is now ready for you to [specify your database](/docs/services/ai-openscale-icp/connect-db.html).

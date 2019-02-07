@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-04"
 
 ---
 
@@ -16,13 +16,13 @@ lastupdated: "2019-01-23"
 {:screen: .screen}
 
 # Specifying a Microsoft Azure ML service instance
-{: #connect-azure}
+{: #caz-connect}
 
 Your first step in the {{site.data.keyword.aios_short}} tool is to specify a Microsoft Azure ML service instance. Your Azure ML service instance is where you store your AI models and deployments.
 {: shortdesc}
 
 ## Connect your Azure ML Studio service instance
-{: #config-azure}
+{: #caz-config}
 
 {{site.data.keyword.aios_short}} connects to AI models and deployments in a Azure ML Studio service instance.
 
@@ -49,7 +49,7 @@ Your first step in the {{site.data.keyword.aios_short}} tool is to specify a Mic
 
 1.  Click **Next**.
 
-### Next steps
-{: #payload-logging}
+## Next steps
+{: #caz-next}
 
-{{site.data.keyword.aios_short}} is now ready for you to [specify your database](connect-db.html).
+{{site.data.keyword.aios_short}} is now ready for you to [specify your database](/docs/services/ai-openscale-icp/connect-db.html).

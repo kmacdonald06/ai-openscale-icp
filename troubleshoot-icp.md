@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-14"
+  years: 2018, 2019
+lastupdated: "2019-02-04"
 
 ---
 
@@ -20,8 +20,10 @@ lastupdated: "2018-12-14"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Troubleshooting
+{: #ts-trouble}
 
 ## Bias/Fairness service is down
+{: #ts-bfdown}
 
 ### Overview
 
@@ -86,11 +88,6 @@ There are two ways to configure kubectl client.
       kubectl -n [namespace] delete pod [pod name]
       ```
 
-      If the command does not delete the pod, run:
-      ```bash
-      kubectl -n [namespace] delete pod [pod name] --grace-period=0 --force
-      ```
-
       - Check that the pod is not larger than your nodes. For example, if all nodes have a capacity of cpu:1, then a pod with a request of cpu: 1.1 will never be scheduled.
 
       You can check node capacities with the kubectl get nodes -o <format> command. Here are some example command lines that extract just the necessary information:
@@ -130,6 +127,7 @@ There are two ways to configure kubectl client.
 
 ---
 ## {{site.data.keyword.aios_short}} service is down
+{: #ts-aiosdown}
 
 ### Overview
 
@@ -195,11 +193,6 @@ There are two ways to configure kubectl client.
         kubectl -n [namespace] delete pod [pod name]
         ```
 
-        If the command does not delete the pod, run:
-        ```bash
-        kubectl -n [namespace] delete pod [pod name] --grace-period=0 --force
-        ```
-
         - Check that the pod is not larger than your nodes. For example, if all nodes have a capacity of cpu:1, then a pod with a request of cpu: 1.1 will never be scheduled.
 
       You can check node capacities with the kubectl get nodes -o `<format>` command. Here are some example command lines that extract just the necessary information:
@@ -233,6 +226,7 @@ There are two ways to configure kubectl client.
 
 ---
 ## {{site.data.keyword.aios_short}} configuration service is down
+{: #ts-aiosconfigdown}
 
 ### Overview
 
@@ -299,11 +293,6 @@ If cloudctl is available on your laptop, run the following command to configure 
       kubectl -n [namespace] delete pod [pod name]
       ```
 
-      If the command does not delete the pod, run:
-      ```bash
-      kubectl -n [namespace] delete pod [pod name] --grace-period=0 --force
-      ```
-
       - Check that the pod is not larger than your nodes. For example, if all nodes have a capacity of cpu:1, then a pod with a request of cpu: 1.1 will never be scheduled.
 
       You can check node capacities with the kubectl get nodes -o `<format>` command. Here are some example command lines that extract just the necessary information:
@@ -337,6 +326,7 @@ If cloudctl is available on your laptop, run the following command to configure 
 ---
 
 ## {{site.data.keyword.aios_short}} dashboard service is down
+{: #ts-aiosdashdown}
 
 ### Overview
 
@@ -401,11 +391,6 @@ There are two ways to configure kubectl client.
       kubectl -n [namespace] delete pod [pod name]
       ```
 
-      If the command does not delete the pod, run:
-      ```bash
-      kubectl -n [namespace] delete pod [pod name] --grace-period=0 --force
-      ```
-
       - Check that the pod is not larger than your nodes. For example, if all nodes have a capacity of cpu:1, then a pod with a request of cpu: 1.1 will never be scheduled.
 
       You can check node capacities with the kubectl get nodes -o `<format>` command. Here are some example command lines that extract just the necessary information:
@@ -438,6 +423,7 @@ There are two ways to configure kubectl client.
 
 ---
 ## Data Mart service is down
+{: #ts-datamartdown}
 
 ### Overview
 
@@ -502,11 +488,6 @@ There are two ways to configure kubectl client.
       kubectl -n [namespace] delete pod [pod name]
       ```
 
-      If the command does not delete the pod, run:
-      ```bash
-      kubectl -n [namespace] delete pod [pod name] --grace-period=0 --force
-      ```
-
       - Check that the pod is not larger than your nodes. For example, if all nodes have a capacity of cpu:1, then a pod with a request of cpu: 1.1 will never be scheduled.
 
       You can check node capacities with the kubectl get nodes -o `<format>` command. Here are some example command lines that extract just the necessary information:
@@ -540,6 +521,7 @@ There are two ways to configure kubectl client.
 ---
 
 ## Explainability service is down
+{: #ts-expdown}
 
 ### Overview
 
@@ -604,11 +586,6 @@ There are two ways to configure kubectl client.
       kubectl -n [namespace] delete pod [pod name]
       ```
 
-      If the command does not delete the pod, run:
-      ```bash
-      kubectl -n [namespace] delete pod [pod name] --grace-period=0 --force
-      ```
-
       - Check that the pod is not larger than your nodes. For example, if all nodes have a capacity of cpu:1, then a pod with a request of cpu: 1.1 will never be scheduled.
 
       You can check node capacities with the kubectl get nodes -o `<format>` command. Here are some example command lines that extract just the necessary information:
@@ -649,6 +626,7 @@ There are two ways to configure kubectl client.
 ---
 
 ## {{site.data.keyword.aios_short}} feedback service is down
+{: #ts-aiosfeedbackdown}
 
 ### Overview
 
@@ -713,11 +691,6 @@ There are two ways to configure kubectl client.
       kubectl -n [namespace] delete pod [pod name]
       ```
 
-      If the command does not delete the pod, run:
-      ```bash
-      kubectl -n [namespace] delete pod [pod name] --grace-period=0 --force
-      ```
-
       - Check that the pod is not larger than your nodes. For example, if all nodes have a capacity of cpu:1, then a pod with a request of cpu: 1.1 will never be scheduled.
 
       You can check node capacities with the kubectl get nodes -o `<format>` command. Here are some example command lines that extract just the necessary information:
@@ -758,6 +731,7 @@ There are two ways to configure kubectl client.
 ---
 
 ## {{site.data.keyword.aios_short}} discovery service is down
+{: #ts-aiosdiscdown}
 
 ### Overview
 
@@ -822,11 +796,6 @@ There are two ways to configure kubectl client.
       kubectl -n [namespace] delete pod [pod name]
       ```
 
-      If the command does not delete the pod, run:
-      ```bash
-      kubectl -n [namespace] delete pod [pod name] --grace-period=0 --force
-      ```
-
       - Check that the pod is not larger than your nodes. For example, if all nodes have a capacity of cpu:1, then a pod with a request of cpu: 1.1 will never be scheduled.
 
       You can check node capacities with the kubectl get nodes -o `<format>` command. Here are some example command lines that extract just the necessary information:
@@ -860,6 +829,7 @@ There are two ways to configure kubectl client.
 ---
 
 ## {{site.data.keyword.aios_short}} nginx service is down
+{: #ts-aiosnginxdown}
 
 ### Overview
 
@@ -924,11 +894,6 @@ There are two ways to configure kubectl client.
       kubectl -n [namespace] delete pod [pod name]
       ```
 
-      If the command does not delete the pod, run:
-      ```bash
-      kubectl -n [namespace] delete pod [pod name] --grace-period=0 --force
-      ```
-
       - Check that the pod is not larger than your nodes. For example, if all nodes have a capacity of cpu:1, then a pod with a request of cpu: 1.1 will never be scheduled.
 
       You can check node capacities with the kubectl get nodes -o `<format>` command. Here are some example command lines that extract just the necessary information:
@@ -962,6 +927,7 @@ There are two ways to configure kubectl client.
 ---
 
 ## {{site.data.keyword.aios_short}} payload logging API service is down
+{: #ts-aiospayloadapidown}
 
 ### Overview
 
@@ -1026,11 +992,6 @@ There are two ways to configure kubectl client.
       kubectl -n [namespace] delete pod [pod name]
       ```
 
-      If the command does not delete the pod, run:
-      ```bash
-      kubectl -n [namespace] delete pod [pod name] --grace-period=0 --force
-      ```
-
       - Check that the pod is not larger than your nodes. For example, if all nodes have a capacity of cpu:1, then a pod with a request of cpu: 1.1 will never be scheduled.
 
       You can check node capacities with the kubectl get nodes -o <format> command. Here are some example command lines that extract just the necessary information:
@@ -1064,6 +1025,7 @@ There are two ways to configure kubectl client.
 ---
 
 ## {{site.data.keyword.aios_short}} payload logging service is down
+{: #ts-aiospayloaddown}
 
 ### Overview
 
@@ -1127,11 +1089,6 @@ There are two ways to configure kubectl client.
       kubectl -n [namespace] delete pod [pod name]
       ```
 
-      If the command does not delete the pod, run:
-      ```bash
-      kubectl -n [namespace] delete pod [pod name] --grace-period=0 --force
-      ```
-
       - Check that the pod is not larger than your nodes. For example, if all nodes have a capacity of cpu:1, then a pod with a request of cpu: 1.1 will never be scheduled.
 
       You can check node capacities with the kubectl get nodes -o <format> command. Here are some example command lines that extract just the necessary information:
@@ -1165,6 +1122,7 @@ There are two ways to configure kubectl client.
 ---
 
 ## {{site.data.keyword.aios_short}} scheduling service is down
+{: #ts-aiosscheddown}
 
 ### Overview
 
@@ -1229,11 +1187,6 @@ There are two ways to configure kubectl client.
       kubectl -n [namespace] delete pod [pod name]
       ```
 
-      If the command does not delete the pod, run:
-      ```bash
-      kubectl -n [namespace] delete pod [pod name] --grace-period=0 --force
-      ```
-
       - Check that the pod is not larger than your nodes. For example, if all nodes have a capacity of cpu:1, then a pod with a request of cpu: 1.1 will never be scheduled.
 
       You can check node capacities with the kubectl get nodes -o `<format>` command. Here are some example command lines that extract just the necessary information:
@@ -1267,6 +1220,7 @@ There are two ways to configure kubectl client.
 ---
 
 ## {{site.data.keyword.aios_short}} redis service is down
+{: #ts-aiosredisdown}
 
 ### Overview
 
@@ -1336,11 +1290,6 @@ There are two ways to configure kubectl client.
       kubectl -n [namespace] delete pod [pod name]
       ```
 
-      If the command does not delete the pod, run:
-      ```bash
-      kubectl -n [namespace] delete pod [pod name] --grace-period=0 --force
-      ```
-
       - Check that the pod is not larger than your nodes. For example, if all nodes have a capacity of cpu:1, then a pod with a request of cpu: 1.1 will never be scheduled.
 
       You can check node capacities with the kubectl get nodes -o <format> command. Here are some example command lines that extract just the necessary information:
@@ -1374,6 +1323,7 @@ There are two ways to configure kubectl client.
 ---
 
 ## etcd service is down
+{: #ts-etcddown}
 
 ### Overview
 
@@ -1442,11 +1392,6 @@ There are two ways to configure kubectl client.
       kubectl -n [namespace] delete pod [pod name]
       ```
 
-      If the command does not delete the pod, run:
-      ```bash
-      kubectl -n [namespace] delete pod [pod name] --grace-period=0 --force
-      ```
-
       - Check that the pod is not larger than your nodes. For example, if all nodes have a capacity of cpu:1, then a pod with a request of cpu: 1.1 will never be scheduled.
 
       You can check node capacities with the kubectl get nodes -o `<format>` command. Here are some example command lines that extract just the necessary information:
@@ -1484,6 +1429,7 @@ There are two ways to configure kubectl client.
 ---
 
 ## Create a dashboard with event_stream
+{: #ts-createdashes}
 
 ### Overview
 
@@ -1534,6 +1480,7 @@ The event stream consists of several services.  Please see subfolder for details
 ---
 
 ## Using {{site.data.keyword.aios_short}} monitoring
+{: #ts-aiosusemonitor}
 
 ### Overview
 

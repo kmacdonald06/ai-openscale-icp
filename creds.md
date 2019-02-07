@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-17"
+  years: 2018, 2019
+lastupdated: "2019-02-04"
 
 ---
 
@@ -18,6 +18,7 @@ lastupdated: "2018-10-17"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Creating credentials
+{: #cred-creds}
 
 To create credentials for {{site.data.keyword.aios_short}}, complete the following steps using the {{site.data.keyword.Bluemix_notm}} [command console](https://console.bluemix.net/docs/cli/index.html#overview):
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-06"
+  years: 2018, 2019
+lastupdated: "2019-02-04"
 
 ---
 
@@ -38,11 +38,11 @@ These are the key steps:
 
 - Retrieve log files
 
-  - Check what pods are available:
+    - Check what pods are available:
 
-    ```
-    kubectl get pods --namespace aiopenscale
-    ```
+      ```bash
+      kubectl get pods --namespace aiopenscale
+      ```
 
 Example output:
 
@@ -70,7 +70,7 @@ Example output:
 | etcd-1 | 1/1 | Running | 0 | 5d |
 | etcd-2 | 1/1 | Running | 0 | 5d ||
 
-  - For the following pods:
+- For the following pods:
 
 | NAME | READY | STATUS | RESTARTS | AGE
 |:---|:---:|:---:|:---:|:---|
@@ -95,11 +95,11 @@ Example output:
 
   issue the command:
 
-  ```
+  ```bash
   kubectl logs <podName> --namespace aiopenscale > pod.log
   ```
 
-  - For the remaining pods:
+- For the remaining pods:
 
 | NAME | READY | STATUS | RESTARTS | AGE
 |:---|:---:|:---:|:---:|:---|
@@ -107,13 +107,13 @@ Example output:
 | ai-open-scale-ibm-aios-explainability-5cdb4687f5-hln7h       | 2/2 |      Running |  0  |        1h |
 | ai-open-scale-ibm-aios-feedback-59f7c558bd-xgd56             | 2/2 |      Running |  0  |        1h ||
 
-  ```
+  ```bash
   kubectl logs ai-open-scale-ibm-aios-explainability-5cdb4687f5-hln7h  --container aios-bias --namespace aiopenscale
   ```
 
   Container names will be displayed when using the earlier command:
 
-  ```
+  ```bash
   kubectl logs <podName> --namespace aiopenscale > pod.log
   ```
 

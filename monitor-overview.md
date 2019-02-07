@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-10"
+  years: 2018, 2019
+lastupdated: "2019-02-04"
 
 ---
 
@@ -16,12 +16,13 @@ lastupdated: "2018-12-10"
 {:screen: .screen}
 
 # Preparing monitors for a deployment
-{: #monitor-config}
+{: #mo-config}
 
 Set up and enable monitors for each deployment that you are tracking with {{site.data.keyword.aios_short}}.
 {: shortdesc}
 
 ## Selecting a deployment
+{: #mo-deploy}
 
 1.  First, you must select a deployment.
 
@@ -35,6 +36,7 @@ Set up and enable monitors for each deployment that you are tracking with {{site
     ![Prepare for monitoring](images/config-prep-monitor.png)
 
 ## Working with data
+{: #mo-data}
 
 1.  Now you will provide information about your model and training data; click **Next**.
 
@@ -132,12 +134,13 @@ For numeric or categorical data, you need to provide information about the train
    For models that accept text as input, it is expected that the model accepts the entire text, and not a vectorized representation of the text.
 
 ## Review and save configuration
+{: #mo-save}
 
 Review your selection summary and click **Save** to continue.
 
   ![Select data table](images/config-summary-monitor.png)
 
-### Next steps
-{: #monitor-next}
+## Next steps
+{: #mo-next}
 
 To begin configuring monitors, select a category and click **Begin**.
