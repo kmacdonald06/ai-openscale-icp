@@ -2,7 +2,7 @@
 {:topicgroup: .topicgroup}
 
 {: .toc subcollection="ai-openscale-icp" audience="service" href="/docs/services/ai-openscale-icp/getting-started.html" path="services/ai-openscale-icp"}
-AI OpenScale for ICP for Data
+Watson OpenScale for ICP for Data
 
     {: .navgroup id="learn"}
     install-icp.md
@@ -13,7 +13,7 @@ AI OpenScale for ICP for Data
 
     {: .navgroup id="howto"}
     {: .topicgroup}
-    Configuring AI OpenScale
+    Configuring Watson OpenScale
         creds.md
         connect-wml.md
         connect-azureml.md
