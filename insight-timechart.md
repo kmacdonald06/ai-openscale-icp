@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-28"
+lastupdated: "2019-02-04"
 
 ---
 
@@ -16,13 +16,13 @@ lastupdated: "2019-01-28"
 {:screen: .screen}
 
 # Monitoring Fairness, Average Requests per Minute, and Accuracy
-{: #insight-time-chart}
+{: #itc-timechart}
 
 Monitoring data for individual deployments are displayed in a time series chart. The chart tracks Fairness, Average Requests per Minute, and Accuracy over the last seven days.
 {: shortdesc}
 
 ## Viewing data for a deployment
-{: #view}
+{: #itc-view}
 
 Select a deployment from the dashboard to see monitoring data for that deployment. The top of the monitoring data chart displays information about the deployed model, including when the model was last evaluated for Fairness and Accuracy, and when it will be evaluated next.
 
@@ -43,7 +43,7 @@ Next, move the marker across the chart to see statistics for an individual hour.
 Select the chart to see details behind a particular Fairness statistic.
 
 ### Data visualization
-{: #insight-data-visual}
+{: #itc-data-visual}
 
 Clicking the chart opens a visualization of the data points for a monitored feature at a specific hour. Following the previous example, the Age feature, which has been tagged for bias, is shown.
 
@@ -107,7 +107,7 @@ Note the three filters at the top of the page (Feature, Date, and Hour) that let
         ![Debias API endpoint](images/insight-debias-api.png)
 
 ## Monitoring Explainability
-{: #insight-explain}
+{: #itc-monitor-explain}
 
 For each deployment, you can see explainability data for specific transactions by selecting the Transactions tab ( ![Transactions tab](images/insight-transact-tab.png) ) in the navigator.
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-14"
+  years: 2018, 2019
+lastupdated: "2019-02-06"
 
 ---
 
@@ -14,42 +14,98 @@ lastupdated: "2018-12-14"
 {:screen: .screen}
 
 # Release notes
+{: #rn-relnotes}
 
 This document outlines new features and known issues for {{site.data.keyword.aios_full_notm}}.
 {: shortdesc}
 
-## 14 December 2018
-{: #14December2018}
+## 7 February 2019
+{: #rn-7February2019}
 
-The following new features, changes, and known issues with the service are available.
+The following new features and changes to the service are available.
 
 ### New features and changes
+{: #rn-7February2019nf}
 
-{{site.data.keyword.aios_short}} features that have been added or enhanced since the beta release include:
+{{site.data.keyword.aios_short}} features that have been added or enhanced since the previous release include:
 
-- __*General availability*__: The General Availability (GA) release of {{site.data.keyword.aios_full_notm}} on IBM Cloud Private for Data V1.2, See the [installation instructions](/docs/services/ai-openscale-icp/install-icp.html#install) for more information.
+- __*UI updates*__: Several improvements have been made to the {{site.data.keyword.aios_short}} user interface, including a way to [manually trigger Bias and Accuracy runs](/docs/services/ai-openscale/insight-timechart.html#it-ov), and the ability to see a list of transactions from the [fairness details chart](/docs/services/ai-openscale/insight-timechart.html#it-tra).
 
-- __*Support for your model type*__: In addition to AI model deployments in Watson Machine Learning, {{site.data.keyword.aios_short}} supports model deployments in Microsoft Azure, Amazon SageMaker, and Custom environments. See [Supported model types](/docs/services/ai-openscale-icp/index.html#supported-model-types) for more information.
+- __*Explainability enhancements*__: All numbers now have the same precision/scale across Pertinent Positive (PP) and Pertinent Negative (PN) values.
 
-- __*Bias monitoring*__: Support for protected attributes of type `float` and `double`, and bias detection on linear regression models. And {{site.data.keyword.aios_short}} can automatically de-bias your AI model for you. See [Understanding fairness](/docs/services/ai-openscale-icp/monitor-fairness.html#understand-fair) for more information.
+- __*IBM SPSS Collaboration & Deployment Services support*__: IBM SPSS C&DS is now a supported machine learning service instance. See [Specifying an IBM SPSS Collaboration & Deployment Services instance](/docs/services/ai-openscale-icp/connect-spss.html#cspss-spss)
 
-- __*Explainability*__: Support for regression models, Python functions, and complementary contrastive explanations. See [Monitoring explainability](/docs/services/ai-openscale-icp/insight-timechart.html#insight-explain) for more information.
+- __*Db2 SSL support*__: {{site.data.keyword.aios_short}} supports passing self-signed certificates (Base-64 encoded) with Db2 credentials.
 
-- __*Data Store*__: Quality monitoring without reliance on Watson Machine Learning, and the ability to use your own database, whether it's Db2, Postgres or Db2 on Cloud.
-
-- __*NeuNetS (Beta)*__: The IBM Neural Network Synthesizer (NeuNetS) is available as a beta release (public cloud only). See the [NeuNetS documentation](https://dataplatform.cloud.ibm.com/ml/neunets) for more information.
-
-- __*Enhanced UI*__: The {{site.data.keyword.aios_short}} UI has been improved to include a runtime histogram distribution with toggle for training data, Model ID & Versioning, and a Transaction ID table from the histogram. See [Data visualization](/docs/services/ai-openscale-icp/insight-timechart.html#insight-data-visual) for more information.
-
-- __*Tutorial module*__: To automate provisioning and configuration, and to see an {{site.data.keyword.aios_full_notm}} instance, including sample data, you can install and run a Python module. See [Automated setup](/docs/services/ai-openscale-icp/getting-started.html#module)
+- __*IBM Cloud Database support*__: {{site.data.keyword.aios_short}} now supports Databases for PostgreSQL, in addition to Compose for PostgreSQL and Db2)
 
 ### Known issues
+{: #rn-7February2019ki}
+
+- **Python functions not supported**
+
+    -  Bias checking, de-biasing, and explainability is not supported for Python functions, in the current release.
+
+- **Explainability support limitations**
+
+    - When building your models, do not include the target (label) column from the input request for scoring. If the model requires the target column to be included in the input request, then bias checking, de-biasing, and explainability will not work.
+
+    - Image-based models cannot be deployed on Watson Machine Learning (WML), so the Explainability service does not support image-based models; this is a WML limitation.
+
+- **Custom ML service instance**
+
+    - The [Python module](/docs/services/ai-openscale/alt-setup.html) does not currently have Explainability working for the Custom service instance. This is because, to generate an explanation, the Custom service instance should have a numerical prediction in the response data, which is not included with the module script. Explainability will not be supported on the Custom service instance if the model that is sourcing the custom application returns a non-numerical prediction in the scoring response.
+
+- **Microsoft Azure**
+
+    - Some clusters may have an issue with obtaining web service metadata for Azure, when there are a large number of web services. When this occurs, the deployment response from Azure appears to be empty.
+
+      This may be caused by timeout values that are exceeded by the time it takes to obtain this metadata. For example, if you are using the HAProxy load balancer, you may need to work around this issue by:
+
+        - Logging into the load balancer node and updating `/etc/haproxy/haproxy.cfg` to set the client and server timeout from `1m` to `5m`:
+
+          ```bash
+          timeout client           5m
+          timeout server           5m
+          ```
+
+        - Running `systemctl restart haproxy` to restart the HAProxy load balancer.
+
+      If you are using a different load balancer, other than HAProxy, you may need to adjust timeout values in a similar fashion.
+      {: note}
+
+## 14 December 2018
+{: #rn-14December2018}
+
+The following new features and changes to the service are available.
+
+### New features and changes
+{: #rn-14December2018nf}
+
+- **GA release**
+
+    - Welcome to the General Availability (GA) release of {{site.data.keyword.aios_full_notm}}. This release contains the following features:
+
+        - __*Releases*__: {{site.data.keyword.aios_short}} is available as an IBM Cloud Standard (paid) plan, and on IBM Cloud Private for Data V1.2
+
+          The IBM Neural Network Synthesizer (NeuNetS) is also available as a beta release (public cloud only). See the [NeuNetS documentation](https://dataplatform.cloud.ibm.com/ml/neunets) for more information
+
+        - __*Enhanced UI*__: The {{site.data.keyword.aios_short}} UI now includes a runtime histogram distribution with toggle, Model ID & Versioning, and a Transaction ID table from the histogram
+
+        - __*Bias*__: Support for protected attributes of type `float` and `double`, bias detection on linear regression models, and bias remediation
+
+        - __*Explainability*__: Support for regression models, Python functions, and IBM Explainer, along with LIME, algorithms
+
+        - __*Data Store*__: Quality monitoring without reliance on Watson Machine Learning, and Db2 support
+
+### Known issues
+{: #rn-14December2018ki}
 
 - **Microsoft Azure**
 
     - Of the two types of Azure Machine Learning web services, only the `New` type is supported by {{site.data.keyword.aios_short}}. The `Classic` type is not supported.
 
-    - In the Azure web service, the default input name is `"input1"`. Currently, this field is mandated for {{site.data.keyword.aios_short}} and, if it is missing, {{site.data.keyword.aios_short}} will not work.
+    - In the Azure web service, the default input name is `"input1"`. Currently, this field is mandated for {{site.data.keyword.aios_short}} and, if it is missing, Accuracy monitoring will fail.
 
       If your Azure web service does not use the default name, change the input field name to `"input1"`, then the code will work.
 
@@ -63,7 +119,7 @@ The following new features, changes, and known issues with the service are avail
 
 - **Code snippets invalid**
 
-    - Both cURL and Python code snippets provided for monitor configuration are invalid. Correct code snippets for cURL are provided here:
+    - Both cURL and Python code snippets provided for monitor configuration are invalid. Correct code snippets are provided here:
 
       *Payload logging*
 
@@ -128,24 +184,40 @@ The following new features, changes, and known issues with the service are avail
       --header 'Content-Type: application/json' --header 'Accept: application/json' --header "Authorization: Bearer $ICP_TOKEN"
       ```
 
-      *Bias Remediation*
+    - Java code snippet provided for debiasing endpoint is invalid. Correct code snippet is provided here:
 
-      ```cURL
-      # Generate an ICP access token by replacing ICP username as <USERNAME>, and ICP password as <PASSWORD> in the request below. Also replace the <HOSTNAME>:<PORT>
+      *Debias endpoint*
 
-      curl -k -X GET --user "<USERNAME>:<PASSWORD>" "https://<HOSTNAME>:<PORT>/v1/preauth/validateAuth"
+      ```java
+      /**
+      At runtime you need to replace values for the following
 
-      # the above CURL request will return an auth token under "accessToken", use this value for <TOKEN> in the below request
+      <HOSTNAME> - Host Name eg: aiopenscale.test.cloud.ibm.com
+      <PORT> - Server Port
+      <DATA_MART_ID> - DataMart id
+      <SERVICE_BINDING_ID> - Service Binding id
+      <ASSET_ID> - Asset id or the model id 
+      <DEPLOYMENT_ID> - Deployment id
+      <TOKEN> - Bearer token
 
-      # Replace "fields" - list of features column from payload logging - replace sample values with proper ones
-      # Replace "values" - payload logging data records - replace sample values with proper ones
+      */
+      import org.apache.http.HttpVersion;
+      import org.apache.http.client.fluent.Request;
+      import org.apache.http.entity.ContentType;
 
-      curl -X POST "https://<HOSTNAME>:<PORT>/v1/data_marts/<DATA_MART_ID>/service_bindings/<SERVICE_BINDING_ID>/subscriptions/<ASSET_ID>/deployments/<DEPLOYMENT_ID>/online" -H "accept: application/json" -H "Authorization: bearer <TOKEN>" -H "X-Global-Transaction-Id: " -H "Content-Type: application/json" -d "{ \"fields\": [ \"field1\", \"field2\", \"field3\" ], \"values\": [ [ \"field1Value1\", \"field2Value1\", \"field3Value1\" ], [ \"field1Value2\", \"field2Value2\", \"field3Value2\" ] ]}"
+      String bearerToken = "Bearer <TOKEN>";
+      String URL = "https://<HOSTNAME>:<PORT>/v1/data_marts/<DATA_MART_ID>/service_bindings/<SERVICE_BINDING_ID>/subscriptions/<ASSET_ID>/deployments/<DEPLOYMENT_ID>/online";
+
+      String payload = "{ \"fields\": [ \"field1\", \"field2\", \"field3\" ], \"values\": [ [ \"field1Value1\", \"field2Value1\", \"field3Value1\" ], [ \"field1Value2\", \"field2Value2\", \"field3Value2\" ]] }";
+
+      byte[] res = Request.Post(URL).addHeader("Authorization", bearerToken).useExpectContinue().version(HttpVersion.HTTP_1_1)
+                .bodyString(payload, ContentType.APPLICATION_JSON).execute().returnContent().asBytes();
       ```
 
 ## 17 September 2018
-{: #17September2018}
+{: #rn-17September2018}
 
 ### New features and changes
+{: #rn-17September2018nf}
 
 - **Beta preview release** - Welcome to the beta preview release of {{site.data.keyword.aios_full_notm}}.

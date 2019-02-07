@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-03"
+  years: 2018, 2019
+lastupdated: "2019-02-04"
 
 ---
 
@@ -16,21 +16,21 @@ lastupdated: "2018-12-03"
 {:screen: .screen}
 
 # Fairness
-{: #monitor-fair}
+{: #mf-monitor}
 
 Fairness monitors your deployment for biases, to help ensure fair outcomes across different populations.
 {: shortdesc}
 
 ## Understanding Fairness
-{: #understand-fair}
+{: #mf-understand}
 
-{{site.data.keyword.aios_short}} checks your deployed model for bias at runtime. To detect bias for a deployed model, you must define feature requirements, such as Age or Gender, as detailed in [Configuring the Fairness monitor](monitor-fairness.html#config-fair) below.
+{{site.data.keyword.aios_short}} checks your deployed model for bias at runtime. To detect bias for a deployed model, you must define feature requirements, such as Age or Gender, as detailed in [Configuring the Fairness monitor](#mf-config) below.
 
 It is mandatory to specify the output schema for a model or function in Watson Machine Learning (WML), for bias checking to be enabled in {{site.data.keyword.aios_short}}. The output schema can be specified using the `client.repository.ModelMetaNames.OUTPUT_DATA_SCHEMA` property in the metadata part of the `store_model` API. For more information, see the [WML client documentation](http://wml-api-pyclient-dev.mybluemix.net/#repository)
 
 ### How it works
 
-Before configuring the Fairness monitor, there are a few key concepts that are critical to understand:
+Before configuring the Fairness monitor, there a few key concepts that are critical to understand:
 
 - *Fairness attributes*: These are the model attributes for which the model is likely to exhibit bias. As an example, for the fairness attribute **`Gender`**, the model could be biased against specific gender values (`Female`, `Transgender`, etc.) Another example of a fairness attribute is **`Age`**, where the model could exhibit bias against people in an age group, like `18 to 25`.
   
@@ -56,7 +56,7 @@ Consider a data point where, for `Gender=Male` (Reference value), the model pred
  {{site.data.keyword.aios_short}} supports bias detection only for those models and Python functions which expect some kind of structured data in its feature vector. In the current release, bias detection is supported only for classification models (models which predict a categorical value); {{site.data.keyword.aios_short}} does not support bias detection for regression models (models which predict a continuous value).
 
 ## Configuring the Fairness monitor
-{: #config-fair}
+{: #mf-config}
 
 1.  From the *What is Fairness?* page, click **Next** to start the configuration process.
 
@@ -124,7 +124,7 @@ Consider a data point where, for `Gender=Male` (Reference value), the model pred
 
 1.  Click **Save** to complete your configuration.
 
-### Next steps
-{: #fair-next}
+## Next steps
+{: #mf-next}
 
 From the *Configure monitors* page, you can select another monitoring category.

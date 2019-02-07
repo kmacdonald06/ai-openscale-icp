@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-09-08"
+  years: 2018, 2019
+lastupdated: "2019-02-04"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-09-08"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Information security
-{: #information-security}
+{: #is-infosec}
 
 IBM is committed to providing our clients and partners with innovative data privacy, security and governance solutions.
 {: shortdesc}
@@ -34,13 +34,13 @@ If you need to request GDPR support for {{site.data.keyword.cloud}} {{site.data.
 -   Outside of the EU, see [Requesting support for resources outside the European Union](/docs/services/watson/getting-started-gdpr-sar.html#request-non-EU).
 
 ## European Union General Data Protection Regulation (GDPR)
-{: #gdpr}
+{: #is-gdpr}
 
 IBM is committed to providing our clients and partners with innovative data privacy, security and governance solutions to assist them on their journey to GDPR compliance.
 
 Learn more about IBM's own GDPR readiness journey and our GDPR capabilities and offerings to support your compliance journey [here ![External link icon](../../icons/launch-glyph.svg "External link icon")](../../icons/launch-glyph.svg "External link icon")](http://www.ibm.com/gdpr){: new_window}.
 
 ## Labeling and deleting data in {{site.data.keyword.aios_short}}
-{: #gdpr-in-service}
+{: #is-gdpr-in-service}
 
 The {{site.data.keyword.aios_short}} service processes but does not store users’ data. Users of the {{site.data.keyword.aios_short}} service do not need to take any action to identify, protect, or delete their data.

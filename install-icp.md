@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-13"
+  years: 2018, 2019
+lastupdated: "2019-02-04"
 
 ---
 
@@ -21,7 +21,7 @@ lastupdated: "2018-12-13"
 {:download: .download}
 
 # Installation checklist
-{: #install}
+{: #inst-install-icp}
 
 Learn how to install the {{site.data.keyword.aios_short}} tool into {{site.data.keyword.icpfull}} for Data.
 {: shortdesc}
@@ -29,14 +29,15 @@ Learn how to install the {{site.data.keyword.aios_short}} tool into {{site.data.
 The {{site.data.keyword.icpfull_notm}} environment is a Kubernetes-based container platform that can help you quickly modernize and automate workloads that are associated with the applications and services you use. You can develop and deploy on your own infrastructure and in your data center which helps to mitigate risk and minimize vulnerabilities.
 
 ## Hardware requirements
+{: #inst-hw}
 
-Always refer to [System requirements for IBM Cloud Private for Data](https://www.ibm.com/support/knowledgecenter/en/SSQNUZ_1.1.0/com.ibm.icpdata.doc/zen/install/reqs-ent.html) for the most current requirements.
+Always refer to [System requirements for {{site.data.keyword.icpfull_notm}} for Data](https://www.ibm.com/support/knowledgecenter/en/SSQNUZ_1.1.0/com.ibm.icpdata.doc/zen/install/reqs-ent.html) for the most current requirements.
 
 ### Operating system requirements
 
 | Operating system | Minimum level | Hardware | Bitness
 |:---|:---:|:---:|:---:
-Red Hat Enterprise Linux (RHEL) Server 7 | 7.5 | x86-64 | 64-Exploit ||
+|Red Hat Enterprise Linux (RHEL) Server 7 | 7.5 | x86-64 | 64-Exploit ||
 
 ### Hardware and software requirements for a three-node configuration
 
@@ -75,28 +76,29 @@ If you plan to deploy a Db2 Warehouse database in your IBM Cloud Private for Dat
 | | | | Recommended core-to-memory ratio for improved performance: 1:16 | 5 TB as a starter is strongly recommended. |
 
 ## Software requirements
+{: #inst-sw}
 
 Download the appropriate package, by part number, from [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/pao_customer.html).
 
 1.  {{site.data.keyword.icpfull_notm}} for Data version 1.2, running on {{site.data.keyword.icpfull_notm}} version 3.1.0.
 
-    - **Standalone**: The standalone {{site.data.keyword.icpfull_notm}} for Data package, part number *CNZ34EN*. This is a `.bin` file that includes both the {{site.data.keyword.icpfull_notm}} 3.1.0 platform, and {{site.data.keyword.icpfull_notm}} for Data 1.2 Enterprise Edition. The part number is for the {{site.data.keyword.icpfull_notm}} for Data Starter package.
+    - **Standalone**: The standalone {{site.data.keyword.icpfull_notm}} for Data package, part number *CNY56EN*. This is a `.bin` file that includes both the {{site.data.keyword.icpfull_notm}} 3.1.0 platform, and {{site.data.keyword.icpfull_notm}} for Data 1.2 Enterprise Edition. The part number is for the {{site.data.keyword.icpfull_notm}} for Data Starter package.
 
-1.  {{site.data.keyword.icpfull_notm}} for Data 1.2.0 Watson Machine Learning Extension package
+1.  {{site.data.keyword.icpfull_notm}} for Data 1.2.0.1 Watson Machine Learning Extension package
 
-    - Download part number *CNY5GEN*. This is a `.bin` file.
+    - Download part number *CC092EN*. This is a `.bin` file.
 
-1.  IBM Event Streams V2018.3.0 for Linux on x86 64-bit Multilingual
+1.  IBM Event Streams V2018.3.1 for Linux on x86 64-bit Multilingual
 
-    - Download part number *CNW2CML*. This is a `tar.gz` file.
+    - Download part number *CNXJ8ML*. This is a `tar.gz` file.
 
-1.  IBM Db2 Warehouse package for {{site.data.keyword.icpfull_notm}} for Data 1.2 (Optional)
+1.  IBM Db2 Warehouse V3.0 for {{site.data.keyword.icpfull_notm}} for Data 1.2 (Optional)
 
     - Download part number *CNY5DEN*. This is a `tar.gz` file.
 
-1.  {{site.data.keyword.aios_full_notm}} for {{site.data.keyword.icpfull_notm}} V1.0.0 Linux 64-bit system
+1.  {{site.data.keyword.aios_full_notm}} for {{site.data.keyword.icpfull_notm}} V1.0.1 Linux 64-bit system
 
-    - Download part number *CNX8ZEN*. This is a `tar.gz` file.
+    - Download part number *CNZC1EN*. This is a `tar.gz` file.
 
 <!---
 
@@ -123,6 +125,7 @@ Download the appropriate package, by part number, from [IBM Passport Advantage](
 --->
 
 ## Install {{site.data.keyword.icpfull_notm}} for Data
+{: #inst-icp4d}
 
 Follow the instructions for [Installing the stand-alone version of IBM Cloud Private for Data ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/zen/install/standovu.html), in the IBM Knowledge Center.
 
@@ -600,12 +603,13 @@ See [Setting up an external load balancer ![External link icon](../../icons/laun
 --->
 
 ## Install the Watson Machine Learning package
+{: #inst-wml}
 
 Follow the instructions to install the [Watson Machine Learning add-on ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/zen/admin/extend-ai-analytics.html#extend-ai-analytics__wml), in the IBM Knowledge Center.
 
 At the end of the Watson Machine Learning module installation into ICP4D, add the following lines to `/etc/haproxy/haproxy.cfg` on the load balancer system:
 
-  ```
+  ```bash
   frontend wml
       bind *:31002
       mode tcp
@@ -641,14 +645,14 @@ At the end of the Watson Machine Learning module installation into ICP4D, add th
 
 After saving the above changes, run the following command, for the changes to take effect:
 
-  ```
+  ```bash
   systemctl restart haproxy
   systemctl status -l haproxy
   ```
 
 Then confirm the command output has no error - the following is a sample reference output:
 
-  ```
+  ```bash
   haproxy.service - HAProxy Load Balancer
    Loaded: loaded (/usr/lib/systemd/system/haproxy.service; enabled; vendor preset: disabled)
    Active: active (running) since Mon 2018-12-10 09:48:06 CST; 6ms ago
@@ -722,38 +726,67 @@ To uninstall, run:
 --->
 
 ## Install the IBM Db2 Warehouse package
+{: #inst-db2}
 
 Follow the instructions for [Downloading the database installation package ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/zen/admin/download-db-pkg.html#download-db2-warehouse-pkg), in the IBM Knowledge Center.
 
 When configuring this package, Db2 **must** have the non-SSL port enabled.
 {: important}
 
-## Install IBM Event Streams V2018.3.0 for Linux and {{site.data.keyword.aios_full_notm}} for {{site.data.keyword.icpfull_notm}}
+## Install IBM Event Streams V2018.3.1 for Linux and {{site.data.keyword.aios_full_notm}} for {{site.data.keyword.icpfull_notm}}
+{: #inst-es-aios}
 
-1.  Copy the IBM Event Streams V2018.3.0 for Linux on x86 64-bit Multilingual tarball to a directory on the {{site.data.keyword.icpfull_notm}} for Data cluster `master-1 node`, for example, `/ibm/ES`.
+1.  Copy the IBM Event Streams V2018.3.1 for Linux on x86 64-bit Multilingual tarball to a directory on the {{site.data.keyword.icpfull_notm}} for Data cluster `master-1 node`, for example, `/ibm/ES`.
 
-1.  Untar the {{site.data.keyword.aios_full_notm}} for {{site.data.keyword.icpfull_notm}} 1.0.0 tarball to a directory on your {{site.data.keyword.icpfull_notm}} for Data cluster `master-1 node`, for example, `/ibm/AIOS`.
+1.  Untar the {{site.data.keyword.aios_full_notm}} for {{site.data.keyword.icpfull_notm}} 1.0.1 tarball to a directory on your {{site.data.keyword.icpfull_notm}} for Data cluster `master-1 node`, for example, `/ibm/AIOS`.
+
+1.  Log into your docker registry and {{site.data.keyword.aios_full_notm}} cluster from a command line window.
 
 1.  Install Event Streams from your {{site.data.keyword.icpfull_notm}} for Data cluster `master-1 node` by using the `install_es.sh` package in the {{site.data.keyword.aios_short}} tarball, for example:
 
-    ```
+    ```bash
     cd /ibm/AIOS
     ./install_es.sh -f /ibm/ES/[<Event_ Streams_tarball_file_name>]
     ```
 
 1.  When `install_es.sh` has finished executing, the following message will display. Complete the steps outlined in the message before proceeding to the next step:
 
+    ```bash
+    Follow the steps below to expose the ports for Event Stream through the HAProxy load balancer:
+
+    1. Append the content of `${HAPROXY_OUTPUT}` to `/etc/haproxy/haproxy.cfg` on `${LOAD_BALANCER_IP}`
+
+    2. Run `systemctl restart haproxy` on `${LOAD_BALANCER_IP}` to restart the HAProxy load balancer.
+
+    If another load balancer is used, configure it to expose ports 31703, 31105, 31094, 32180, and 32036 for Event Stream to the master nodes.
     ```
-    Follow the steps below to expose the ports for Event Stream through the load balancer:
 
-    1. Append the content of es_haproxy.txt to /etc/haproxy/haproxy.cfg on [LOAD_BALANCER_IP]
-    2. Run 'systemctl restart haproxy' on [LOAD_BALANCER_IP] to restart the load balancer.
+1.  Finally, install {{site.data.keyword.aios_short}}
 
-    ```
+    If your cluster has not been prepared using an embedded {{site.data.keyword.icpfull_notm}} for Data installation, you need to perform the following steps:
+    {: important}
 
-1.  Finally, install {{site.data.keyword.aios_short}}:
+    - Update the environment variable settings in the `common.sh` file included in the {{site.data.keyword.aios_short}} tarball.
 
-    ```
+    - If you are using manual storage provisioning, you must manually create persistent volumes required for the {{site.data.keyword.aios_short}} components.
+
+        - Customize the `utils/etcd-pvc-template.yaml` file included in the {{site.data.keyword.aios_short}} tarball for your environment. Replace the `nfs` section in the template if you are using another storage type.
+        
+    - To use NFS volumes:
+
+        - Replace the `NFS_SERVER_IP` with your NFS host IP address
+
+        - Replace `/data/aios-etcd-0`, `/data/aios-etcd-1`, and `/data/aios-etcd-2`, if your NFS mount point is different.
+
+        - Run `kubectl create namespace aiopenscale`
+
+        - Run `kubectl -n aiopenscale create -f etcd-pvc-template.yaml` to create `PersistentVolume` and `PersistentVolumeClaim`
+
+    - If you are using `DynamicProvisioning` with a `StorageClass`, replace `oketi-gluster` with your `StorageClass` name in the `common.sh` file.
+
+    Run the installation:
+
+    ```bash
     ./install_aios.sh
     ```
 
@@ -780,9 +813,9 @@ When configuring this package, Db2 **must** have the non-SSL port enabled.
 The uninstallation will prompt for {{site.data.keyword.icpfull_notm}} username and password.
 
 ## Next steps
-{: #next-steps}
+{: #inst-next}
 
 Use the {{site.data.keyword.aios_short}} tool to monitor your AI models for bias and accuracy.
 
-- To learn more about the {{site.data.keyword.aios_short}} service first, read the [About](index.html) topics.
-- To see how it works for yourself, follow the steps in the [Getting Started](getting-started.html) tutorial.
+- To learn more about the {{site.data.keyword.aios_short}} service first, read the [About](/docs/services/ai-openscale-icp/index.html) topics.
+- To see how it works for yourself, follow the steps in the [Getting Started](/docs/services/ai-openscale-icp/getting-started.html) tutorial.

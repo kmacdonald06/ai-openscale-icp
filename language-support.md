@@ -1,13 +1,15 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-26"
+  years: 2018, 2019
+lastupdated: "2019-02-04"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:note: .note}
+{:important: .important}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -18,5 +20,6 @@ lastupdated: "2018-11-26"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Supported languages
+{: #sl-langs}
 
 {{site.data.keyword.aios_short}} currently supports English only.

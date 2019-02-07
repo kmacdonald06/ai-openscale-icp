@@ -1,20 +1,22 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-10"
+  years: 2018, 2019
+lastupdated: "2019-02-04"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
 {:screen: .screen}
 
 # Navigating the dashboard
-{: #insights}
+{: #iov-insights}
 
 You can track all the deployments you are monitoring through the {{site.data.keyword.aios_short}} dashboard. The dashboard is your main view into {{site.data.keyword.aios_short}}.
 
@@ -23,7 +25,7 @@ You can track all the deployments you are monitoring through the {{site.data.key
 {: shortdesc}
 
 ## Insights
-{: #insight-dash-tab}
+{: #iov-dash-tab}
 
 The Insights tab ( ![Insight dashboard](images/insight-dash-tab.png) ) provides a high-level view of your deployment monitoring.
 
@@ -37,13 +39,10 @@ The Insights tab ( ![Insight dashboard](images/insight-dash-tab.png) ) provides 
 
 Each tile provides a summary of monitoring activity for that deployment. Note that the `Call Center Routing` deployment tile shows no issues, indicating a fairly stable, accurate model.
 
-### Next steps
-{: #next-insight}
-
-Select any of the individual deployment tiles to view more details about that deployment. See [Working with monitoring data](insight-timechart.html).
+Select any of the individual deployment tiles to view more details about that deployment. See [Working with monitoring data](/docs/services/ai-openscale-icp/insight-timechart.html).
 
 ## Configuration
-{: #insight-config-tab}
+{: #iov-config-tab}
 
 The Configuration tab ( ![Config tab](images/insight-config-tab.png) ) opens a Configuration Summary for the selected deployment.
 
@@ -52,11 +51,11 @@ The Configuration tab ( ![Config tab](images/insight-config-tab.png) ) opens a C
 From here, you can directly edit the configuration settings for your deployment monitor.
 
 ## Transactions
-{: #insight-transact-tab}
+{: #iov-transact-tab}
 
-The Transactions tab ( ![Transactions tab](images/insight-transact-tab.png) ) lets you search a specific transaction ID to explain a particular deployment transaction. For more information, see [Monitoring Explainability](insight-timechart.html#insight-explain).
+The Transactions tab ( ![Transactions tab](images/insight-transact-tab.png) ) lets you search a specific transaction ID to explain a particular deployment transaction. For more information, see [Monitoring Explainability](/docs/services/ai-openscale-icp/insight-timechart.html#itc-monitor-explain).
 
 ## Help tab
-{: #insight-transact-tab}
+{: #iov-help-tab}
 
 The Help tab ( ![Transactions tab](images/insight-help-tab.png) ) provides additional information to assist you in using {{site.data.keyword.aios_short}}.

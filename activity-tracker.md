@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-09"
+  years: 2018, 2019
+lastupdated: "2019-02-04"
 
 ---
 
@@ -18,16 +18,21 @@ lastupdated: "2018-10-09"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Activity Tracker events
+{: #at-events}
 
 When you have {{site.data.keyword.aios_short}} provisioned as a service in your {{site.data.keyword.Bluemix_notm}} account, you can see the following events in the [{{site.data.keyword.Bluemix_notm}} Activity Tracker](https://console.bluemix.net/docs/services/cloud-activity-tracker/activity_tracker_ov.html#activity_tracker_ov).
 
 ## Events for public APIs
+{: #at-pubapi}
+
 | Action | Description |
 | -- | -- |
 | aiopenscale.metrics.create | Store metric in the {{site.data.keyword.aios_short}} instance |
 | aiopenscale.payload.create | Log payload in the {{site.data.keyword.aios_short}} instance |
 
 ## Events for private APIs
+{: #at-priapi}
+
 | Action | Description |
 | -- | -- |
 | aiopenscale.datamart.configure | Configure the {{site.data.keyword.aios_short}} instance |

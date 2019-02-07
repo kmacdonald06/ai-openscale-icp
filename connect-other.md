@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-14"
+  years: 2018, 2019
+lastupdated: "2019-02-04"
 
 ---
 
@@ -15,14 +15,14 @@ lastupdated: "2018-12-14"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# Specify your Custom service
-{: #connect-other}
+# Specifying a Custom ML service instance
+{: #ccust-custom}
 
 Your first step in the {{site.data.keyword.aios_short}} tool is to specify a service instance. Your service instance is where you store your AI models and deployments.
 {: shortdesc}
 
 ## Connect your Custom service instance
-{: #config-other}
+{: #ccust-config}
 
 {{site.data.keyword.aios_short}} connects to AI models and deployments in a service instance.
 
@@ -69,7 +69,7 @@ Your first step in the {{site.data.keyword.aios_short}} tool is to specify a ser
 1.  Click **Next**.
 
 ### How it works
-{: #custom-works}
+{: #ccust-works}
 
 This image shows the Custom environment support:
 
@@ -166,9 +166,9 @@ You can also reference the following links:
 
   In this example, `"personal”` and `“camping”` are the possible classes, and the scores in each scoring output are assigned to both classes. If the prediction probabilities are missing, bias detection will work, but auto-debias will not.
   
-  The above scoring output should be accessible from a live scoring endpoint which {{site.data.keyword.aios_short}} could call over REST. For AzureML, SageMaker, and WML, {{site.data.keyword.aios_short}} directly connects to the native scoring endpoints, (so you don’t have to worry about implementing the scoring spec)
+  The above scoring output should be accessible from a live scoring endpoint which {{site.data.keyword.aios_short}} could call over REST. For AzureML, SageMaker, and WML, {{site.data.keyword.aios_short}} directly connects to the native scoring endpoints, (so you don’t have to worry about implementing the scoring spec).
 
-### Next steps
-{: #payload-logging}
+## Next steps
+{: #ccust-next}
 
-{{site.data.keyword.aios_short}} is now ready for you to [specify your database](connect-db.html).
+{{site.data.keyword.aios_short}} is now ready for you to [specify your database](/docs/services/ai-openscale-icp/connect-db.html).
