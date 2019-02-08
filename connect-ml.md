@@ -21,7 +21,7 @@ lastupdated: "2019-02-04"
 If your AI model is deployed in a machine learning engine other than Watson Machine Learning (WML), you must enable payload logging for the external machine learning engine with a Python client.
 {: shortdesc}
 
-See more complete information in the [{{site.data.keyword.aios_short}} Python client documentation](http://ai-openscale-python-client.mybluemix.net/), and in the sample {{site.data.keyword.aios_short}} Python client notebooks that are part of the [AI OpenScale tutorials](https://github.com/pmservice/ai-openscale-tutorials/blob/master/README.md).
+See more complete information in the [{{site.data.keyword.aios_short}} Python client documentation](http://ai-openscale-python-client.mybluemix.net/), and in the sample {{site.data.keyword.aios_short}} Python client notebooks that are part of the [{{site.data.keyword.aios_short}} tutorials](https://github.com/pmservice/ai-openscale-tutorials/blob/master/README.md).
 
 ## Before you begin
 {: #cml-prereq}
@@ -112,7 +112,7 @@ You will need to have the training data of your model available in Db2 or Cloud 
 
 ### Scoring and payload logging
 
-- Score your model, then convert the request and response to the form used by {{site.data.keyword.aios_short}}. For a full example, see the [IBM AI OpenScale & Custom ML engine notebook](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/AI%20OpenScale%20and%20Custom%20ML%20Engine.ipynb).
+- Score your model, then convert the request and response to the form used by {{site.data.keyword.aios_short}}. For a full example, see the [{{site.data.keyword.aios_short}} & Custom ML engine notebook](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/AI%20OpenScale%20and%20Custom%20ML%20Engine.ipynb).
 
 - Store the request and response in the payload logging table
 
@@ -204,7 +204,7 @@ You will need to have the training data of your model available in Db2 or Cloud 
 
 ### Scoring and payload logging
 
-- Score your model, then convert the request and response to the form used by {{site.data.keyword.aios_short}}. For a full example, see the [IBM AI OpenScale & SPSS C&DS engine notebook](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/AI%20OpenScale%20and%20SPSS%20C%26DS%20Engine.ipynb).
+- Score your model, then convert the request and response to the form used by {{site.data.keyword.aios_short}}. For a full example, see the [{{site.data.keyword.aios_short}} & SPSS C&DS engine notebook](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/AI%20OpenScale%20and%20SPSS%20C%26DS%20Engine.ipynb).
 
 - Store the request and response in the payload logging table
 

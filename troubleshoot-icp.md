@@ -1506,7 +1506,7 @@ The dashboard consists of several rows.  Please see below for more details of ea
 
 - Availability by service
 
-  This row shows availability for each service.  The top left panels shows total containers ready.  If the speedometer shows green 100%, then your AI OpenScale is healthy.  Otherwise, you can look into the table on the right side to find out what service is down to take action to bring that service up.  There are other AI Openscale runbooks that help to diagnostic why container is not started successfully.  Below the top panels are the panels for individual services. The green line is the number of containers ready.  The red line is the number of containers that are requested.
+  This row shows availability for each service.  The top left panels shows total containers ready.  If the speedometer shows green 100%, then your {{site.data.keyword.aios_short}} is healthy.  Otherwise, you can look into the table on the right side to find out what service is down to take action to bring that service up.  There are other {{site.data.keyword.aios_short}} runbooks that help to diagnostic why container is not started successfully.  Below the top panels are the panels for individual services. The green line is the number of containers ready.  The red line is the number of containers that are requested.
 
 - CPU by servic
 

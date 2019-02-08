@@ -20,7 +20,7 @@ lastupdated: "2019-02-04"
 # Creating credentials
 {: #cred-creds}
 
-To create credentials for {{site.data.keyword.aios_short}}, complete the following steps using the {{site.data.keyword.Bluemix_notm}} [command console](https://console.bluemix.net/docs/cli/index.html#overview):
+To create credentials for {{site.data.keyword.aios_short}}, complete the following steps using the {{site.data.keyword.Bluemix_notm}} [command console](https://{DomainName}/docs/cli/index.html#overview):
 
 - Get your API key
 
