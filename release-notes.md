@@ -132,8 +132,8 @@ The following new features and changes to the service are available.
 
       # the above CURL request will return an auth token under "accessToken", that you will use as {icp_token} in the payload logging request below
       # TODO: manually define and pass:
-      # request - input to scoring endpoint in supported by AI OpenScale format - replace sample fields and values with proper ones
-      # response - output from scored model in supported by AI OpenScale format - replace sample fields and values with proper ones
+      # request - input to scoring endpoint in supported by {{site.data.keyword.aios_short}} format - replace sample fields and values with proper ones
+      # response - output from scored model in supported by {{site.data.keyword.aios_short}} format - replace sample fields and values with proper ones
       # - $SCORING_ID - ID of the scoring transaction
       # - $SCORING_TIME - Time (ms) taken to make prediction (for performance monitoring)
 

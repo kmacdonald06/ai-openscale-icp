@@ -111,7 +111,7 @@ Note the three filters at the top of the page (Feature, Date, and Hour) that let
 
 For each deployment, you can see explainability data for specific transactions by selecting the Transactions tab ( ![Transactions tab](images/insight-transact-tab.png) ) in the navigator.
 
-You will first be prompted to enter a Transaction ID. Whenever data is sent to the model for scoring, it sets a transaction ID in the HTTP header by setting the `X-Global-Transaction-Id` field. This transaction ID gets stored in the payload table. If you want to find an explanation of the model behavior for a particular scoring, then it can be done by specifying the transaction id associated with that scoring request. See the tutorial for information about [finding and using a transaction ID](https://console.bluemix.net/docs/services/ai-openscale/getting-started.html#view-explainability-for-a-model-transaction).
+You will first be prompted to enter a Transaction ID. Whenever data is sent to the model for scoring, it sets a transaction ID in the HTTP header by setting the `X-Global-Transaction-Id` field. This transaction ID gets stored in the payload table. If you want to find an explanation of the model behavior for a particular scoring, then it can be done by specifying the transaction id associated with that scoring request. See the tutorial for information about [finding and using a transaction ID](https://{DomainName}/docs/services/ai-openscale/getting-started.html#view-explainability-for-a-model-transaction).
 
   ![Explainability transaction ID](images/insight-explain-trans-id.png)
 

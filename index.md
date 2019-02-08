@@ -83,7 +83,7 @@ Table 1. Framework support details
 ## Browser support
 {: #abt-browser}
 
-The {{site.data.keyword.aios_short}} service tooling requires the same level of browser software as is required by {{site.data.keyword.Bluemix_notm}}. See the {{site.data.keyword.Bluemix_notm}} [Prerequisites ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/overview/prereqs.html#browsers){: new_window} topic for details.
+The {{site.data.keyword.aios_short}} service tooling requires the same level of browser software as is required by {{site.data.keyword.Bluemix_notm}}. See the {{site.data.keyword.Bluemix_notm}} [Prerequisites ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/docs/overview/prereqs.html#browsers){: new_window} topic for details.
 
 ## ModelOps CLI tool
 {: #abt-mopscli}
@@ -99,6 +99,6 @@ The [{{site.data.keyword.aios_short}} Python client ![External link icon](../../
 {: #abt-next}
 
 - [Get started](/docs/services/ai-openscale-icp/getting-started.html) with the service.
-- View the [API Reference material ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/apidocs/ai-openscale){: new_window}.
+- View the [API Reference material ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/ai-openscale){: new_window}.
 
 Still have questions? [Contact IBM ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/account/reg/us-en/signup?formid=MAIL-watson){: new_window}.

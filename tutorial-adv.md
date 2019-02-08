@@ -58,12 +58,12 @@ In this tutorial, you will:
 ## Provision {{site.data.keyword.Bluemix_notm}} Services
 {: #crt-services}
 
-Login to your [{{site.data.keyword.Bluemix_notm}} account](https://console.bluemix.net) with your IBM ID. When provisioning services, particularly in the case of Db2 Warehouse, verify that your selected organization and space are the same for all services.
+Login to your [{{site.data.keyword.Bluemix_notm}} account](https://{DomainName}) with your IBM ID. When provisioning services, particularly in the case of Db2 Warehouse, verify that your selected organization and space are the same for all services.
 
 ### Provision a Watson Machine Learning service
 {: #crt-wml}
 
-- [Provision a Watson Machine Learning instance](https://console.bluemix.net/catalog/services/machine-learning) if you do not already have one associated with your account:
+- [Provision a Watson Machine Learning instance](https://{DomainName}/catalog/services/machine-learning) if you do not already have one associated with your account:
 
   ![Machine Learning](images/machine_learning.png)
 
@@ -72,7 +72,7 @@ Login to your [{{site.data.keyword.Bluemix_notm}} account](https://console.bluem
 ### Provision a Db2 Warehouse service
 {: #crt-db2}
 
-- [Provision a Db2 Warehouse service](https://console.bluemix.net/catalog/services/db2-warehouse) if you do not already have one associated with your account:
+- [Provision a Db2 Warehouse service](https://{DomainName}/catalog/services/db2-warehouse) if you do not already have one associated with your account:
 
   ![Db2 Warehouse](images/db2_warehouse.png)
 
@@ -108,14 +108,14 @@ The `German Credit Lab - OpenScale Lab instructions` notebook contains detailed 
 - Once you have provisioned your services and entered your credentials, your notebook is ready to run. Run each step of the notebook in sequence. Notice what is happening at each step, as described. Complete all the steps, up through and including the steps in the "Identify transactions for Explainability" section.
 
 The net result is that you will have created, trained, and deployed the **German Credit Risk Model** to your {{site.data.keyword.aios_short}} service instance. {{site.data.keyword.aios_short}} will be configured to check the model for bias against sex (in this case, Female) or age (In this case, 18-25 years old).
-
+{{site.data.keyword.aios_short}}
 ## Viewing results
 {: #crt-view-results}
 
 ### View insights for your deployment
 {: #crt-view-insights}
 
-Using the [AI OpenScale dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://aiopenscale.cloud.ibm.com/aiopenscale/){: new_window}, click on the **Insights** tab:
+Using the [{{site.data.keyword.aios_short}} dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://aiopenscale.cloud.ibm.com/aiopenscale/){: new_window}, click on the **Insights** tab:
 
   ![Insights](images/insight-dash-tab.png)
 
