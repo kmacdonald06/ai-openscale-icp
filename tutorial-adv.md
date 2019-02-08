@@ -108,7 +108,7 @@ The `German Credit Lab - OpenScale Lab instructions` notebook contains detailed 
 - Once you have provisioned your services and entered your credentials, your notebook is ready to run. Run each step of the notebook in sequence. Notice what is happening at each step, as described. Complete all the steps, up through and including the steps in the "Identify transactions for Explainability" section.
 
 The net result is that you will have created, trained, and deployed the **German Credit Risk Model** to your {{site.data.keyword.aios_short}} service instance. {{site.data.keyword.aios_short}} will be configured to check the model for bias against sex (in this case, Female) or age (In this case, 18-25 years old).
-{{site.data.keyword.aios_short}}
+
 ## Viewing results
 {: #crt-view-results}
 
