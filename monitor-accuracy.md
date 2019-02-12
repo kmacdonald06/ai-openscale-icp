@@ -51,18 +51,6 @@ Use the available [REST API](https://watson-ml-api.mybluemix.net/) end-points di
 
     ![What is Accuracy? page](images/accuracy-what-is.png)
 
-<!---
-
-1.  If your model was created with Apache Spark, you must select a Spark instance; this will be the engine that processes model reevaluation and retraining. The system will detect any Spark instances in your IBM Cloud account.
-
-    **NOTE** - if an existing Spark instance is not found, or if you want to provision a new Spark service, click the **Add new connection** link to access the Apache Spark landing page in {{site.data.keyword.Bluemix_notm}}.
-
-    ![Accuracy Spark instance page](images/accuracy-spark.png)
-
-    Click **Next** to continue.
-
---->
-
 1.  On the *Set accuracy threshold* page, select a value that represents an acceptable accuracy level.
 
     Accuracy is a value synthesized from relevant data science metrics associated with each particular model type. The score is a normalized measure to allow you to easily compare accuracy across different model types. In typical situations, an accuracy score of 80 is sufficient.
@@ -72,13 +60,9 @@ Use the available [REST API](https://watson-ml-api.mybluemix.net/) end-points di
 
     Click **Next** to continue.
 
-1.  Now, set a minimum sample size, to prevent measuring Accuracy until a minimum number of records are available in the evaluation dataset. This ensures the sample size is not too small to skew results.
+1.  Now, set minimum and maximum sample sizes. Minimum size prevents measuring Accuracy until a minimum number of records are available in the evaluation dataset; this ensures the sample size is not too small to skew results. The maximum sample size helps better manage the time and effort it takes to evaluate the dataset; only the most recent records will be evaluated if this size is exceeded.
 
      ![Configure sample size](images/accuracy-config-sample.png)
-
-1.  Finally, set a maximum sample size, to better manage the time and effort it takes to evaluate the dataset. Only the most recent records will be evaluated if this size is exceeded.
-
-     ![Configure max sample size](images/accuracy-config-sample-max.png)
 
 1.  Click the **Next** button.
 
