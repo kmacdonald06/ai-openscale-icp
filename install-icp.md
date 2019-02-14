@@ -98,7 +98,7 @@ Download the appropriate package, by part number, from [IBM Passport Advantage](
 
 1.  {{site.data.keyword.aios_full_notm}} for {{site.data.keyword.icpfull_notm}} V1.0.1 Linux 64-bit system
 
-    - Download part number *CNZC1EN*. This is a `tar.gz` file.
+    - Download the file associated with part number *CNZC1EN*. This is a `tar.gz` file.
 
 <!---
 
