@@ -42,6 +42,8 @@ Get a quick overview of {{site.data.keyword.aios_short}} by watching this video.
 
 To quickly see how {{site.data.keyword.aios_short}} monitors a model, technical users can install a Python module that automates the configuration of {{site.data.keyword.aios_short}} and other services. Sample data is included.
 
+Additional tutorial links may be found in the [Additional resources](/docs/services/ai-openscale-icp/addl-rsc.html) topic.
+
 ## Before you begin
 {: #gs-prereqs}
 
