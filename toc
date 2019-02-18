@@ -14,7 +14,7 @@ Watson OpenScale for ICP for Data
 
     {: .navgroup id="howto"}
     {: .topicgroup}
-    Configuring AI OpenScale
+    Configuring Watson OpenScale
         creds.md
         connect-wml.md
         connect-other.md
