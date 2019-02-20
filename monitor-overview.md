@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-04"
+lastupdated: "2019-02-20"
 
 ---
 
@@ -115,9 +115,13 @@ For numeric or categorical data, you need to provide information about the train
 
   ![Select column label](images/fair-config-column.png)
 
+- (**SPSS-only**) Select columns with a probability value, from the output data. Note that there may be more than one. Click **Next**.
+
+    ![Select probability label](images/explain-prob-column.png)
+
 - Select the columns used to train the model - these are the features that your model deployment expects in a request. Click **Next**.
 
-    ![Select column label](images/explain-select-column.png)
+    ![Select feature label](images/explain-select-column.png)
 
 - Finally, select the columns that contained text, and have been converted to integers. For example, if the original training data contained `Male` and `Female` for *Gender*, and they have now been mapped to `0` and `1` respectively, the training data now contains `0` and `1` values for the *Gender* column. Identify such columns which now contain integers, but originally contained text values. Click **Next**.
 

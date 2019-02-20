@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-07"
+lastupdated: "2019-02-20"
 
 ---
 
@@ -72,6 +72,17 @@ ibm-ai-openscale-cli --apikey None --db2 <path to IBM DB2 credentials file> --en
 
 Regarding the optional `--datamart-name <datamart name>` argument, when you run the module, it creates a `datamart-name` value called `aiosfastpath`, which is a schema that must be reserved exclusively for use by {{site.data.keyword.aios_short}}. If you rerun the module, it programmatically deletes and recreates the `datamart-name` schema, so you can't use the schema for any other purpose.
 {: note}
+
+To sucessfully run the module, two parameter values must be increased. Run the following commands:
+
+```bash
+db2 update db cfg for [dbname] using SORTHEAP 1024
+```
+
+```bash
+db2 update db cfg for [dbname] using LOGFILSIZ 5000
+```
+{: important}
 
 ### Example of IBM DB2 credentials file
 
