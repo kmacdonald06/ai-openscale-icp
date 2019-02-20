@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-06"
+lastupdated: "2019-02-20"
 
 ---
 
@@ -81,15 +81,15 @@ Login to your [{{site.data.keyword.Bluemix_notm}} account](https://{DomainName})
 ## Create and deploy a machine learning model
 {: #crt-make-model}
 
-### Add the `German Credit Lab - OpenScale Lab instructions` notebook to your favorite editor
+### Add the `Watson OpenScale and Watson ML engine` notebook to your favorite editor
 {: #crt-add-notebook}
 
-- Download the [German Credit Lab - OpenScale Lab instructions](https://github.com/emartensibm/german-credit/blob/master/german_credit_lab.ipynb)
+- Download the [Watson OpenScale and Watson ML engine](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/Watson%20OpenScale%20and%20Watson%20ML%20Engine.ipynb)
 
-### Edit and run the `German Credit Lab - OpenScale Lab instructions` notebook
+### Edit and run the `Watson OpenScale and Watson ML engine` notebook
 {: #crt-edit-notebook}
 
-The `German Credit Lab - OpenScale Lab instructions` notebook contains detailed instructions for each step in the Python code you will run. As you work through the notebook, take some time to understand what each command is doing.
+The `Watson OpenScale and Watson ML engine` notebook contains detailed instructions for each step in the Python code you will run. As you work through the notebook, take some time to understand what each command is doing.
 {: tip}
 
 - In the "Provision services and configure credentials" section, make the following changes:
