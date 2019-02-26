@@ -44,13 +44,13 @@ To proceed with using the free Lite plan database, simply select that option, th
 
 ### Existing or new database
 
-1.  Once you have selected the "Use existing or purchase new database" option, {{site.data.keyword.aios_short}} checks your {{site.data.keyword.Bluemix_notm}} account to locate any existing databases.
+1.  Once you have selected the "Use existing or purchase new database" option, {{site.data.keyword.aios_short}} checks your {{site.data.keyword.cloud_notm}} account to locate any existing databases.
 
 1.  Select your existing database type (Compose for Postgres, Database for Postgres, or Db2), then a database from the **Database** drop-down menu, and then a **Schema**:
 
     ![Select database](images/gs-config-database3.png)
 
-1.  You can also click **Select a different location** to specify a database location outside of your {{site.data.keyword.Bluemix_notm}} account.
+1.  You can also click **Select a different location** to specify a database location outside of your {{site.data.keyword.cloud_notm}} account.
 
     - Select the **Database Type** (`Compose for PostgreSQL`, `Database for PostgreSQL`, or `Db2`), then provide connection information:
 

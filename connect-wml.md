@@ -24,7 +24,7 @@ Your first step in the {{site.data.keyword.aios_short}} tool is to specify a Wat
 ## Prerequisites
 {: #cwml-prereq}
 
-You should have provisioned a WML instance in the same {{site.data.keyword.Bluemix_notm}} account where the {{site.data.keyword.aios_short}} service instance is present. If you have provisioned a WML instance in some other account, then you will not be able to configure that instance with {{site.data.keyword.aios_short}}.
+You should have provisioned a WML instance in the same {{site.data.keyword.cloud_notm}} account where the {{site.data.keyword.aios_short}} service instance is present. If you have provisioned a WML instance in some other account, then you will not be able to configure that instance with {{site.data.keyword.aios_short}}.
 
 ## Connect your Watson Machine Learning service instance
 {: #cwml-config}
@@ -39,11 +39,11 @@ You should have provisioned a WML instance in the same {{site.data.keyword.Bluem
 
     ![Tile selection](images/connect-wml.png)
 
-1.  {{site.data.keyword.aios_short}} checks your {{site.data.keyword.Bluemix_notm}} account to locate any existing WML instances. You can then select an instance from the **Watson Machine Learning service** drop-down menu.
+1.  {{site.data.keyword.aios_short}} checks your {{site.data.keyword.cloud_notm}} account to locate any existing WML instances. You can then select an instance from the **Watson Machine Learning service** drop-down menu.
 
     ![Select WML service](images/gs-set-wml.png)
 
-1.  (Optional) You also have the option to **Select a different location**, to specify a machine learning location outside of your {{site.data.keyword.Bluemix_notm}} account. Provide credentials for your location as valid JSON:
+1.  (Optional) You also have the option to **Select a different location**, to specify a machine learning location outside of your {{site.data.keyword.cloud_notm}} account. Provide credentials for your location as valid JSON:
 
     ![Set WML instance](images/gs-get-wml.png)
 
