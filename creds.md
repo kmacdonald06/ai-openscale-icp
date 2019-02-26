@@ -20,7 +20,7 @@ lastupdated: "2019-02-04"
 # Creating credentials
 {: #cred-creds}
 
-To create credentials for {{site.data.keyword.aios_short}}, complete the following steps using the {{site.data.keyword.Bluemix_notm}} [command console](https://{DomainName}/docs/cli/index.html#overview):
+To create credentials for {{site.data.keyword.aios_short}}, complete the following steps using the {{site.data.keyword.cloud_notm}} [command console](https://{DomainName}/docs/cli/index.html#overview):
 
 - Get your API key
 
@@ -38,7 +38,7 @@ To create credentials for {{site.data.keyword.aios_short}}, complete the followi
     Locked       false
     UUID         ApiKey-xxxxxxxxx-afd7-xxxxx-b0e1-xxxxxxxxxxx
     ```
-- Verify the Resource Group you are using in your {{site.data.keyword.Bluemix_notm}} account.
+- Verify the Resource Group you are using in your {{site.data.keyword.cloud_notm}} account.
 
   ![Resource Group in Cloud](images/cloud-resource.png)
 
@@ -55,7 +55,7 @@ To create credentials for {{site.data.keyword.aios_short}}, complete the followi
     ```curl
     ibmcloud resource service-instance '<Your_AI_OpenScale_instance_name>'
     ```
-    **Note**: If you are using the {{site.data.keyword.Bluemix_notm}} command console on Windows, replace the single quotes (') in the above commands with double quotes (").
+    **Note**: If you are using the {{site.data.keyword.cloud_notm}} command console on Windows, replace the single quotes (') in the above commands with double quotes (").
 
     You will see information output like the following:
 

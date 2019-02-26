@@ -37,7 +37,7 @@ The credit risk model provided in this tutorial uses a training dataset that con
 ## Prerequisites
 {: #crt-prereqs}
 
-This tutorial uses a Jupyter notebook that should be run using a "Python 3.5 with Spark" runtime environment. It requires service credentials for the following {{site.data.keyword.Bluemix_notm}} services:
+This tutorial uses a Jupyter notebook that should be run using a "Python 3.5 with Spark" runtime environment. It requires service credentials for the following {{site.data.keyword.cloud_notm}} services:
 
 - {{site.data.keyword.aios_short}}
 - Watson Machine Learning
@@ -50,15 +50,15 @@ The Jupyter notebook will train, create and deploy a German Credit Risk model, c
 
 In this tutorial, you will:
 
-- Provision {{site.data.keyword.Bluemix_notm}} machine learning and storage services
+- Provision {{site.data.keyword.cloud_notm}} machine learning and storage services
 - Set up a Watson Studio project, and run a Python notebook to create, train and deploy a machine learning model
 - Run a Python notebook to create a data mart, configure performance, accuracy, and fairness monitors, and create data to monitor
 - View results in the {{site.data.keyword.aios_short}} Insights tab
 
-## Provision {{site.data.keyword.Bluemix_notm}} Services
+## Provision {{site.data.keyword.cloud_notm}} Services
 {: #crt-services}
 
-Login to your [{{site.data.keyword.Bluemix_notm}} account](https://{DomainName}) with your IBM ID. When provisioning services, particularly in the case of Db2 Warehouse, verify that your selected organization and space are the same for all services.
+Login to your [{{site.data.keyword.cloud_notm}} account](https://{DomainName}) with your IBM ID. When provisioning services, particularly in the case of Db2 Warehouse, verify that your selected organization and space are the same for all services.
 
 ### Provision a Watson Machine Learning service
 {: #crt-wml}
@@ -94,7 +94,7 @@ The `Watson OpenScale and Watson ML engine` notebook contains detailed instructi
 
 - In the "Provision services and configure credentials" section, make the following changes:
 
-    - Follow the instructions to create, copy, and paste an {{site.data.keyword.Bluemix_notm}} API key.
+    - Follow the instructions to create, copy, and paste an {{site.data.keyword.cloud_notm}} API key.
 
     - Replace the Watson Machine Learning (WML) and Db2 service credentials with the ones you created previously.
 
