@@ -1,3 +1,2 @@
-# ai-openscale-icp
-
-Adding text to test
+# ai-openscale
+IBM Watson OpenScale
