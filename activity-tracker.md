@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-04"
+lastupdated: "2019-02-26"
 
 ---
 
@@ -20,7 +20,7 @@ lastupdated: "2019-02-04"
 # Activity Tracker events
 {: #at-events}
 
-When you have {{site.data.keyword.aios_short}} provisioned as a service in your {{site.data.keyword.cloud_notm}} account, you can see the following events in the [{{site.data.keyword.cloud_notm}} Activity Tracker](https://{DomainName}/docs/services/cloud-activity-tracker/activity_tracker_ov.html#activity_tracker_ov).
+When you have {{site.data.keyword.aios_short}} provisioned as a service in your {{site.data.keyword.cloud_notm}} account, you can see the following events in the [{{site.data.keyword.cloud_notm}} Activity Tracker](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-activity_tracker_ov).
 
 ## Events for public APIs
 {: #at-pubapi}
