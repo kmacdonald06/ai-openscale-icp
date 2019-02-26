@@ -1,2 +1,3 @@
-# ai-openscale
-IBM Watson OpenScale
+# ai-openscale-icp
+
+IBM Watson OpenScale on ICP
