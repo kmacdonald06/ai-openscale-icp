@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-07"
+lastupdated: "2019-02-27"
 
 ---
 
@@ -20,13 +20,14 @@ lastupdated: "2019-02-07"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Additional resources
+{: #arsc-ov}
 
 ## Tutorials
 {: #arsc-tutorials}
 
-The [advanced tutorial](/docs/services/ai-openscale/tutorial-adv.html), which provides a Jupyter notebook to walk you through the process of creating, deploying, and viewing results of a detailed credit risk model scenario in {{site.data.keyword.aios_short}}, is also available as a tutorial for other machine learning service instances:
+The [advanced tutorial](/docs/services/ai-openscale?topic=ai-openscale-crt-ov), which provides a Jupyter notebook to walk you through the process of creating, deploying, and viewing results of a detailed credit risk model scenario in {{site.data.keyword.aios_short}}, is also available as a tutorial for other machine learning service instances:
 
-- [Microsoft Azure ML Studio](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/AI%20OpenScale%20and%20Azure%20ML%20Studio%20Engine.ipynb)
-- [Amazon SageMaker ML Studio](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/AI%20OpenScale%20and%20SageMaker%20ML%20Engine.ipynb)
-- [Custom service instance](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/AI%20OpenScale%20and%20Custom%20ML%20Engine.ipynb)
-- [IBM SPSS C&DS](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/AI%20OpenScale%20and%20SPSS%20C%26DS%20Engine.ipynb)
+- [Microsoft Azure ML Studio ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/AI%20OpenScale%20and%20Azure%20ML%20Studio%20Engine.ipynb){: new_window}
+- [Amazon SageMaker ML Studio ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/AI%20OpenScale%20and%20SageMaker%20ML%20Engine.ipynb){: new_window}
+- [Custom service instance ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/AI%20OpenScale%20and%20Custom%20ML%20Engine.ipynb){: new_window}
+- [IBM SPSS C&DS ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/AI%20OpenScale%20and%20SPSS%20C%26DS%20Engine.ipynb){: new_window}
