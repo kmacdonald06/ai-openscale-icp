@@ -2,13 +2,15 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-04"
+lastupdated: "2019-02-27"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 {:tip: .tip}
+{:important: .important}
+{:note: .note}
 {:pre: .pre}
 {:codeblock: .codeblock}
 {:screen: .screen}
@@ -34,4 +36,4 @@ You have successfully configured {{site.data.keyword.aios_short}}.
 ## Next steps
 {: #dpl-next}
 
-{{site.data.keyword.aios_short}} is now ready for you to [specify your database](/docs/services/ai-openscale-icp/connect-db.html).
+{{site.data.keyword.aios_short}} is now ready for you to [specify your database](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-cdb-connect).
