@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-04"
+lastupdated: "2019-02-27"
 
 ---
 
@@ -36,7 +36,7 @@ The free Lite plan database has some important limitations:
 
 - The free Lite plan database is hosted, and is not directly accessible to you.
 - {{site.data.keyword.aios_full}} will have full access to your database, and thus will have full access to your data.
-- The free Lite plan database is not GDPR-compliant. If your model processes personally-identifiable information (PII), you cannot use the free Lite plan database. You must purchase a new database, or use an existing database that conforms to GDPR rules. See [Information security](/docs/services/ai-openscale-icp/information-security.html) to learn more.
+- The free Lite plan database is not GDPR-compliant. If your model processes personally-identifiable information (PII), you cannot use the free Lite plan database. You must purchase a new database, or use an existing database that conforms to GDPR rules. See [Information security](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-is-infosec) to learn more.
 
 To proceed with using the free Lite plan database, simply select that option, then review the summary data and click **Save**.
 
@@ -111,4 +111,4 @@ Once you have run your payload logging, you will see a checkmark in the "Ready t
 ## Next steps
 {: #cdb-next}
 
-{{site.data.keyword.aios_short}} is now ready for you to [configure monitors for your deployments](/docs/services/ai-openscale-icp/monitor-overview.html).
+{{site.data.keyword.aios_short}} is now ready for you to [configure monitors for your deployments](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-mo-config).
