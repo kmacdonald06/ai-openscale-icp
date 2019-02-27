@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-04"
+lastupdated: "2019-02-27"
 
 ---
 
@@ -36,7 +36,7 @@ Your first step in the {{site.data.keyword.aios_short}} tool is to specify a Mic
 
 1.  Enter your credentials:
 
-    See [How to: Use the portal to create an Azure AD application and service principal that can access resources ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal) for instructions about how to get your Microsoft Azure credentials.
+    See [How to: Use the portal to create an Azure AD application and service principal that can access resources ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal){: new_window} for instructions about how to get your Microsoft Azure credentials.
     {: note}
 
     ![Enter Azure ML service credentials](images/connect-azure-cred.png)
@@ -52,4 +52,4 @@ Your first step in the {{site.data.keyword.aios_short}} tool is to specify a Mic
 ## Next steps
 {: #caz-next}
 
-{{site.data.keyword.aios_short}} is now ready for you to [specify your database](/docs/services/ai-openscale-icp/connect-db.html).
+{{site.data.keyword.aios_short}} is now ready for you to [specify your database](docs/services/ai-openscale-icp?topic=ai-openscale-icp-cdb-connect).
