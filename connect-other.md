@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-04"
+lastupdated: "2019-02-28"
 
 ---
 
@@ -22,11 +22,9 @@ Your first step in the {{site.data.keyword.aios_short}} tool is to specify a ser
 {: shortdesc}
 
 ## Connect your Custom service instance
-{: #ccust-config}
+{: #co-config}
 
 {{site.data.keyword.aios_short}} connects to AI models and deployments in a service instance.
-
-### Steps to configure
 
 1.  From the home page of the {{site.data.keyword.aios_short}} tool, click **Begin**.
 
@@ -68,7 +66,7 @@ Your first step in the {{site.data.keyword.aios_short}} tool is to specify a ser
 
 1.  Click **Next**.
 
-### How it works
+## How it works
 {: #ccust-works}
 
 This image shows the Custom environment support:
@@ -87,9 +85,10 @@ You can also reference the following links:
 
 [AIOS Python SDK](https://pypi.org/project/ibm-ai-openscale/)
 
-- **Input criteria for model to support monitors**
+## Input criteria for model to support monitors
+{: #ccust-inp}
 
-  Your model should take as input a feature vector, which is essentially a collection of named fields and their values (the fields being monitored for bias being one of those fields):
+Your model should take as input a feature vector, which is essentially a collection of named fields and their values (the fields being monitored for bias being one of those fields):
 
   ```bash
   {
@@ -113,18 +112,19 @@ You can also reference the following links:
   }
   ```
 
-  In this example, `“age”` could be a field someone is evaluating for fairness.
-  
-  If the input is a tensor/matrix, which is transformed from the input feature space (which is often the case in deep learning from text or images), that model cannot be handled by the {{site.data.keyword.aios_short}} platform in the current release. By extension, deep learning models with text or image inputs cannot be handled for bias detection and mitigation.
-  
-  Additionally, training data should be loaded to support Explainability.
-  
-  For explainability on text, the full text should be one of the features. Explainability on images for a Custom model is not supported in the current release.
-  {: note}
+In this example, `“age”` could be a field someone is evaluating for fairness.
 
-- **Output criteria for model to support monitors**
+If the input is a tensor/matrix, which is transformed from the input feature space (which is often the case in deep learning from text or images), that model cannot be handled by the {{site.data.keyword.aios_short}} platform in the current release. By extension, deep learning models with text or image inputs cannot be handled for bias detection and mitigation.
 
-  Your model should output the input feature vector alongside the prediction probabilities of various classes in that model.
+Additionally, training data should be loaded to support Explainability.
+
+For explainability on text, the full text should be one of the features. Explainability on images for a Custom model is not supported in the current release.
+{: note}
+
+## Output criteria for model to support monitors
+{: #ccust-oup}
+
+Your model should output the input feature vector alongside the prediction probabilities of various classes in that model.
 
   ```bash
   {
@@ -164,11 +164,11 @@ You can also reference the following links:
   }
   ```
 
-  In this example, `"personal”` and `“camping”` are the possible classes, and the scores in each scoring output are assigned to both classes. If the prediction probabilities are missing, bias detection will work, but auto-debias will not.
-  
-  The above scoring output should be accessible from a live scoring endpoint which {{site.data.keyword.aios_short}} could call over REST. For AzureML, SageMaker, and WML, {{site.data.keyword.aios_short}} directly connects to the native scoring endpoints, (so you don’t have to worry about implementing the scoring spec).
+In this example, `"personal”` and `“camping”` are the possible classes, and the scores in each scoring output are assigned to both classes. If the prediction probabilities are missing, bias detection will work, but auto-debias will not.
+
+The above scoring output should be accessible from a live scoring endpoint which {{site.data.keyword.aios_short}} could call over REST. For AzureML, SageMaker, and WML, {{site.data.keyword.aios_short}} directly connects to the native scoring endpoints, (so you don’t have to worry about implementing the scoring spec).
 
 ## Next steps
 {: #ccust-next}
 
-{{site.data.keyword.aios_short}} is now ready for you to [specify your database](/docs/services/ai-openscale-icp/connect-db.html).
+{{site.data.keyword.aios_short}} is now ready for you to [specify your database](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-cdb-connect).
