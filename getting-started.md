@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-03-01"
 
 ---
 
@@ -42,12 +42,12 @@ Get a quick overview of {{site.data.keyword.aios_short}} by watching this video.
 
 To quickly see how {{site.data.keyword.aios_short}} monitors a model, technical users can install a Python module that automates the configuration of {{site.data.keyword.aios_short}} and other services. Sample data is included.
 
-Additional tutorial links may be found in the [Additional resources](/docs/services/ai-openscale-icp/addl-rsc.html) topic.
+Additional tutorial links may be found in the [Additional resources](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-arsc-ov) topic.
 
 ## Before you begin
 {: #gs-prereqs}
 
-1.  [Install {{site.data.keyword.aios_short}} into {{site.data.keyword.icpfull}} for Data](/docs/services/ai-openscale-icp/install-icp.html).
+1.  [Install {{site.data.keyword.aios_short}} into {{site.data.keyword.icpfull}} for Data](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-inst-install-icp).
 1.  [Install any release of Python 3 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.python.org/downloads/){: new_window}.
 
     Python 3 includes the required pip package management system.
@@ -129,7 +129,7 @@ From the {{site.data.keyword.aios_short}} dashboard click the **Insights** tab, 
 
      - For example, the following screen shows data for a specific date and time. The dates and times vary, depending on when you run the module.
 
-     - For information about interpreting the time series chart, see [Working with monitored data > Monitoring Fairness, Average Requests per Minute, and Accuracy](/docs/services/ai-openscale-icp/insight-timechart.html#itc-timechart).
+     - For information about interpreting the time series chart, see [Monitoring Fairness, Average Requests per Minute, and Accuracy](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-itc-timechart).
 
       ![Monitor data](images/setup02-0206.png)
 
@@ -137,7 +137,7 @@ From the {{site.data.keyword.aios_short}} dashboard click the **Insights** tab, 
 
     - Notice that in the following screen capture, no bias exists.
 
-    - For information about interpreting the chart of the data points at a specific hour, see  [Working with monitored data > Data visualization](/docs/services/ai-openscale-icp/insight-timechart.html#itc-data-visual).
+    - For information about interpreting the chart of the data points at a specific hour, see [Data visualization](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-itc-timechart#itc-data-visual).
 
       ![View details](images/setup03-0206.png)
 
@@ -150,11 +150,11 @@ Transaction IDs for the past hour are listed for those transactions that have bi
 
   ![Transaction list with no transactions](images/setup06-0206.png)
 
-For information about finding and explaining transactions, see [Monitoring Explainability](/docs/services/ai-openscale-icp/insight-tinechart.html#insight-explain).
+For information about finding and explaining transactions, see [Monitoring Explainability](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-itc-timechart#itc-monitor-explain).
 
 ## Related information
 {: #gs-info}
 
-- To learn about biases, see [Fairness](/docs/services/ai-openscale-icp/monitor-fairness.html).
-- To learn about how well your model predicts outcomes, see [Accuracy](/docs/services/ai-openscale-icp/monitor-accuracy.html).
-- To learn about interpreting charts, data, and transactions, see [Working with monitored data](/docs/services/ai-openscale-icp/insight-timechart.html).
+- To learn about biases, see [Fairness](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-mf-monitor).
+- To learn about how well your model predicts outcomes, see [Accuracy](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-acc-monitor).
+- To learn about interpreting charts, data, and transactions, see [Monitoring Fairness, Average Requests per Minute, and Accuracy](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-itc-timechart).
