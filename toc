@@ -18,7 +18,7 @@ Watson OpenScale for ICP for Data
         creds.md
         connect-wml.md
         connect-other.md
-        connect-spss.md        
+        connect-spss.md
         connect-azureml.md
         connect-sagemaker.md
         connect-ml.md
@@ -35,6 +35,7 @@ Watson OpenScale for ICP for Data
     Viewing and editing monitor data
         insight-overview.md
         insight-timechart.md
+        insight-explain.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
@@ -50,7 +51,7 @@ Watson OpenScale for ICP for Data
     release-notes.md
     troubleshoot-icp.md
     logs-icp.md
-    
+
     {: .topicgroup}
     Developer community
         [StackOverflow](https://stackoverflow.com/questions/tagged/ai-openscale)

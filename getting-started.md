@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-01"
+lastupdated: "2019-03-04"
 
 ---
 
@@ -150,7 +150,7 @@ Transaction IDs for the past hour are listed for those transactions that have bi
 
   ![Transaction list with no transactions](images/setup06-0206.png)
 
-For information about finding and explaining transactions, see [Monitoring Explainability](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-itc-timechart#itc-monitor-explain).
+For information about finding and explaining transactions, see [Monitoring explainability](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-ie-ov).
 
 ## Related information
 {: #gs-info}
