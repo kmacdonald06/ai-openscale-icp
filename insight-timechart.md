@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-04"
+lastupdated: "2019-03-04"
 
 ---
 
@@ -42,14 +42,19 @@ Next, move the marker across the chart to see statistics for an individual hour.
 
 Select the chart to see details behind a particular Fairness statistic.
 
-### Data visualization
+## Visualizing data for a specific hour
 {: #itc-data-visual}
 
 Clicking the chart opens a visualization of the data points for a monitored feature at a specific hour. Following the previous example, the Age feature, which has been tagged for bias, is shown.
 
   ![Time series chart](images/insight-data-detail.png)
 
-Note the three filters at the top of the page (Feature, Date, and Hour) that let you select a different feature or time to review details. This chart is showing multiple things:
+Note the three filters at the top of the page (Feature, Date, and Hour) that let you select a different feature or time to review details.
+
+### Interpreting the chart
+{: #itc-intp}
+
+The chart shows multiple things:
 
 - You can observe the population experiencing bias (customers between 18 and 23 years old). The chart also shows the percentage of expected outcome (52%) for this population.
 
@@ -63,88 +68,48 @@ Note the three filters at the top of the page (Feature, Date, and Hour) that let
 
 - Another important thing that the chart shows is the name of the table containing the data which has been identified for manual labeling. Whenever the algorithm detects bias in a model, it also identifies the data points which can be sent for manual labeling by humans. This manually-labeled data can then be used along with the original training data to retrain the model. This retrained model is likely to not have the bias. The manual labeling table is present in the database associated with the {{site.data.keyword.aios_short}} instance.
 
-- *Runtime and Training Data*
+## Runtime and Training Data
+{: #itc-rtsw}
 
-  The Runtime data / Training data switch lets you toggle the differences between your trained model and the data collected at runtime that is triggering a bias warning.
+The Runtime data / Training data switch lets you toggle the differences between your trained model and the data collected at runtime that is triggering a bias warning.
 
-  ![Runtime Training toggle](images/runtime_train_data.png)
+![Runtime Training toggle](images/runtime_train_data.png)
 
-- *View Transactions*
+## View transactions
+{: #itc-tra}
 
-  This option allows you to view the individual transactions that contributed to bias. When you click this link:
+This option allows you to view the individual transactions that contributed to bias when you click the **View biased transactions** button.
 
-  ![View transactions](images/view_transactions.png)
+![View transactions](images/view_transactions.png)
 
-  a list of transactions is listed.
+A list of transactions where the deployment has acted in a biased manner is listed. Click the **Explain** link for any of the transaction IDs to get details about that transaction in the Explainability tab. For more information, see [Monitoring explainability](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-ie-ov).
 
-  ![Transaction list](images/transaction_list0.png)
+![Transaction list](images/transaction_list0.png)
 
-  Click the **Explain** link for any of the transaction IDs to get details about that transaction in the Explainability tab. See [Monitoring Explainability](insight-timechart.html#insight-explain) below.
+## Production model and De-biased model
+{: #itc-prdb}
 
+You can use these two tabs to toggle between your production model, and a de-biased model created by {{site.data.keyword.aios_short}}.
 
-- *Production model and De-biased model*
+![Runtime Training toggle](images/bias-debias.png)
 
-  You can use these two tabs to toggle between your production model, and a de-biased model created by {{site.data.keyword.aios_short}}.
-  
-  ![Runtime Training toggle](images/bias-debias.png)
+Selecting the **De-biased model** tab will show you the changes in the de-biased model, versus the model in production. In this example, the model Fairness has increased from 74% to 93%, with a drop of only 1% in Accuracy. The chart also reflects the improved outcome status for groups aged 18 to 23.
 
-  Selecting the **De-biased model** tab will show you the changes in the de-biased model, versus the model in production. In this example, the model Fairness has increased from 74% to 93%, with a drop of only 1% in Accuracy. The chart also reflects the improved outcome status for groups aged 18 to 23.
+![Runtime Training toggle](images/insight-data-detail2.png)
 
-   ![Runtime Training toggle](images/insight-data-detail2.png)
+### De-biasing options
+{: #itc-dbo}
 
-    - *Passive de-biasing* - When {{site.data.keyword.aios_short}} does bias checking, it also does a de-biasing of the data, by analyzing the behavior of the model, and identifying the data where the model is acting in a biased manner.
+- *Passive de-biasing* - When {{site.data.keyword.aios_short}} does bias checking, it also does a de-biasing of the data, by analyzing the behavior of the model, and identifying the data where the model is acting in a biased manner.
 
-      {{site.data.keyword.aios_short}} then builds a machine learning model to predict whether the model is likely to act in a biased manner on a given, new data point. {{site.data.keyword.aios_short}} then analyzes the data which is received by the model, on an hourly basis, and finds the data points where {{site.data.keyword.aios_short}} believes the model is acting in a biased manner. For such data points, the fairness attribute is perturbed from minority to majority, and the perturbed data is sent to the original model for prediction. This prediction of the original model is used as the de-biased output.
+  {{site.data.keyword.aios_short}} then builds a machine learning model to predict whether the model is likely to act in a biased manner on a given, new data point. {{site.data.keyword.aios_short}} then analyzes the data which is received by the model, on an hourly basis, and finds the data points where {{site.data.keyword.aios_short}} believes the model is acting in a biased manner. For such data points, the fairness attribute is perturbed from minority to majority, and the perturbed data is sent to the original model for prediction. This prediction of the original model is used as the de-biased output.
 
-      {{site.data.keyword.aios_short}} performs this de-biasing hourly, on all the data which has been received by the model in the past hour. It also computes the fairness for the de-biased output, and displays it in the **De-biased model** tab.
+  {{site.data.keyword.aios_short}} performs this de-biasing hourly, on all the data which has been received by the model in the past hour. It also computes the fairness for the de-biased output, and displays it in the **De-biased model** tab.
 
-    - *Active de-biasing* - In active de-biasing, you can make use of a de-biasing REST API endpoint from your application. This REST API endpoint will internally call your model, and check its behavior.
+- *Active de-biasing* - In active de-biasing, you can make use of a de-biasing REST API endpoint from your application. This REST API endpoint will internally call your model, and check its behavior.
 
-      If {{site.data.keyword.aios_short}} believes that the model is acting in a biased manner, it will do the data perturbation as mentioned above, and send it back to the original model. The output of the original model on the perturbed data will be returned as the de-biased prediction. If {{site.data.keyword.aios_short}} determines that the original model is not acting in a biased manner, then {{site.data.keyword.aios_short}} will return the original model's prediction as the de-biased prediction. Thus, by using this REST API endpoint, you can ensure that your application does not make decisions based on biased output of your models.
+  If {{site.data.keyword.aios_short}} believes that the model is acting in a biased manner, it will do the data perturbation as mentioned above, and send it back to the original model. The output of the original model on the perturbed data will be returned as the de-biased prediction. If {{site.data.keyword.aios_short}} determines that the original model is not acting in a biased manner, then {{site.data.keyword.aios_short}} will return the original model's prediction as the de-biased prediction. Thus, by using this REST API endpoint, you can ensure that your application does not make decisions based on biased output of your models.
 
-      Select the **Debiased Scoring Endpoint** link to find your de-biasing REST API endpoint
+  Select the **Debiased Scoring Endpoint** link to find your de-biasing REST API endpoint
 
-        ![Debias API endpoint](images/insight-debias-api.png)
-
-## Monitoring Explainability
-{: #itc-monitor-explain}
-
-For each deployment, you can see explainability data for specific transactions by selecting the Transactions tab ( ![Transactions tab](images/insight-transact-tab.png) ) in the navigator.
-
-You will first be prompted to enter a Transaction ID. Whenever data is sent to the model for scoring, it sets a transaction ID in the HTTP header by setting the `X-Global-Transaction-Id` field. This transaction ID gets stored in the payload table. If you want to find an explanation of the model behavior for a particular scoring, then it can be done by specifying the transaction id associated with that scoring request. See the tutorial for information about [finding and using a transaction ID](https://{DomainName}/docs/services/ai-openscale/getting-started.html#view-explainability-for-a-model-transaction).
-
-  ![Explainability transaction ID](images/insight-explain-trans-id.png)
-
-### Categorical models
-In this example, using a binary classification model that approves or denies insurance claims, you can see the confidence in the model prediction (90%). You can also see the factors that contributed positively or negatively to the final outcome of `DENIED` in this case.
-
-The feature *POLICY AGE* having a value of `< 1 year` had the maximum impact in the model deciding a DENIED outcome. The other features that contributed to this outcome were *CLAIM FREQUENCY* (`High`) and *AGE* (`18`), with only a minor impact from *CAR VALUE* (`$50,000`).
-
-  ![Explainability binary classification](images/insight-explain-binary.png)
-
-While the charts are useful in showing the most significant factors in determining the outcome of a transaction, classification models can also include advanced explanations, detailed in the `Minimum changes for an Approved outcome` and `Minimum factors supporting this outcome` sections.
-
-Advanced explanations are not available for regression, image, and unstructured text models.
-{: note}
-
-The `Minimum changes for an Approved outcome` tells us that, if the values of the features were changed to the values listed in this section, then the prediction of the model will change.
-
-Likewise, the `Minimum factors supporting this outcome` tells us that, even if the values of the features were changed to those listed in this section, the prediction of the model would not have changed.
-
-Thus, these two values tell us the behaviour of the model in the vicinity of the data point for which the explanation is being generated.
-
-  ![Explainability binary classification](images/insight-explain-binary2.png)
-
-### Image models
-
-For an image classification model example, you can see which parts of an image contributed positively to the predicted outcome and which contributed negatively. In the below example, the image on the right show the parts which impacted positively to the prediction and the image on the left shows the parts of images that had a negative impact on the outcome.
-
-**Note**: Currently, explanations cannot be generated for images which are greater than 1 MB in size.
-
-  ![Explainability image classification](images/insight-explain-image.png)
-
-### Unstructured text models
-
-Finally, an example of a classification model that evaluates unstructured text. The explanation shows the keywords that had a positive as well as a negative impact on the model prediction. We also show the position of the identified keywords in the original text which was fed as input to the model.
-
-  ![Explainability image classification](images/insight-explain-text.png)
+  ![Debias API endpoint](images/insight-debias-api.png)

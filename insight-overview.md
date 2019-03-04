@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-04"
+lastupdated: "2019-03-04"
 
 ---
 
@@ -39,7 +39,7 @@ The Insights tab ( ![Insight dashboard](images/insight-dash-tab.png) ) provides 
 
 Each tile provides a summary of monitoring activity for that deployment. Note that the `Call Center Routing` deployment tile shows no issues, indicating a fairly stable, accurate model.
 
-Select any of the individual deployment tiles to view more details about that deployment. See [Working with monitoring data](/docs/services/ai-openscale-icp/insight-timechart.html).
+Select any of the individual deployment tiles to view more details about that deployment. See [Monitoring Fairness, Average Requests per Minute, and Accuracy](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-itc-timechart).
 
 ## Configuration
 {: #iov-config-tab}
@@ -53,7 +53,7 @@ From here, you can directly edit the configuration settings for your deployment 
 ## Transactions
 {: #iov-transact-tab}
 
-The Transactions tab ( ![Transactions tab](images/insight-transact-tab.png) ) lets you search a specific transaction ID to explain a particular deployment transaction. For more information, see [Monitoring Explainability](/docs/services/ai-openscale-icp/insight-timechart.html#itc-monitor-explain).
+The Transactions tab ( ![Transactions tab](images/insight-transact-tab.png) ) lets you search a specific transaction ID to explain a particular deployment transaction. For more information, see [Monitoring explainability](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-ie-ov).
 
 ## Help tab
 {: #iov-help-tab}
