@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-03-04"
 
 ---
 
@@ -30,14 +30,14 @@ lastupdated: "2019-02-05"
 
 Here's how you will implement {{site.data.keyword.aios_short}}:
 
-- **Configure {{site.data.keyword.aios_short}}**: With the easy-to-use graphical environment, [set up a payload logging database](/docs/services/ai-openscale-icp/connect-db.html), and the [Watson Machine Learning instance](/docs/services/ai-openscale-icp/connect-wml.html) where your AI models and deployments are stored.
+- **Configure {{site.data.keyword.aios_short}}**: With the easy-to-use graphical environment, [set up a payload logging database](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-cdb-connect), and the [Watson Machine Learning instance](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-cwml-wml) where your AI models and deployments are stored.
 
 - **Work with monitors**: For each deployment, configure how {{site.data.keyword.aios_short}} will monitor that deployment. You can monitor for:
 
-    - [Fairness](/docs/services/ai-openscale-icp/monitor-fairness.html)
-    - [Accuracy](/docs/services/ai-openscale-icp/monitor-accuracy.html)
+    - [Fairness](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-mf-monitor)
+    - [Accuracy](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-acc-monitor)
 
-- **View and edit monitored data**: The {{site.data.keyword.aios_short}} [dashboard](insight-overview.html) lets you easily view key insights and identify issues for your deployments. Visualization of individual data points for each monitored feature provides additional detail.
+- **View and edit monitored data**: The {{site.data.keyword.aios_short}} [dashboard](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-iov-insights) lets you easily view key insights and identify issues for your deployments. Visualization of individual data points for each monitored feature provides additional detail.
 
 ## Limitations
 {: #abt-limits}
@@ -72,7 +72,7 @@ Table 1. Model support details
 
 Table 1. Framework support details
 
-| Algorithms | **Out-of-the-box support** | **[Custom environment](connect-other.html#custom-works) or Python function support** |
+| Algorithms | **Out-of-the-box support** | **[Custom environment](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-ccust-custom) or Python function support** |
 |:---|:---:|:---:|
 | **Structured Classification** | Spark mllib on WML, AWS Sagemaker Native, Azure ML Studio Native | Scikit-Learn, XGboost, SPSS, Keras, Tensorflow,  Pytorch, Caffe,  or any other framework of your choice |
 | **Structured Regression**     | Spark mllib on WML, AWS Sagemaker Native, Azure ML Studio Native | Scikit-Learn, XGboost, SPSS, Keras, Tensorflow,  Pytorch, Caffe,  or any other framework of your choice |
@@ -83,22 +83,22 @@ Table 1. Framework support details
 ## Browser support
 {: #abt-browser}
 
-The {{site.data.keyword.aios_short}} service tooling requires the same level of browser software as is required by {{site.data.keyword.cloud_notm}}. See the {{site.data.keyword.cloud_notm}} [Prerequisites ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/docs/overview/prereqs.html#browsers){: new_window} topic for details.
+The {{site.data.keyword.aios_short}} service tooling requires the same level of browser software as is required by {{site.data.keyword.cloud_notm}}. See the {{site.data.keyword.cloud_notm}} [Prerequisites](/docs/overview?topic=overview-prereqs-platform#browsers) topic for details.
 
 ## ModelOps CLI tool
 {: #abt-mopscli}
 
-The [{{site.data.keyword.aios_short}} CLI model operations tool ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Watson/aiopenscale-modelops-cli) allows you to execute tasks related to the lifecycle management of machine learning models. This tool is complementary to the {{site.data.keyword.cloud_notm}} CLI tool, augmented with the [machine learning plugin](https://www.ibm.com/support/knowledgecenter/DSXDOC/analyze-data/ml_dlaas_environment.html).
+The [{{site.data.keyword.aios_short}} CLI model operations tool ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Watson/aiopenscale-modelops-cli){: new_window} allows you to execute tasks related to the lifecycle management of machine learning models. This tool is complementary to the {{site.data.keyword.cloud_notm}} CLI tool, augmented with the [machine learning plugin ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/knowledgecenter/DSXDOC/analyze-data/ml_dlaas_environment.html){: new_window}.
 
 ## Python client
 {: #abt-python}
 
-The [{{site.data.keyword.aios_short}} Python client ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://ai-openscale-python-client.mybluemix.net/) is a Python library that allows you to work directly with the {{site.data.keyword.aios_short}} service on {{site.data.keyword.cloud_notm}}. You can use the Python client, instead of the {{site.data.keyword.aios_short}} client UI, to directly configure a logging database, bind your machine learning engine, and select and monitor deployments. For an example using the Python client in this way, see both the [CARS4U action recommendation - model ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/CARS4U%20action%20recommendation%20-%20model.ipynb) and the [Working with Watson Machine Learning Engine ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/AI%20OpenScale%20and%20Watson%20ML%20Engine.ipynb) notebooks.
+The [{{site.data.keyword.aios_short}} Python client ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://ai-openscale-python-client.mybluemix.net/){: new_window} is a Python library that allows you to work directly with the {{site.data.keyword.aios_short}} service on {{site.data.keyword.cloud_notm}}. You can use the Python client, instead of the {{site.data.keyword.aios_short}} client UI, to directly configure a logging database, bind your machine learning engine, and select and monitor deployments. For an example using the Python client in this way, see both the [CARS4U action recommendation - model ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/CARS4U%20action%20recommendation%20-%20model.ipynb){: new_window} and the [Working with Watson Machine Learning Engine ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/AI%20OpenScale%20and%20Watson%20ML%20Engine.ipynb){: new_window} notebooks.
 
 ## Next steps
 {: #abt-next}
 
-- [Get started](/docs/services/ai-openscale-icp/getting-started.html) with the service.
+- [Get started](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-gs-get-started) with the service.
 - View the [API Reference material ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/ai-openscale){: new_window}.
 
 Still have questions? [Contact IBM ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/account/reg/us-en/signup?formid=MAIL-watson){: new_window}.
