@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-04"
+lastupdated: "2019-03-05"
 
 ---
 
@@ -119,4 +119,4 @@ Example output:
 
 - Package and send log files to IBM Support
 
-    - Zip your logs, and send the compressed files to [IBM Support](https://www.ibm.com/support/home/)
+    - Zip your logs, and send the compressed files to [IBM Support ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/home/)
