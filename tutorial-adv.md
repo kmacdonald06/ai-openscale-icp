@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-03-05"
 
 ---
 
@@ -20,6 +20,7 @@ lastupdated: "2019-02-20"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Tutorial - (Advanced)
+{: #crt-ov}
 
 ## Scenario
 {: #crt-scenario}
@@ -58,12 +59,12 @@ In this tutorial, you will:
 ## Provision {{site.data.keyword.cloud_notm}} Services
 {: #crt-services}
 
-Login to your [{{site.data.keyword.cloud_notm}} account](https://{DomainName}) with your IBM ID. When provisioning services, particularly in the case of Db2 Warehouse, verify that your selected organization and space are the same for all services.
+Login to your [{{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}) with your {{site.data.keyword.ibmid}}. When provisioning services, particularly in the case of Db2 Warehouse, verify that your selected organization and space are the same for all services.
 
 ### Provision a Watson Machine Learning service
 {: #crt-wml}
 
-- [Provision a Watson Machine Learning instance](https://{DomainName}/catalog/services/machine-learning) if you do not already have one associated with your account:
+- [Provision a Watson Machine Learning instance ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/machine-learning) if you do not already have one associated with your account:
 
   ![Machine Learning](images/machine_learning.png)
 
@@ -72,7 +73,7 @@ Login to your [{{site.data.keyword.cloud_notm}} account](https://{DomainName}) w
 ### Provision a Db2 Warehouse service
 {: #crt-db2}
 
-- [Provision a Db2 Warehouse service](https://{DomainName}/catalog/services/db2-warehouse) if you do not already have one associated with your account:
+- [Provision a Db2 Warehouse service ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/db2-warehouse) if you do not already have one associated with your account:
 
   ![Db2 Warehouse](images/db2_warehouse.png)
 
@@ -84,7 +85,7 @@ Login to your [{{site.data.keyword.cloud_notm}} account](https://{DomainName}) w
 ### Add the `Watson OpenScale and Watson ML engine` notebook to your favorite editor
 {: #crt-add-notebook}
 
-- Download the [Watson OpenScale and Watson ML engine](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/Watson%20OpenScale%20and%20Watson%20ML%20Engine.ipynb)
+- Download the [Watson OpenScale and Watson ML engine ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/Watson%20OpenScale%20and%20Watson%20ML%20Engine.ipynb)
 
 ### Edit and run the `Watson OpenScale and Watson ML engine` notebook
 {: #crt-edit-notebook}
@@ -155,4 +156,4 @@ You will be taken to the **Explainability** tab, where you will now see an expla
 ## Next steps
 {: #crt-next-steps}
 
-- Learn more about [viewing and interpreting the data](/docs/services/ai-openscale/insight-timechart.html) and [monitoring explainability](/docs/services/ai-openscale/insight-explain.html).
+- Learn more about [viewing and interpreting the data](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-itc-timechart) and [monitoring explainability](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-ie-ov).
