@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-03-05"
 
 ---
 
@@ -47,6 +47,7 @@ Set up and enable monitors for each deployment that you are tracking with {{site
     ![Select input type](images/config-input-monitor.png)
 
 ### Numeric/categorical data
+{: #mo-datan}
 
 For numeric or categorical data, you need to provide information about the training data for your model, in order to configure the monitors.
 
@@ -54,7 +55,7 @@ For numeric or categorical data, you need to provide information about the train
 
 - **Manually configure monitors** - Requires you to provide connection information to your training data.
 
-    - Select the [algorithm type](/docs/services/ai-openscale/monitor-accuracy.html#understand-accuracy), and click **Next**:
+    - Select the [algorithm type](/docs/services/ai-openscale?topic=ai-openscale-acc-monitor#acc-understand), and click **Next**:
 
       ![Multi-class](images/multiclass.png)
 
@@ -99,7 +100,7 @@ For numeric or categorical data, you need to provide information about the train
 
   Running the Python notebook lets you capture distinct values in the schema columns, as well as the column names. In addition, you can use the notebook to pre-configure the Fairness monitor.
 
-    - Download the [custom notebook](https://github.com/IBM-Watson/aios-data-distribution/blob/master/training_statistics_notebook.ipynb), and replace any credentials with your own credentials.
+    - Download the [custom notebook ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Watson/aios-data-distribution/blob/master/training_statistics_notebook.ipynb){: new_window}, and replace any credentials with your own credentials.
 
     - Review the notebook carefully, specifying data for your model where appropriate. Save the notebook.
 
@@ -128,6 +129,7 @@ For numeric or categorical data, you need to provide information about the train
     ![Select data table](images/explain-text-column.png)
 
 ### Images and Unstructured text
+{: #mo-datai}
 
 - **Images**
 
