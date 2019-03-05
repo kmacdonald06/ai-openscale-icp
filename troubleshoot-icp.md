@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-04"
+lastupdated: "2019-03-05"
 
 ---
 
@@ -26,6 +26,7 @@ lastupdated: "2019-02-04"
 {: #ts-bfdown}
 
 ### Overview
+{: #ts-bfdov}
 
 - Situation: ai-open-scale-ibm-aios-bias_micro_service_is_down:
 - Customer Impact: Customers can't use any functionality such as configure new instances, analyze of requests, store payload ...
@@ -33,6 +34,7 @@ lastupdated: "2019-02-04"
 - Dependencies: etcd
 
 ### Configure kubectl
+{: #ts-bfdck}
 
 There are two ways to configure kubectl client.
 
@@ -54,6 +56,7 @@ There are two ways to configure kubectl client.
     - Paste the configuration information to your command line, and press **Enter**.
 
 ### Verification/Recovery steps
+{: #ts-bfdvr}
 
 1.  Check pod's status with the following commands:
 
@@ -130,6 +133,7 @@ There are two ways to configure kubectl client.
 {: #ts-aiosdown}
 
 ### Overview
+{: #ts-odov}
 
 - Situation: ai-open-scale-ibm-aios-common-api_micro_service_is_down:
 - Customer Impact: Customers can't use any functionality such as configure new instances, analyze of requests, store payload . . .
@@ -137,6 +141,7 @@ There are two ways to configure kubectl client.
 - Dependencies: etcd
 
 ### Configure kubectl
+{: #ts-odkc}
 
 There are two ways to configure kubectl client.
 
@@ -159,6 +164,7 @@ There are two ways to configure kubectl client.
     - Paste the configuration information to your command line, and press **Enter**.
 
 ### Verification/Recovery steps
+{: #ts-odvr}
 
 1.  Check pod's status with the following commands:
 
@@ -229,6 +235,7 @@ There are two ways to configure kubectl client.
 {: #ts-aiosconfigdown}
 
 ### Overview
+{: #ts-ocdov}
 
 - Situation: ai-open-scale-ibm-aios-configuration_micro_service_is_down:
 - Customer Impact: Customers can't use any functionality such as configure new instances, analyze of requests, store payload ...
@@ -236,6 +243,7 @@ There are two ways to configure kubectl client.
 - Dependencies: etcd
 
 ### Configure kubectl
+{: #ts-ocdkc}
 
 There are two ways to configure kubectl client.
 
@@ -259,6 +267,7 @@ If cloudctl is available on your laptop, run the following command to configure 
     - Paste the configuration information to your command line, and press **Enter**.
 
 ### Verification/Recovery steps
+{: #ts-ocdvr}
 
 1.  Check pod's status with the following commands:
 
@@ -329,6 +338,7 @@ If cloudctl is available on your laptop, run the following command to configure 
 {: #ts-aiosdashdown}
 
 ### Overview
+{: #ts-oddov}
 
 - Situation: ai-open-scale-ibm-aios-dashboard_micro_service_is_down:
 - Customer Impact: Customers can't use any functionality such as configure new instances, analyze of requests, store payload ...
@@ -336,6 +346,7 @@ If cloudctl is available on your laptop, run the following command to configure 
 - Dependencies: N/A
 
 ### Configure kubectl
+{: #ts-oddkc}
 
 There are two ways to configure kubectl client.
 
@@ -357,6 +368,7 @@ There are two ways to configure kubectl client.
     - Paste the configuration information to your command line, and press **Enter**.
 
 ### Verification/Recovery steps
+{: #ts-oddvr}
 
 1.  Check pod's status with the following commands:
 
@@ -426,6 +438,7 @@ There are two ways to configure kubectl client.
 {: #ts-datamartdown}
 
 ### Overview
+{: #ts-dmdov}
 
 - Situation: ai-open-scale-ibm-aios-data-mart_micro_service_is_down:
 - Customer Impact: Customers can't use any functionality such as configure new instances, analyze of requests, store payload ...
@@ -433,6 +446,7 @@ There are two ways to configure kubectl client.
 - Dependencies: etcd
 
 ### Configure kubectl
+{: #ts-dmdkc}
 
 There are two ways to configure kubectl client.
 
@@ -454,6 +468,7 @@ There are two ways to configure kubectl client.
     - Paste the configuration information to your command line, and press **Enter**.
 
 ### Verification/Recovery steps
+{: #ts-dmdvr}
 
 1.  Check pod's status with the following commands:
 
@@ -524,6 +539,7 @@ There are two ways to configure kubectl client.
 {: #ts-expdown}
 
 ### Overview
+{: #ts-esdov}
 
 - Situation: ai-open-scale-ibm-aios-explainability_micro_service_is_down:
 - Customer Impact: Customers can't use any functionality such as configure new instances, analyze of requests, store payload ...
@@ -531,6 +547,7 @@ There are two ways to configure kubectl client.
 - Dependencies: etcd
 
 ### Configure kubectl
+{: #ts-esdkc}
 
 There are two ways to configure kubectl client.
 
@@ -552,6 +569,7 @@ There are two ways to configure kubectl client.
     - Paste the configuration information to your command line, and press **Enter**.
 
 ### Verification/Recovery steps
+{: #ts-esdvr}
 
 1.  Check pod's status with the following commands:
 
@@ -629,6 +647,7 @@ There are two ways to configure kubectl client.
 {: #ts-aiosfeedbackdown}
 
 ### Overview
+{: #ts-fsdov}
 
 - Situation: ai-open-scale-ibm-aios-feedback_micro_service_is_down:
 - Customer Impact: Customers can't use any functionality such as configure new instances, analyze of requests, store payload ...
@@ -636,6 +655,7 @@ There are two ways to configure kubectl client.
 - Dependencies: etcd
 
 ### Configure kubectl
+{: #ts-fsdkc}
 
 There are two ways to configure kubectl client.
 
@@ -657,6 +677,7 @@ There are two ways to configure kubectl client.
     - Paste the configuration information to your command line, and press **Enter**.
 
 ### Verification/Recovery steps
+{: #ts-fsdvr}
 
 1.  Check pod's status with the following commands:
 
@@ -734,6 +755,7 @@ There are two ways to configure kubectl client.
 {: #ts-aiosdiscdown}
 
 ### Overview
+{: #ts-dsdov}
 
 - Situation: ai-open-scale-ibm-aios-ml-gateway-discovery_micro_service_is_down:
 - Customer Impact: Customers can't use any functionality such as configure new instances, analyze of requests, store payload ...
@@ -741,6 +763,7 @@ There are two ways to configure kubectl client.
 - Dependencies: N/A
 
 ### Configure kubectl
+{: #ts-dsdkc}
 
 There are two ways to configure kubectl client.
 
@@ -762,6 +785,7 @@ There are two ways to configure kubectl client.
     - Paste the configuration information to your command line, and press **Enter**.
 
 ### Verification/Recovery steps
+{: #ts-dsdvr}
 
 1.  Check pod's status with the following commands:
 
@@ -832,6 +856,7 @@ There are two ways to configure kubectl client.
 {: #ts-aiosnginxdown}
 
 ### Overview
+{: #ts-nsdov}
 
 - Situation: ai-open-scale-ibm-aios-nginx_micro_service_is_down:
 - Customer Impact: Customers can't use any functionality such as configure new instances, analyze of requests, store payload ...
@@ -839,6 +864,7 @@ There are two ways to configure kubectl client.
 - Dependencies: N/A
 
 ### Configure kubectl
+{: #ts-nsdkc}
 
 There are two ways to configure kubectl client.
 
@@ -860,6 +886,7 @@ There are two ways to configure kubectl client.
     - Paste the configuration information to your command line, and press **Enter**.
 
 ### Verification/Recovery steps
+{: #ts-nsdvr}
 
 1.  Check pod's status with the following commands:
 
@@ -930,6 +957,7 @@ There are two ways to configure kubectl client.
 {: #ts-aiospayloadapidown}
 
 ### Overview
+{: #ts-pladov}
 
 - Situation: ai-open-scale-ibm-aios-payload-logging-api_micro_service_is_down:
 - Customer Impact: Customers can't write Payload to our service from exteranl services (Azur, Amazon, other) so customers don't have current data for analyze.
@@ -937,6 +965,7 @@ There are two ways to configure kubectl client.
 - Dependencies: IBM Event Stream
 
 ### Configure kubectl
+{: #ts-pladkc}
 
 There are two ways to configure kubectl client.
 
@@ -958,6 +987,7 @@ There are two ways to configure kubectl client.
     - Paste the configuration information to your command line, and press **Enter**.
 
 ### Verification/Recovery steps
+{: #ts-pladvr}
 
 1.  Check pod's status with the following commands:
 
@@ -1028,6 +1058,7 @@ There are two ways to configure kubectl client.
 {: #ts-aiospayloaddown}
 
 ### Overview
+{: #ts-plsdov}
 
 - Situation: ai-open-scale-ibm-aios-payload-logging_micro_service_is_down:
 - Customer Impact: Customers can't write Payload to our service from external services (Azur, Amazon, other) so customers don't have current data for analyze.
@@ -1035,6 +1066,7 @@ There are two ways to configure kubectl client.
 - Dependencies: IBM Event Stream
 
 ### Configure kubectl
+{: #ts-plsdkc}
 
 There are two ways to configure kubectl client.
 
@@ -1056,6 +1088,7 @@ There are two ways to configure kubectl client.
     - Paste the configuration information to your command line, and press **Enter**.
 
 ### Verification/Recovery steps
+{: #ts-plsdvr}
 
 1.  Check pod's status with the following commands:
 
@@ -1125,6 +1158,7 @@ There are two ways to configure kubectl client.
 {: #ts-aiosscheddown}
 
 ### Overview
+{: #ts-ssdov}
 
 - Situation: ai-open-scale-ibm-aios-scheduling_micro_service_is_down:
 - Customer Impact: Customers can't use any functionality such as configure new instances, analyze of requests, store payload ...
@@ -1132,6 +1166,7 @@ There are two ways to configure kubectl client.
 - Dependencies: N/A
 
 ### Configure kubectl
+{: #ts-ssdkc}
 
 There are two ways to configure kubectl client.
 
@@ -1153,6 +1188,7 @@ There are two ways to configure kubectl client.
     - Paste the configuration information to your command line, and press **Enter**.
 
 ### Verification/Recovery steps
+{: #ts-ssdvr}
 
 1.  Check pod's status with the following commands:
 
@@ -1223,6 +1259,7 @@ There are two ways to configure kubectl client.
 {: #ts-aiosredisdown}
 
 ### Overview
+{: #ts-redov}
 
 - Situation: ai-open-scale-ibm-aios-redis_micro_service_is_down:
 - Customer Impact: Customers can't use any functionality such as configure new instances, analyze of requests, store payload ...
@@ -1230,6 +1267,7 @@ There are two ways to configure kubectl client.
 - Dependencies: N/A
 
 ### Configure kubectl
+{: #ts-redkc}
 
 There are two ways to configure kubectl client.
 
@@ -1251,6 +1289,7 @@ There are two ways to configure kubectl client.
     - Paste the configuration information to your command line, and press **Enter**.
 
 ### Verification/Recovery steps
+{: #ts-redvr}
 
 1.  Check pod's status with the following commands:
 
@@ -1326,6 +1365,7 @@ There are two ways to configure kubectl client.
 {: #ts-etcddown}
 
 ### Overview
+{: #ts-etcov}
 
 - Situation: etcd_micro_service_is_down:
 - Customer Impact: Customers can't use any functionality such as configure new instances, analyze of requests, store payload ...
@@ -1333,6 +1373,7 @@ There are two ways to configure kubectl client.
 - Dependencies: None
 
 ### Configure kubectl
+{: #ts-etckc}
 
 There are two ways to configure kubectl client.
 
@@ -1354,6 +1395,7 @@ There are two ways to configure kubectl client.
     - Paste the configuration information to your command line, and press **Enter**.
 
 ### Verification/Recovery steps
+{: #ts-etcvr}
 
 1.  Check pod's status with the following commands:
 
@@ -1432,10 +1474,12 @@ There are two ways to configure kubectl client.
 {: #ts-createdashes}
 
 ### Overview
+{: #ts-dshov}
 
 - This document describe how to create new dashboard to monitor AI Open Scale services.
 
 ### Configure kubectl
+{: #ts-dshkc}
 
 There are two ways to configure kubectl client.
 
@@ -1458,6 +1502,8 @@ There are two ways to configure kubectl client.
     - Paste the configuration information to your command line, and press **Enter**.
 
 ### Viewing event stream
+{: #ts-dshve}
+
 The event stream consists of several services.  Please see subfolder for details of each service.
 
   ```bash
@@ -1483,10 +1529,12 @@ The event stream consists of several services.  Please see subfolder for details
 {: #ts-aiosusemonitor}
 
 ### Overview
+{: #ts-omov}
 
 - This document describe how to create new dashboard to monitor AI Open Scale services.
 
 ### Setting up the dashboard
+{: #ts-omsd}
 
 - Get aios-dashboard.json file from ibm-aiopenscale-x86_64-1.0.0.tar.gz.  This file can be found from `utils` directory.
 - Log in to your ICP cluster `https://${ICP Host}:8443`
@@ -1497,6 +1545,7 @@ The event stream consists of several services.  Please see subfolder for details
 - Select `prometheus` for prometheus input field
 
 ### Viewing the dashboard
+{: #ts-omvd}
 
 The dashboard consists of several rows.  Please see below for more details of each row.
 
