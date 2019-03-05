@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-04"
+lastupdated: "2019-03-05"
 
 ---
 
@@ -31,15 +31,17 @@ The {{site.data.keyword.icpfull_notm}} environment is a Kubernetes-based contain
 ## Hardware requirements
 {: #inst-hw}
 
-Always refer to [System requirements for {{site.data.keyword.icpfull_notm}} for Data](https://www.ibm.com/support/knowledgecenter/en/SSQNUZ_1.1.0/com.ibm.icpdata.doc/zen/install/reqs-ent.html) for the most current requirements.
+Always refer to [System requirements for {{site.data.keyword.icpfull_notm}} for Data ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/knowledgecenter/en/SSQNUZ_1.1.0/com.ibm.icpdata.doc/zen/install/reqs-ent.html){: new_window} for the most current requirements.
 
 ### Operating system requirements
+{: #inst-hwo}
 
 | Operating system | Minimum level | Hardware | Bitness
 |:---|:---:|:---:|:---:
 |Red Hat Enterprise Linux (RHEL) Server 7 | 7.5 | x86-64 | 64-Exploit ||
 
 ### Hardware and software requirements for a three-node configuration
+{: #inst-hwt}
 
 This configuration requires a minimum of four servers, either physical or virtual machines, three acting as a master and worker node (for example, `node1` acts as both `master1` and `worker1`), and one acting as load balancer.
 
@@ -51,6 +53,7 @@ This configuration requires a minimum of four servers, either physical or virtua
 | | | | | Optional: 200GB raw disk for the Docker devicemapper. If you do not provide this raw disk, you must have 600 GB minimum for the installation path. |
 
 ### Hardware and software requirements for a six-node configuration
+{: #inst-hws}
 
 This configuration requires a minimum of seven servers, either physical or virtual machines, three acting as `master` nodes, three acting as `worker` nodes, and one acting as load balancer.
 
@@ -66,6 +69,7 @@ This configuration requires a minimum of seven servers, either physical or virtu
 | | | | | Optional: 200GB raw disk for the Docker devicemapper. If you do not provide this raw disk, you must have 600 GB minimum for the installation path. |
 
 ### Db2 Warehouse requirements
+{: #inst-hwd}
 
 If you plan to deploy a Db2 Warehouse database in your IBM Cloud Private for Data cluster, you must create a dedicated worker node with the following specifications.
 
@@ -78,7 +82,7 @@ If you plan to deploy a Db2 Warehouse database in your IBM Cloud Private for Dat
 ## Software requirements
 {: #inst-sw}
 
-Download the appropriate package, by part number, from [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/pao_customer.html).
+Download the appropriate package, by part number, from [IBM Passport Advantage ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/pao_customer.html){: new_window}.
 
 1.  {{site.data.keyword.icpfull_notm}} for Data version 1.2, running on {{site.data.keyword.icpfull_notm}} version 3.1.0.
 
@@ -103,22 +107,23 @@ Download the appropriate package, by part number, from [IBM Passport Advantage](
 <!---
 
 ## Installation artifacts
+{: #inst-af}
 
-1.  Download the latest starter installer build from [http://9.30.110.240:8088/job/icp-embedded-install-md5-test/](http://9.30.110.240:8088/job/icp-embedded-install-md5-test/)
+1.  Download the latest starter installer build from [http://9.30.110.240:8088/job/icp-embedded-install-md5-test/ ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://9.30.110.240:8088/job/icp-embedded-install-md5-test/)
 
 1.  Download the model installer:
 
-    - [Deploy a Fyre cluster, build an embedded {{site.data.keyword.icpfull_notm}} installer with Zen, and install embedded {{site.data.keyword.icpfull_notm}} with Zen](https://github.ibm.com/PrivateCloud/InstallAndGo/wiki/How-to-Deploy-a-Fyre-Cluster,-Build-Embedded-ICP-installer-with-Zen,-and-Install-Embedded-ICP-with-Zen)
+    - [Deploy a Fyre cluster, build an embedded {{site.data.keyword.icpfull_notm}} installer with Zen, and install embedded {{site.data.keyword.icpfull_notm}} with Zen ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.ibm.com/PrivateCloud/InstallAndGo/wiki/How-to-Deploy-a-Fyre-Cluster,-Build-Embedded-ICP-installer-with-Zen,-and-Install-Embedded-ICP-with-Zen)
 
     OR
 
-    - [Install or upgrade a module for an existing {{site.data.keyword.icpfull_notm}} environment](https://github.ibm.com/PrivateCloud/icp-embedded-installer/wiki/Install-Upgrade-a-Module-on-ICP4)
+    - [Install or upgrade a module for an existing {{site.data.keyword.icpfull_notm}} environment ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.ibm.com/PrivateCloud/icp-embedded-installer/wiki/Install-Upgrade-a-Module-on-ICP4)
 
   Download the `installer.tar` file and untar it.
 
 1.  Download the Watson Machine Learning model:
 
-    - Find the latest build at [http://9.30.110.240:8088/job/WML-Helm-Chart/](http://9.30.110.240:8088/job/WML-Helm-Chart/)
+    - Find the latest build at [http://9.30.110.240:8088/job/WML-Helm-Chart/ ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://9.30.110.240:8088/job/WML-Helm-Chart/)
 
   Download the `wml_module.tar.gz` file.
 
@@ -311,6 +316,7 @@ Follow the instructions for [Installing the stand-alone version of IBM Cloud Pri
     └─xvde1 202:65   0  500G  0 part /data
 
 ### Install load balancer
+{: #inst-icplb}
 
 1.  Run the following steps to install the load balancer
 
@@ -513,6 +519,7 @@ Follow the instructions for [Installing the stand-alone version of IBM Cloud Pri
     ```
 
 ### Test load balancer
+{: #inst-icpte}
 
 See [Setting up an external load balancer ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/knowledgecenter/SSBS6K_2.1.0.3/installing/set_loadbalancer.html) and [How to test the load balancer![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.ibm.com/PrivateCloud/icp-embedded-installer/wiki/How-to-test-the-load-balancer) for more information.
 
@@ -539,6 +546,7 @@ See [Setting up an external load balancer ![External link icon](../../icons/laun
 1.  Repeat steps 2 and 3 for other ports (443, 80, 8001, 8443, 8500, 9443, 31843) to make sure the load balance also works.
 
 ## Prepare installation configuration file `wdp.conf`
+{: #inst-icpco}
 
 1.  Create the file `/ibm/wdp.conf`
 
@@ -621,7 +629,7 @@ At the end of the Watson Machine Learning module installation into ICP4D, add th
       balance roundrobin
       server server1 169.62.249.124:31002
       server server2 169.62.249.100:31002
-      server server3 169.62.249.99:31002  
+      server server3 169.62.249.99:31002
 
   frontend wml-envoy
       bind *:32006
@@ -639,7 +647,7 @@ At the end of the Watson Machine Learning module installation into ICP4D, add th
 
   Change the IP address to the private IP address of all the cluster master nodes.
   {: note}
-  
+
   The server name in this configuration file always starts from `server1`, `server2`, `server3`, etc.
   {: note}
 
@@ -689,6 +697,7 @@ Then confirm the command output has no error - the following is a sample referen
 See [Install or Upgrade a module on ICP](https://github.ibm.com/PrivateCloud/icp-embedded-installer/wiki/Install-Upgrade-a-Module-on-ICP4) for more information.
 
 ### Troubleshoot installation issues
+{: #inst-icpts}
 
 The install log location is `/ibm/InstallPackage/tmp`.
 
@@ -716,6 +725,7 @@ The install log location is `/ibm/InstallPackage/tmp`.
   See [Installer issue information required](https://github.ibm.com/PrivateCloud/icp-embedded-installer/wiki/Installer-issue-information-required) for more details.
 
 ### Uninstall
+{: #inst-icpu}
 
 To uninstall, run:
 
@@ -771,7 +781,7 @@ When configuring this package, Db2 **must** have the non-SSL port enabled.
     - If you are using manual storage provisioning, you must manually create persistent volumes required for the {{site.data.keyword.aios_short}} components.
 
         - Customize the `utils/etcd-pvc-template.yaml` file included in the {{site.data.keyword.aios_short}} tarball for your environment. Replace the `nfs` section in the template if you are using another storage type.
-        
+
     - To use NFS volumes:
 
         - Replace the `NFS_SERVER_IP` with your NFS host IP address
@@ -791,20 +801,22 @@ When configuring this package, Db2 **must** have the non-SSL port enabled.
     ```
 
   The installation will prompt you to read and accept the license agreement, {{site.data.keyword.icpfull_notm}} `username` and `password`, {{site.data.keyword.icpfull_notm}} for Data `username` and `password`, Event Streams release name, and Event Streams namespace.
-  
+
   Default values are provided wherever possible. You should use the default values if you follow the installation steps for {{site.data.keyword.icpfull_notm}} for Data, Watson Machine Learning, and Event Streams, as defined in this document.
 
-### Post-installation
+## Post-installation
+{: #inst-po}
 
-- Log into the {{site.data.keyword.icpfull_notm}} for Data [Management Console](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.3/manage_cluster/cfc_gui.html), then go to the *Add-ons* page by clicking the icon in the upper-right corner of the screen.
+- Log into the {{site.data.keyword.icpfull_notm}} for Data [Management Console ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.3/manage_cluster/cfc_gui.html), then go to the *Add-ons* page by clicking the icon in the upper-right corner of the screen.
 
   OR
-  
+
 - Type `https://[Load Balancer IP]:31843/zen/#/addons`, and click the {{site.data.keyword.aios_short}} add-on to open the {{site.data.keyword.aios_short}} UI.
 
   The {{site.data.keyword.aios_short}} UI can also be launched using `https://[Load Balancer IP]:31843/aiopenscale` after logging into the {{site.data.keyword.aios_full_notm}} for {{site.data.keyword.icpfull_notm}} UI.
 
-### Uninstallation steps
+## Uninstallation steps
+{: #inst-un}
 
 1.  Go to the directory from where you installed {{site.data.keyword.aios_short}}, for example `ibm/aios`, on the {{site.data.keyword.icpfull_notm}} for Data cluster `master-1 node` host.
 
@@ -817,5 +829,5 @@ The uninstallation will prompt for {{site.data.keyword.icpfull_notm}} username a
 
 Use the {{site.data.keyword.aios_short}} tool to monitor your AI models for bias and accuracy.
 
-- To learn more about the {{site.data.keyword.aios_short}} service first, read the [About](/docs/services/ai-openscale-icp/index.html) topics.
-- To see how it works for yourself, follow the steps in the [Getting Started](/docs/services/ai-openscale-icp/getting-started.html) tutorial.
+- To learn more about the {{site.data.keyword.aios_short}} service first, read the [About](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-abt-about) topic.
+- To see how it works for yourself, follow the steps in the [Getting Started](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-gs-get-started) tutorial.
