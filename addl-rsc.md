@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-05"
 
 ---
 
@@ -25,7 +25,7 @@ lastupdated: "2019-02-27"
 ## Tutorials
 {: #arsc-tutorials}
 
-The [advanced tutorial](/docs/services/ai-openscale?topic=ai-openscale-crt-ov), which provides a Jupyter notebook to walk you through the process of creating, deploying, and viewing results of a detailed credit risk model scenario in {{site.data.keyword.aios_short}}, is also available as a tutorial for other machine learning service instances:
+The [advanced tutorial](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-crt-ov), which provides a Jupyter notebook to walk you through the process of creating, deploying, and viewing results of a detailed credit risk model scenario in {{site.data.keyword.aios_short}}, is also available as a tutorial for other machine learning service instances:
 
 - [Microsoft Azure ML Studio ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/AI%20OpenScale%20and%20Azure%20ML%20Studio%20Engine.ipynb){: new_window}
 - [Amazon SageMaker ML Studio ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/AI%20OpenScale%20and%20SageMaker%20ML%20Engine.ipynb){: new_window}
