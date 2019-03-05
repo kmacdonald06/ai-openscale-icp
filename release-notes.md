@@ -2,13 +2,15 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-06"
+lastupdated: "2019-03-05"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 {:tip: .tip}
+{:important: .important}
+{:note: .note}
 {:pre: .pre}
 {:codeblock: .codeblock}
 {:screen: .screen}
@@ -29,11 +31,11 @@ The following new features and changes to the service are available.
 
 {{site.data.keyword.aios_short}} features that have been added or enhanced since the previous release include:
 
-- __*UI updates*__: Several improvements have been made to the {{site.data.keyword.aios_short}} user interface, including a way to [manually trigger Bias and Accuracy runs](/docs/services/ai-openscale/insight-timechart.html#it-ov), and the ability to see a list of transactions from the [fairness details chart](/docs/services/ai-openscale/insight-timechart.html#it-tra).
+- __*UI updates*__: Several improvements have been made to the {{site.data.keyword.aios_short}} user interface, including buttons to [check fairness and accuracy on demand](/docs/services/ai-openscale?topic=ai-openscale-it-ov#it-vdep), and the ability to see a list of transactions from the [fairness details chart](/docs/services/ai-openscale?topic=ai-openscale-it-ov#it-tra).
 
 - __*Explainability enhancements*__: All numbers now have the same precision/scale across Pertinent Positive (PP) and Pertinent Negative (PN) values.
 
-- __*IBM SPSS Collaboration & Deployment Services support*__: IBM SPSS C&DS is now a supported machine learning service instance. See [Specifying an IBM SPSS Collaboration & Deployment Services instance](/docs/services/ai-openscale-icp/connect-spss.html#cspss-spss)
+- __*IBM SPSS Collaboration & Deployment Services support*__: IBM SPSS C&DS is now a supported machine learning service instance. See [Specifying an IBM SPSS Collaboration & Deployment Services instance](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-cspss-spss)
 
 - __*Db2 SSL support*__: {{site.data.keyword.aios_short}} supports passing self-signed certificates (Base-64 encoded) with Db2 credentials.
 
@@ -54,7 +56,7 @@ The following new features and changes to the service are available.
 
 - **Custom ML service instance**
 
-    - The [Python module](/docs/services/ai-openscale/alt-setup.html) does not currently have Explainability working for the Custom service instance. This is because, to generate an explanation, the Custom service instance should have a numerical prediction in the response data, which is not included with the module script. Explainability will not be supported on the Custom service instance if the model that is sourcing the custom application returns a non-numerical prediction in the scoring response.
+    - The [Python module](/docs/services/ai-openscale?topic=ai-openscale-as-module) does not currently have Explainability working for the Custom service instance. This is because, to generate an explanation, the Custom service instance should have a numerical prediction in the response data, which is not included with the module script. Explainability will not be supported on the Custom service instance if the model that is sourcing the custom application returns a non-numerical prediction in the scoring response.
 
 - **Microsoft Azure**
 
@@ -88,7 +90,7 @@ The following new features and changes to the service are available.
 
         - __*Releases*__: {{site.data.keyword.aios_short}} is available as an IBM Cloud Standard (paid) plan, and on IBM Cloud Private for Data V1.2
 
-          The IBM Neural Network Synthesizer (NeuNetS) is also available as a beta release (public cloud only). See the [NeuNetS documentation](https://dataplatform.cloud.ibm.com/ml/neunets) for more information
+          The IBM Neural Network Synthesizer (NeuNetS) is also available as a beta release (public cloud only). See the [NeuNetS documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://dataplatform.cloud.ibm.com/ml/neunets) for more information.
 
         - __*Enhanced UI*__: The {{site.data.keyword.aios_short}} UI now includes a runtime histogram distribution with toggle, Model ID & Versioning, and a Transaction ID table from the histogram
 
@@ -196,7 +198,7 @@ The following new features and changes to the service are available.
       <PORT> - Server Port
       <DATA_MART_ID> - DataMart id
       <SERVICE_BINDING_ID> - Service Binding id
-      <ASSET_ID> - Asset id or the model id 
+      <ASSET_ID> - Asset id or the model id
       <DEPLOYMENT_ID> - Deployment id
       <TOKEN> - Bearer token
 
