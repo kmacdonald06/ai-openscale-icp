@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-04"
+lastupdated: "2019-03-07"
 
 ---
 
@@ -46,9 +46,9 @@ Here's how you will implement {{site.data.keyword.aios_short}}:
 
 - The database and Watson Machine Learning instance must be deployed in the same {{site.data.keyword.cloud_notm}} account.
 
-- There is a license limit of 20 deployed models per instance of {{site.data.keyword.aios_short}}.
+- {{site.data.keyword.aios_short}} uses a PostgreSQL or Db2 database to store model deployment output and retraining data. Lite Db2 plans are not currently supported.
 
-- Bias and debias Python functions are not supported in the current release; bias and debias work correctly for other models.
+- There is a license limit of 20 deployed models per instance of {{site.data.keyword.aios_short}}.
 
 - Currently, explanations cannot be generated for images which are greater than 1 MB in size.
 

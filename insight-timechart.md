@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-04"
+lastupdated: "2019-03-07"
 
 ---
 
@@ -40,16 +40,16 @@ Next, move the marker across the chart to see statistics for an individual hour.
 - ***Accuracy***: The Accuracy metric averaged 78%.
 - ***Avg. Reqs/Min***: On average, 300 records were processed per minute between 1:00 and 2:00 PM CST. The throughput is computed every minute, and its average value over the course of the hour is reported in the chart.
 
-Select the chart to see details behind a particular Fairness statistic.
-
 ## Visualizing data for a specific hour
 {: #itc-data-visual}
 
-Clicking the chart opens a visualization of the data points for a monitored feature at a specific hour. Following the previous example, the Age feature, which has been tagged for bias, is shown.
+To see details behind a particular Fairness statistic, click the **View details** link for the selected hour.
 
-  ![Time series chart](images/insight-data-detail.png)
+A visualization opens of the data points for a monitored feature at the selected hour. Following the previous example the Age feature, which has been tagged for bias, is shown.
 
 Note the three filters at the top of the page (Feature, Date, and Hour) that let you select a different feature or time to review details.
+
+  ![Time series chart](images/insight-data-detail.png)
 
 ### Interpreting the chart
 {: #itc-intp}
@@ -78,18 +78,24 @@ The Runtime data / Training data switch lets you toggle the differences between 
 ## View transactions
 {: #itc-tra}
 
-This option allows you to view the individual transactions that contributed to bias when you click the **View biased transactions** button.
+This option allows you to view the individual transactions that contributed to bias when you click the **View transactions** button.
 
 ![View transactions](images/view_transactions.png)
 
 A list of transactions where the deployment has acted in a biased manner is listed. Click the **Explain** link for any of the transaction IDs to get details about that transaction in the Explainability tab. For more information, see [Monitoring explainability](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-ie-ov).
 
-![Transaction list](images/transaction_list0.png)
+Select the **All transactions** view to see all transactions from the selected feature (in this example "AGE"), and the selected period (in this example "September 15, 2018 1:00 PM"):
+
+![Transaction list](images/transaction_list1.png)
+
+Select the **Biased transactions** view to see only the subset of transactions that received biased outcomes. Each biased transaction is compared to a similar-but-slightly-altered (perturbed) transaction that shows how changing the value of the monitored feature (AGE) will result in a favorable outcome for the biased transaction:
+
+![Transaction list biased](images/transaction_list2.png)
 
 ## Production model and De-biased model
 {: #itc-prdb}
 
-You can use these two tabs to toggle between your production model, and a de-biased model created by {{site.data.keyword.aios_short}}.
+You can use these two tabs to toggle between your production model, and a de-biased model created by {{site.data.keyword.aios_short}}. See [Understanding how de-biasing works](/docs/services/ai-openscale?topic=ai-openscale-mf-monitor#mf-debias) for more details.
 
 ![Runtime Training toggle](images/bias-debias.png)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-05"
+lastupdated: "2019-03-07"
 
 ---
 
@@ -52,8 +52,7 @@ The Jupyter notebook will train, create and deploy a German Credit Risk model, c
 In this tutorial, you will:
 
 - Provision {{site.data.keyword.cloud_notm}} machine learning and storage services
-- Set up a Watson Studio project, and run a Python notebook to create, train and deploy a machine learning model
-- Run a Python notebook to create a data mart, configure performance, accuracy, and fairness monitors, and create data to monitor
+- Run a Python notebook to create, train and deploy a machine learning model. Then, create a data mart, configure performance, accuracy, and fairness monitors, and create data to monitor
 - View results in the {{site.data.keyword.aios_short}} Insights tab
 
 ## Provision {{site.data.keyword.cloud_notm}} Services
@@ -82,15 +81,15 @@ Login to your [{{site.data.keyword.cloud_notm}} account ![External link icon](..
 ## Create and deploy a machine learning model
 {: #crt-make-model}
 
-### Add the `Watson OpenScale and Watson ML engine` notebook to your favorite editor
+### Add the `IBM Watson OpenScale Lab instructions` notebook to your favorite editor
 {: #crt-add-notebook}
 
-- Download the [Watson OpenScale and Watson ML engine ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/Watson%20OpenScale%20and%20Watson%20ML%20Engine.ipynb)
+- Download the [IBM Watson OpenScale Lab instructions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/emartensibm/german-credit/blob/master/german_credit_lab.ipynb){: new_window}
 
-### Edit and run the `Watson OpenScale and Watson ML engine` notebook
+### Edit and run the `IBM Watson OpenScale Lab instructions` notebook
 {: #crt-edit-notebook}
 
-The `Watson OpenScale and Watson ML engine` notebook contains detailed instructions for each step in the Python code you will run. As you work through the notebook, take some time to understand what each command is doing.
+The `IBM Watson OpenScale Lab instructions` notebook contains detailed instructions for each step in the Python code you will run. As you work through the notebook, take some time to understand what each command is doing.
 {: tip}
 
 - In the "Provision services and configure credentials" section, make the following changes:
@@ -99,16 +98,16 @@ The `Watson OpenScale and Watson ML engine` notebook contains detailed instructi
 
     - Replace the Watson Machine Learning (WML) and Db2 service credentials with the ones you created previously.
 
-    - If you have an already-existing schema in your Db2 instance that you would like to use for {{site.data.keyword.aios_short}} data, specify it as the SCHEMA_NAME variable. Otherwise, leave the variable set to `None` to use the default Db2 schema.
+    - Replace the DB credentials with the ones you created for Db2 Warehouse.
 
     - If you previously configured {{site.data.keyword.aios_short}} to use a free internal PostgreSQL database as your data mart, you can switch to a new data mart that uses Db2 Warehouse. To delete your old PostgreSQL configuration and create a new one using Db2 Warehouse, set the KEEP_MY_INTERNAL_POSTGRES variable to `False`.
 
-        The notebook will remove your existing internal PostgreSQL data mart and create a new Db2 data mart with the supplied Db2 credentials. **No data migration will occur**.
+        The notebook will remove your existing internal PostgreSQL data mart and create a new data mart with the supplied DB credentials. **No data migration will occur**.
         {: important}
 
-- Once you have provisioned your services and entered your credentials, your notebook is ready to run. Run each step of the notebook in sequence. Notice what is happening at each step, as described. Complete all the steps, up through and including the steps in the "Identify transactions for Explainability" section.
+- Once you have provisioned your services and entered your credentials, your notebook is ready to run. Run each step of the notebook in sequence. Notice what is happening at each step, as described. Complete all the steps, up through and including the steps in the "Additional data to help debugging" section.
 
-The net result is that you will have created, trained, and deployed the **German Credit Risk Model** to your {{site.data.keyword.aios_short}} service instance. {{site.data.keyword.aios_short}} will be configured to check the model for bias against sex (in this case, Female) or age (In this case, 18-25 years old).
+The net result is that you will have created, trained, and deployed the **Spark German Risk Deployment** model to your {{site.data.keyword.aios_short}} service instance. {{site.data.keyword.aios_short}} will be configured to check the model for bias against sex (in this case, Female) or age (In this case, 18-25 years old).
 
 ## Viewing results
 {: #crt-view-results}
@@ -149,7 +148,7 @@ Select the **View transactions** button from the charts for the latest biased da
 
   ![Transaction list](images/transaction_list_cr.png)
 
-You will be taken to the **Explainability** tab, where you will now see an explanation of how the model arrived at its conclusion, including how confident the model was, the factors that contributed to the confidence level, and the attributes fed to the model.
+You will now see an explanation of how the model arrived at its conclusion, including how confident the model was, the factors that contributed to the confidence level, and the attributes fed to the model.
 
   ![View Transaction](images/view_transaction_cr.png)
 

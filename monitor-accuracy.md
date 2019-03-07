@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-05"
+lastupdated: "2019-03-07"
 
 ---
 
@@ -35,15 +35,10 @@ Accuracy can mean different things depending on the type of the algorithm:
 ### How it works
 {: #acc-uhow}
 
-You need to add manually-labelled data into your feedback table for the accuracy computation to trigger. The feedback table is in the posgres schema with the name <model_id>_feedback.
 
-You can create a performance monitoring system for your predictive models by creating an evaluation instance, and then defining the metrics and triggers for the automatic retraining and deploying of the new model. Spark, Keras and TensorFlow models are supported at this stage, with the following requirements:
+You need to add manually-labelled feedback data through the {{site.data.keyword.aios_short}} UI as shown below, using a [Python client ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://ai-openscale-python-client.mybluemix.net/#feedbacklogging){: new_window} or [Rest API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/ai-openscale#post-feedback-payload){: new_window}.
 
-- A training definition must be stored in the repository
-- `training_data_reference` - must be defined as a part of the stored model's metadata
-- `training_definition_url` - must be defined as a part of the stored model's metadata
-
-Use the available [REST API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://watson-ml-api.mybluemix.net/) end-points directly to provide feedback data and kick off evaluation activities. For more information, see the [WML documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://dataplatform.cloud.ibm.com/docs/content/analyze-data/ml-continuous-learning.html?audience=wdp&context=wdp).
+Review [Supported model types](/docs/services/ai-openscale?topic=ai-openscale-in-ov#in-mod) and [Supported frameworks](/docs/services/ai-openscale?topic=ai-openscale-in-ov#in-fram) for accuracy monitoring limitations.
 
 ## Configuring the Accuracy monitor
 {: #acc-config}
