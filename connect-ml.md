@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-07"
 
 ---
 
@@ -14,6 +14,10 @@ lastupdated: "2019-02-27"
 {:pre: .pre}
 {:codeblock: .codeblock}
 {:screen: .screen}
+{:javascript: .ph data-hd-programlang='javascript'}
+{:java: .ph data-hd-programlang='java'}
+{:python: .ph data-hd-programlang='python'}
+{:swift: .ph data-hd-programlang='swift'}
 
 # Payload logging for non-Watson Machine Learning service instances
 {: #cml-ml}
@@ -116,7 +120,7 @@ You will need to have the training data of your model available in Db2 or Cloud 
 ### Scoring and payload logging
 {: #cml-cusscore}
 
-- Score your model, then convert the request and response to the form used by {{site.data.keyword.aios_short}}. For a full example, see the [{{site.data.keyword.aios_short}} & Custom ML engine notebook ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/AI%20OpenScale%20and%20Custom%20ML%20Engine.ipynb){: new_window}.
+- Score your model. For a full example, see the [IBM {{site.data.keyword.aios_short}} & Custom ML engine notebook ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/AI%20OpenScale%20and%20Custom%20ML%20Engine.ipynb){: new_window}.
 
 - Store the request and response in the payload logging table
 
@@ -211,7 +215,7 @@ You will need to have the training data of your model available in Db2 or Cloud 
 ### Scoring and payload logging
 {: #cml-spenlog}
 
-- Score your model, then convert the request and response to the form used by {{site.data.keyword.aios_short}}. For a full example, see the [{{site.data.keyword.aios_short}} & SPSS C&DS engine notebook ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/AI%20OpenScale%20and%20SPSS%20C%26DS%20Engine.ipynb){: new_window}.
+- Score your model. For a full example, see the [{{site.data.keyword.aios_short}} & SPSS C&DS engine notebook ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/AI%20OpenScale%20and%20SPSS%20C%26DS%20Engine.ipynb){: new_window}.
 
 - Store the request and response in the payload logging table
 
@@ -331,20 +335,11 @@ You will need to have the training data of your model available in Db2 or Cloud 
 ### Scoring and payload logging
 {: #cml-azscore}
 
-- Score your model, then convert the request and response to the form used by {{site.data.keyword.aios_short}}. For a full example, see the [Working with Azure Machine Learning Studio Engine notebook ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/AI%20OpenScale%20and%20Azure%20ML%20Studio%20Engine.ipynb){: new_window}.
+- Score your model. For a full example, see the [Working with Azure Machine Learning Studio Engine notebook ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/AI%20OpenScale%20and%20Azure%20ML%20Studio%20Engine.ipynb){: new_window}.
 
-- Store the request and response in the payload logging table
-
-    Transform the model's input and output to the format compatible with the {{site.data.keyword.aios_short}} standard:
+- Store the request and response in the payload logging table:
 
     ```python
-
-    request_data = {'fields': list(data['Inputs']['input1'][0]),
-           'values': [list(x.values()) for x in data['Inputs']['input1']]}
-
-    response_data = {'fields': list(result['Results']['output1'][0]),
-            'values': [list(x.values()) for x in result['Results']['output1']]}
-
     records_list = [PayloadRecord(request=request_data, response=response_data, response_time=response_time),
                     PayloadRecord(request=request_data, response=response_data, response_time=response_time)]
 
@@ -460,23 +455,11 @@ You will need to have the training data of your model available in Db2 or Cloud 
 ### Scoring and payload logging
 {: #cml-smscore}
 
-- Score your model, then convert the request and response to the form used by {{site.data.keyword.aios_short}}. For a full example, see the [Working with SageMaker Machine Learning Engine notebook ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/AI%20OpenScale%20and%20SageMaker%20ML%20Engine.ipynb){: new_window}.
+- Score your model. For a full example, see the [Working with SageMaker Machine Learning Engine notebook ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/AI%20OpenScale%20and%20SageMaker%20ML%20Engine.ipynb){: new_window}.
 
 - Store the request and response in the payload logging table
 
-    Transform the model's input and output to the format compatible with the {{site.data.keyword.aios_short}} standard:
-
     ```python
-    values = []
-
-    for v in payload.split('\n'):
-           values.append([float(s) for s in v.split(',')])
-
-    request_data = {'fields': fields, 'values': values}
-
-    response_data = {'fields': list(result['predictions'][0]),
-           'values': [list(x.values()) for x in result['predictions']]}
-
     records_list = [PayloadRecord(request=request_data, response=response_data, response_time=response_time),
                     PayloadRecord(request=request_data, response=response_data, response_time=response_time)]
 
@@ -526,6 +509,6 @@ You will need to have the training data of your model available in Db2 or Cloud 
 ## Next steps
 {: #cml-next}
 
-- To continue with the {{site.data.keyword.aios_short}} client, see the "[Specify your database](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-cdb-connect)" topic.
+- To continue with the {{site.data.keyword.aios_short}} client, see the "[Specifying a database](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-cdb-connect)" topic.
 
 - To continue with the Python command library, refer to the [Python client documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://ai-openscale-python-client.mybluemix.net/){: new_window}.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-03-07"
 
 ---
 
@@ -38,7 +38,7 @@ Your first step in the {{site.data.keyword.aios_short}} tool is to specify a ser
 
     ![Select custom](images/connect-custom-deploy.png)
 
-1.  Enter your credentials:
+1.  If you selected the "Enter individual scoring endpoints" tile, enter your credentials:
 
     ![Enter service credentials](images/connect-custom-cred.png)
 
@@ -75,15 +75,15 @@ This image shows the Custom environment support:
 
 You can also reference the following links:
 
-[AIOS payload logging API](https://{DomainName}/apidocs/ai-openscale#publish-scoring-payload)
+[AIOS payload logging API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/ai-openscale#publish-scoring-payload){: new_window}
 
-[Custom deployment API](https://aiopenscale-custom-deployement-spec.mybluemix.net/)
+[Custom deployment API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://aiopenscale-custom-deployement-spec.mybluemix.net/){: new_window}
 
-[Python client binding SDK](http://ai-openscale-python-client.mybluemix.net/#bindings)
+[Python client binding SDK ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://ai-openscale-python-client.mybluemix.net/#bindings){: new_window}
 
-[AIOS configuration UI - sample code](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/AI%20OpenScale%20and%20Custom%20ML%20Engine.ipynb)
+[Working with Custom machine Learning engine ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/AI%20OpenScale%20and%20Custom%20ML%20Engine.ipynb){: new_window}
 
-[AIOS Python SDK](https://pypi.org/project/ibm-ai-openscale/)
+[Python SDK for IBM Watson OpenScale ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://pypi.org/project/ibm-ai-openscale/){: new_window}
 
 ## Input criteria for model to support monitors
 {: #ccust-inp}

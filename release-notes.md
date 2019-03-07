@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-05"
+lastupdated: "2019-03-07"
 
 ---
 
@@ -20,6 +20,32 @@ lastupdated: "2019-03-05"
 
 This document outlines new features and known issues for {{site.data.keyword.aios_full_notm}}.
 {: shortdesc}
+
+## 5 March 2019
+{: #rn-5March2019}
+
+The following new features and changes to the service are available.
+
+### New features and changes
+{: #rn-5March2019nf}
+
+{{site.data.keyword.aios_short}} features that have been added or enhanced since the previous release include:
+
+- __*New Credit Risk model*__: A new Credit Risk model example/tutorial is supported for all scoring engines. For more information see the [Getting started](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-gs-get-started#gs-get-started) and [Additional resources](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-arsc-ov#arsc-ov) topics.
+
+- __*Computing debias*__: You can toggle between your production model and a de-biased model created by {{site.data.keyword.aios_short}}. See [Production model and De-biased model](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-itc-timechart#itc-prdb) and [Understanding how de-biasing works](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-mf-monitor#mf-debias) for more information.
+
+## 22 February 2019
+{: #rn-22February2019}
+
+The following new features and changes to the service are available.
+
+### New features and changes
+{: #rn-22February2019nf}
+
+{{site.data.keyword.aios_short}} features that have been added or enhanced since the previous release include:
+
+- __*UI updates*__: You can import a JSON file to programmatically configure all monitors and features during subscription creation. You can also export the configuration file. See the [Configure deployment subscription using JSON files](/docs/services/ai-openscale?topic=ai-openscale-cf-ov) topic for more information.
 
 ## 7 February 2019
 {: #rn-7February2019}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-05"
+lastupdated: "2019-03-07"
 
 ---
 
@@ -77,6 +77,10 @@ For numeric or categorical data, you need to provide information about the train
         - For Cloud Object Storage, complete the following:
 
             - Log-in URL
+
+              The Login URL must match the region setting of the bucket where your training data is located. You will specify the training data bucket in the next step.
+              {: important}
+
             - Resource instance (ID)
             - API key
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-07"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated: "2019-02-27"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# Specify your database
+# Specifying a database
 {: #cdb-connect}
 
 Specify a database for your {{site.data.keyword.aios_short}} instance to use.
@@ -31,6 +31,7 @@ Specify a database for your {{site.data.keyword.aios_short}} instance to use.
     ![Select database](images/gs-config-database.png)
 
 ### Free Lite plan database
+{: #cdb-lite}
 
 The free Lite plan database has some important limitations:
 
@@ -43,10 +44,14 @@ To proceed with using the free Lite plan database, simply select that option, th
   ![Select database](images/gs-config-database2.png)
 
 ### Existing or new database
+{: #cdb-exn}
 
 1.  Once you have selected the "Use existing or purchase new database" option, {{site.data.keyword.aios_short}} checks your {{site.data.keyword.cloud_notm}} account to locate any existing databases.
 
 1.  Select your existing database type (Compose for Postgres, Database for Postgres, or Db2), then a database from the **Database** drop-down menu, and then a **Schema**:
+
+    {{site.data.keyword.aios_short}} uses a PostgreSQL or Db2 database to store model deployment output and retraining data. Lite Db2 plans are not currently supported.
+    {: note}
 
     ![Select database](images/gs-config-database3.png)
 
@@ -87,6 +92,9 @@ To proceed with using the free Lite plan database, simply select that option, th
 
     - Once you have successfully connected, you can select a schema.
 
+      The schema name needs to be provided explicitly if you provide a Db2 instance with limited access, which does not allow the schema name to be automatically generated. This applies to the Entry Db2 Warehouse plan.
+      {: important}
+
       ![Select schema](images/gs-config-database5.png)
 
 Click **Next** to review the summary data, then click **Save**.
@@ -99,7 +107,7 @@ To configure monitors, {{site.data.keyword.aios_short}} requires you to send a s
 Models deployed in Watson Machine Learning are automatically scored by {{site.data.keyword.aios_short}}. If you only have models deployed in Watson Machine Learning, you will not see this screen.
 {: note:}
 
-Select a deployment, in this case "Fraud Detector", and then use the provided `cURL` or `Python` code snippets to log model deployment request and response data.
+Select a deployment, in this case "Fraud Detector", and then use the provided `cURL` or `Python` code snippets to log model deployment request and response data. See [Payload logging for non-Watson Machine Learning service instances](/docs/services/ai-openscale?topic=ai-openscale-cml-connect) for more detail.
 
 The fields and values in the code snippets need to be substituted with your real values, as the ones provided are only examples.
 {: important}

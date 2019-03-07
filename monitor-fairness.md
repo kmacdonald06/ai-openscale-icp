@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-05"
+lastupdated: "2019-03-07"
 
 ---
 
@@ -56,7 +56,7 @@ Consider a data point where, for `Gender=Male` (Reference value), the model pred
 ### Supported models
 {: #mf-uns}
 
- {{site.data.keyword.aios_short}} supports bias detection only for those models and Python functions which expect some kind of structured data in its feature vector. In the current release, bias detection is supported only for classification models (models which predict a categorical value); {{site.data.keyword.aios_short}} does not support bias detection for regression models (models which predict a continuous value).
+ {{site.data.keyword.aios_short}} supports bias detection only for those models and Python functions which expect some kind of structured data in its feature vector.
 
 ## Configuring the Fairness monitor
 {: #mf-config}
@@ -126,6 +126,29 @@ Consider a data point where, for `Gender=Male` (Reference value), the model pred
     You can also select the **Add another feature** link to return to the feature selection screen and add more features to the Fairness monitor, for example: `City`, `Zip Code` or `Account Balance`.
 
 1.  Click **Save** to complete your configuration.
+
+### Understanding how de-biasing works
+{: #mf-debias}
+
+You will then be presented with a screen that provides a de-biased scoring endpoint.
+
+  ![Debias API](images/fair-debias-api.png)
+
+The de-biased scoring endpoint can be used exactly as the normal scoring endpoint of your deployed model. In addition to returning the response of your deployed model, it also returns two extra columns called `debiased_prediction` and `debiased_probability`.
+
+- The `debiased_prediction` column contains the debiased prediction value. In the case of Watson Machine Learning (WML), this is an encoded representation of the prediction. For example, if the model prediction is either "Loan Granted" or "Loan Denied", WML can encode these two values to "0.0" and "1.0", respectively. The `debiased_prediction` column contains such an encoded representation of the debiased prediction.
+
+- The `debiased_probability` column, on the other hand, represents the probability of the debiased prediction. This is an array of double value, where each value represents the probability of the de-biased prediction belonging to one of the prediction classes.
+
+One another column, `debiased_decoded_target`, is also returned, in case you have a column in your output schema that contains a column with `modeling-role` as `decoded-target`.
+
+- The `debiased_decoded_target` column contains the string representation of the debiased prediction. In the above example, where the prediction value was either "0.0" or "1.0", the `debiased_decoded_target` will contain either "Loan Granted" or "Loan Denied".
+
+Ideally, you would directly call this endpoint from your production application, instead of directly calling the scoring endpoint of your model deployed in your model serve engine (Watson Machine Learning, Amazon Sagemaker, Microsoft Azure ML Studio, etc.) This way, {{site.data.keyword.aios_short}} will also store the `debiased` values in the payload logging table of your model deployment. Then, all scoring done via this endpoint would be automatically de-biased.
+
+Because this endpoint deals with runtime bias, it will continue to run background checks for the latest scoring data from the payload logging table, and keep updating the bias mitigation model which is used to de-bias the scoring requests sent. In this way, {{site.data.keyword.aios_short}} is always up-to-date with the latest incoming data, and with its behavior to detect and mitigate bias.
+
+Finally, {{site.data.keyword.aios_short}} uses a threshold to decide that data is now acceptable and is deemed to be unbiased. That threshold is taken as the least value from the thresholds set in the Fairness monitor for all the fairness attributes configured.
 
 ## Next steps
 {: #mf-next}
