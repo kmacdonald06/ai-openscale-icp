@@ -75,6 +75,9 @@ Select the *Add Feedback Data* button to upload a CSV-formatted data file; set t
 The feedback CSV file is expected to have all feature values, and the manually assigned target/label value. For example, the drug model training data contains feature values `"AGE"`, `"SEX"`, `"BP"`, `"CHOLESTEROL"`,`"NA"`,`"K"`, and the target/label value `"DRUG"`. The feedback CSV file needs to include values for those fields; an example would look like `[43, M, HIGH, NORMAL, 0.6345, 1.4587, DrugX]`. If a header is provided for the feedback CSV file, then field names are mapped using the header. Otherwise the field order **MUST** be exactly the same as in the training schema.
 {: important}
 
+Please note that prediction types returned by your model, and the label/target column in your feedback data, must match.
+{: note}
+
   ![Accuracy delimiter](images/accuracy-delimit.png)
 
 File sizes are currently limited to 8MB.
