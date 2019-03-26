@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-05"
+lastupdated: "2019-03-26"
 
 ---
 
@@ -88,9 +88,10 @@ Download the appropriate package, by part number, from [IBM Passport Advantage !
 
     - **Standalone**: The standalone {{site.data.keyword.icpfull_notm}} for Data package, part number *CNY56EN*. This is a `.bin` file that includes both the {{site.data.keyword.icpfull_notm}} 3.1.0 platform, and {{site.data.keyword.icpfull_notm}} for Data 1.2 Enterprise Edition. The part number is for the {{site.data.keyword.icpfull_notm}} for Data Starter package.
 
-1.  {{site.data.keyword.icpfull_notm}} for Data 1.2.0.1 Watson Machine Learning Extension package
+1.  {{site.data.keyword.icpfull_notm}} for Data Watson Machine Learning Extension package
 
-    - Download part number *CC092EN*. This is a `.bin` file.
+    - For version 1.2.0.1, download part number *CC092EN*. This is a `.bin` file.
+    - For version 1.2.1, download part number * CC0ENEN*. This is a `.bin` file.
 
 1.  IBM Event Streams V2018.3.1 for Linux on x86 64-bit Multilingual
 
