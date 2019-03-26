@@ -91,7 +91,7 @@ Download the appropriate package, by part number, from [IBM Passport Advantage !
 1.  {{site.data.keyword.icpfull_notm}} for Data Watson Machine Learning Extension package
 
     - For version 1.2.0.1, download part number *CC092EN*. This is a `.bin` file.
-    - For version 1.2.1, download part number * CC0ENEN*. This is a `.bin` file.
+    - For version 1.2.1, download part number *CC0ENEN*. This is a `.bin` file.
 
 1.  IBM Event Streams V2018.3.1 for Linux on x86 64-bit Multilingual
 
