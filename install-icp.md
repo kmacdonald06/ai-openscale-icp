@@ -87,12 +87,11 @@ Download the appropriate package, by part number, from [IBM Passport Advantage !
 
 1.  {{site.data.keyword.icpfull_notm}} for Data version 1.2, running on {{site.data.keyword.icpfull_notm}} version 3.1.0.
 
-    - **Standalone**: The standalone {{site.data.keyword.icpfull_notm}} for Data package, part number *CNY56EN*. This is a `.bin` file that includes both the {{site.data.keyword.icpfull_notm}} 3.1.0 platform, and {{site.data.keyword.icpfull_notm}} for Data 1.2 Enterprise Edition. The part number is for the {{site.data.keyword.icpfull_notm}} for Data Starter package.
+    - **Standalone**: The standalone {{site.data.keyword.icpfull_notm}} for Data package, part number *CNY56EN*. This is a `.bin` file that includes both the {{site.data.keyword.icpfull_notm}} 3.1.0 platform, and {{site.data.keyword.icpfull_notm}} for Data 1.2 Enterprise Edition. The part number is for the {{site.data.keyword.icpfull_notm}} for Data Enterprise Edition package.
 
 1.  {{site.data.keyword.icpfull_notm}} for Data Watson Machine Learning Extension package
 
     - For version 1.2.0.1, download part number *CC092EN*. This is a `.bin` file.
-    - For version 1.2.1, download part number *CC0ENEN*. This is a `.bin` file.
 
 1.  IBM Event Streams V2018.3.1 for Linux on x86 64-bit Multilingual
 
@@ -837,5 +836,5 @@ The uninstallation will prompt for {{site.data.keyword.icpfull_notm}} Admin `use
 
 Use the {{site.data.keyword.aios_short}} tool to monitor your AI models for bias and accuracy.
 
-- To learn more about the {{site.data.keyword.aios_short}} service first, read the [About](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-abt-about) topic.
+- To learn more about the {{site.data.keyword.aios_short}} service, see [About](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-abt-about).
 - To see how it works for yourself, follow the steps in the [Getting Started](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-gs-get-started) tutorial.

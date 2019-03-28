@@ -41,15 +41,15 @@ The credit risk model provided in this tutorial uses a training dataset that con
 This tutorial uses a Jupyter notebook that should be run using a "Python 3.5 with Spark" runtime environment. It requires service credentials for the following {{site.data.keyword.cloud_notm}} services:
 
 - {{site.data.keyword.aios_short}}
-- Watson Machine Learning
-- Db2 Warehouse
+- {{site.data.keyword.pm_full}}
+- {{site.data.keyword.dashdblong}}
 
 The Jupyter notebook will train, create and deploy a German Credit Risk model, configure {{site.data.keyword.aios_short}} to monitor that deployment, and provide seven days' worth of historical records and measurements for viewing in the {{site.data.keyword.aios_short}} Insights dashboard.
 
 ## Introduction
 {: #crt-intro}
 
-In this tutorial, you will:
+In this tutorial, you learn to perform the following tasks:
 
 - Provision {{site.data.keyword.cloud_notm}} machine learning and storage services
 - Run a Python notebook to create, train and deploy a machine learning model. Then, create a data mart, configure performance, accuracy, and fairness monitors, and create data to monitor
@@ -60,20 +60,19 @@ In this tutorial, you will:
 
 Login to your [{{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}) with your {{site.data.keyword.ibmid}}. When provisioning services, particularly in the case of Db2 Warehouse, verify that your selected organization and space are the same for all services.
 
-### Provision a Watson Machine Learning service
+### Provision a {{site.data.keyword.pm_short}} service
 {: #crt-wml}
 
-- [Provision a Watson Machine Learning instance ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/machine-learning) if you do not already have one associated with your account:
+- [Provision a {{site.data.keyword.pm_short}} instance ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/machine-learning) if you do not already have one associated with your account:
 
   ![Machine Learning](images/machine_learning.png)
 
 - Give your service a name, choose the Lite (free) plan, and click the **Create** button.
 
-### Provision a Db2 Warehouse service
+### Provision a {{site.data.keyword.dashdblong_notm}} service
 {: #crt-db2}
 
-- [Provision a Db2 Warehouse service ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/db2-warehouse) if you do not already have one associated with your account:
-
+- [Provision a {{site.data.keyword.dashdblong_notm}} service ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/db2-warehouse) if you do not already have one associated with your account. {{site.data.keyword.dashdblong_notm}} is included (at no cost) for {{site.data.keyword.aios_short}} customers on {{site.data.keyword.icpfull}} for Data. You can choose to use the version that is included with {{site.data.keyword.icpfull}} for Data or use an existing installed version that you might have. 
   ![Db2 Warehouse](images/db2_warehouse.png)
 
 - Give your service a name, choose the Entry plan, and click the **Create** button.
@@ -89,21 +88,15 @@ Login to your [{{site.data.keyword.cloud_notm}} account ![External link icon](..
 ### Edit and run the `IBM Watson OpenScale Lab instructions` notebook
 {: #crt-edit-notebook}
 
-The `IBM Watson OpenScale Lab instructions` notebook contains detailed instructions for each step in the Python code you will run. As you work through the notebook, take some time to understand what each command is doing.
-{: tip}
+The `IBM Watson OpenScale Lab instructions` notebook contains detailed instructions for each step in the Python code you will run. As you work through the notebook, take some time to understand what each command is doing. Open the notebook in {{site.data.keyword.DSX}} or any Jupyter notebook editor. For more information about working with notebooks in {{site.data.keyword.DSX_full}}, see [Notebooks](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/dsx/notebooks-parent.html).
 
 - In the "Provision services and configure credentials" section, make the following changes:
 
     - Follow the instructions to create, copy, and paste an {{site.data.keyword.cloud_notm}} API key.
 
-    - Replace the Watson Machine Learning (WML) and Db2 service credentials with the ones you created previously.
+    - Replace the {{site.data.keyword.pm_full}} and {{site.data.keyword.dashdblong}} service credentials with the ones you created previously.
 
-    - Replace the DB credentials with the ones you created for Db2 Warehouse.
-
-    - If you previously configured {{site.data.keyword.aios_short}} to use a free internal PostgreSQL database as your data mart, you can switch to a new data mart that uses Db2 Warehouse. To delete your old PostgreSQL configuration and create a new one using Db2 Warehouse, set the KEEP_MY_INTERNAL_POSTGRES variable to `False`.
-
-        The notebook will remove your existing internal PostgreSQL data mart and create a new data mart with the supplied DB credentials. **No data migration will occur**.
-        {: important}
+    - Replace the database credentials with the ones you created for {{site.data.keyword.dashdblong}}.
 
 - After you provision your services and enter your credentials, your notebook is ready to run. Run each step of the notebook in sequence. Notice what is happening at each step, as described. Complete all the steps, up through and including the steps in the "Additional data to help debugging" section.
 
@@ -136,9 +129,6 @@ Now, you can review the charts for the data you monitored. For this example, you
 
 ### View explainability for a model transaction
 {: #crt-view-explain}
-
-Please note that if you are using the internal lite version of PostgreSQL, you may not be able to retrieve your database credentials, which will prevent you from seeing transactions.
-{: note}
 
 Select the **View transactions** button from the charts for the latest biased data.
 
