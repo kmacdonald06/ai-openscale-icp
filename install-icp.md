@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-26"
+lastupdated: "2019-03-28"
 
 ---
 
@@ -47,26 +47,27 @@ This configuration requires a minimum of four servers, either physical or virtua
 
 | Node type | Number of servers (BM/VM) | CPU | RAM | Disk partition
 |:---|:---:|:---:|:---:|:---
-| Master/worker | 3 | 18 cores | 64 GB | 50GB for root file system |
-| | | | | 500 GB mounted XFS file system for the installation path. This path is for the installer data storage on each node. |
-| | | | | 500 GB mounted XFS file system for the data path. The data path is for user data storage. This amount provides 500 GB usable space for user data with 3x replication. Depending on the user workload, more disk space might be required. |
+| Master/worker | 3 | 32 cores | 128 GB | 100GB for root file system |
+| | | | | Minimum of 400 GB mounted XFS file system for the installation path. This path is for the installer data storage on each node. Must be high-performance disk drive, such as SSD. |
+| | | | | Minimum of 400 GB mounted XFS file system for the data path. The data path is for user data storage. This amount provides 400 GB usable space for user data with 3x replication. Depending on the user workload, more disk space might be required. |
 | | | | | Optional: 200GB raw disk for the Docker devicemapper. If you do not provide this raw disk, you must have 600 GB minimum for the installation path. |
+| Load balancer | 1 | Minimum 4 cores | 8GB | Minimum 100GB This minimum requirement for one load balancer is for clients using {{site.data.keyword.pm_full}}. It is not required for configurations where load balancing is handled by other providers, such as services hosted by Google or AWS. |
 
 ### Hardware and software requirements for a six-node configuration
 {: #inst-hws}
 
-This configuration requires a minimum of seven servers, either physical or virtual machines, three acting as `master` nodes, three acting as `worker` nodes, and one acting as load balancer.
+This configuration requires a minimum of seven servers, either physical or virtual machines, three acting as `master` nodes, three acting as `worker` nodes, and one acting as load balancer. 
 
 | Node type | Number of servers (BM/VM) | CPU | RAM | Disk partition
 |:---|:---:|:---:|:---:|:---
-| Master | 3 | 8 cores | 16 GB | 50GB for root file system |
-| | | | | 500 GB mounted XFS file system for the installation path. This path is for the installer data storage on each node. |
-| | | | | 500 GB mounted XFS file system for the data path. The data path is for user data storage. This amount provides 500 GB usable space for user data with 3x replication. Depending on the user workload, more disk space might be required. |
-| | | | | Optional: 200GB raw disk for the Docker devicemapper. If you do not provide this raw disk, you must have 600 GB minimum for the installation path. |
-| Worker | 3 | 16 cores | 64 GB | 50GB for root file system |
-| | | | | 500 GB mounted XFS file system for the installation path. This path is for the installer data storage on each node. |
-| | | | | 500 GB mounted XFS file system for the data path. The data path is for user data storage on each of the three worker nodes in the cluster. This amount provides 500 GB usable space for user data with 3x replication. Depending on the user workload, more disk space might be required. |
-| | | | | Optional: 200GB raw disk for the Docker devicemapper. If you do not provide this raw disk, you must have 600 GB minimum for the installation path. |
+| Master | 3 | 16 cores | 32 GB | 100 GB for root file system |
+| | | | | 400 GB mounted XFS file system for the installation path. This path is for the installer data storage on each node. Must be high-performance disk drive, such as SSD. |
+| | | | | 400 GB mounted XFS file system for the data path. The data path is for user data storage. This amount provides 500 GB usable space for user data with 3x replication. Depending on the user workload, more disk space might be required. |
+| | | | | Optional: 200 GB raw disk for the Docker devicemapper. If you do not provide this raw disk, you must have 600 GB minimum for the installation path. |
+| Worker | 3 | 16 cores | 128 GB | 100 GB for root file system |
+| | | | | 400 GB mounted XFS file system for the installation path. This path is for the installer data storage on each node. |
+| | | | | 400 GB mounted XFS file system for the data path. The data path is for user data storage on each of the three worker nodes in the cluster. This amount provides 400 GB usable space for user data with 3x replication. Depending on the user workload, more disk space might be required. |
+| | | | | Optional: 200 GB raw disk for the Docker devicemapper. If you do not provide this raw disk, you must have 600 GB minimum for the installation path. |
 
 ### Db2 Warehouse requirements
 {: #inst-hwd}
@@ -77,7 +78,7 @@ If you plan to deploy a Db2 Warehouse database in your IBM Cloud Private for Dat
 |:---|:---:|:---:|:---|:---
 | Worker | 1 | 8 cores | 64 GB | TB storage is suitable for one database with the minimum configuration described. |
 | | | | Minimum core-to-memory ratio: 1:8 | With multiple Db2 Warehouse pod deployments, or other workloads that use the same storage object class, more storage space is needed. |
-| | | | Recommended core-to-memory ratio for improved performance: 1:16 | 5 TB as a starter is strongly recommended. |
+| | | | Recommended core-to-memory ratio for improved performance: 1:16 | 5 TB as a starter is strongly recommended, depending on the amount of scoring that you will be performing. |
 
 ## Software requirements
 {: #inst-sw}
@@ -106,7 +107,7 @@ Download the appropriate package, by part number, from [IBM Passport Advantage !
     - Download the file associated with part number *CNZC1EN*. This is a `tar.gz` file.
 
 <!---
-
+MIKE: After April 16th change 3.1.0 to 3.1.2
 ## Installation artifacts
 {: #inst-af}
 
@@ -144,13 +145,13 @@ Follow the instructions for [Installing the stand-alone version of IBM Cloud Pri
 1.  Modify `/etc/hosts` to include all nodes, for example:
 
     ```curl
-    169.62.226.17 aios-icp4d-01.ibm.cloud aios-icp4d-01
-    169.62.226.29 aios-icp4d-02.ibm.cloud aios-icp4d-02
-    169.62.226.4 aios-icp4d-03.ibm.cloud aios-icp4d-03
-    169.62.226.6 aios-icp4d-04.ibm.cloud aios-icp4d-04
-    169.62.226.30 aios-icp4d-05.ibm.cloud aios-icp4d-05
-    169.62.226.8 aios-icp4d-06.ibm.cloud aios-icp4d-06
-    169.62.226.21 aios-icp4d-lb.ibm.cloud aios-icp4d-lb
+    <server-01-IP> aios-icp4d-01.ibm.cloud aios-icp4d-01
+    <server-02-IP> aios-icp4d-02.ibm.cloud aios-icp4d-02
+    <server-03-IP> aios-icp4d-03.ibm.cloud aios-icp4d-03
+    <server-04-IP> aios-icp4d-04.ibm.cloud aios-icp4d-04
+    <server-05-IP> aios-icp4d-05.ibm.cloud aios-icp4d-05
+    <server-06-IP> aios-icp4d-06.ibm.cloud aios-icp4d-06
+    <server-07-IP> aios-icp4d-lb.ibm.cloud aios-icp4d-lb
     ```
 
 1.  Configure SSH key password-less access from the first master node to all other nodes.
@@ -628,9 +629,9 @@ At the end of the Watson Machine Learning module installation into ICP4D, add th
   backend wml
       mode tcp
       balance roundrobin
-      server server1 169.62.249.124:31002
-      server server2 169.62.249.100:31002
-      server server3 169.62.249.99:31002
+      server server1 <master01-IP>:31002
+      server server2 <master02-IP>:31002
+      server server3 <master03-IP>:31002
 
   frontend wml-envoy
       bind *:32006
@@ -641,12 +642,12 @@ At the end of the Watson Machine Learning module installation into ICP4D, add th
   backend wml-envoy
       mode tcp
       balance roundrobin
-      server server1 169.62.249.124:32006
-      server server2 169.62.249.100:32006
-      server server3 169.62.249.99:32006
+      server server1 <master01-IP>:32006
+      server server2 <master02-IP>:32006
+      server server3 <master03-IP>:32006
   ```
 
-  Change the IP address to the private IP address of all the cluster master nodes.
+  Change the IP address to the IP address of all the cluster master nodes.
   {: note}
 
   The server name in this configuration file always starts from `server1`, `server2`, `server3`, etc.
@@ -741,8 +742,14 @@ To uninstall, run:
 
 Follow the instructions for [Downloading the database installation package ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/zen/admin/download-db-pkg.html#download-db2-warehouse-pkg), in the IBM Knowledge Center.
 
-When configuring this package, Db2 **must** have the non-SSL port enabled.
-{: important}
+## Log into the {{site.data.keyword.icpfull_notm}} for Data cluster 
+{: #log-cluster}
+
+Enter the following command:
+
+`cloudctl login`
+
+When prompted, enter your ICP Admin username and password.
 
 ## Install IBM Event Streams V2018.3.1 for Linux and {{site.data.keyword.aios_full_notm}} for {{site.data.keyword.icpfull_notm}}
 {: #inst-es-aios}
@@ -774,7 +781,7 @@ When configuring this package, Db2 **must** have the non-SSL port enabled.
 
 1.  Finally, install {{site.data.keyword.aios_short}}
 
-    If your cluster has not been prepared using an embedded {{site.data.keyword.icpfull_notm}} for Data installation, you need to perform the following steps:
+    If your cluster has not been installed using an embedded {{site.data.keyword.icpfull_notm}} for Data installation, you need to perform the following steps:
     {: important}
 
     - Update the environment variable settings in the `common.sh` file included in the {{site.data.keyword.aios_short}} tarball.
@@ -801,11 +808,11 @@ When configuring this package, Db2 **must** have the non-SSL port enabled.
     ./install_aios.sh
     ```
 
-  The installation will prompt you to read and accept the license agreement, {{site.data.keyword.icpfull_notm}} `username` and `password`, {{site.data.keyword.icpfull_notm}} for Data `username` and `password`, Event Streams release name, and Event Streams namespace.
+  The installation will prompt you to read and accept the license agreement, {{site.data.keyword.icpfull_notm}} for Data Admin `username` and `password`, {{site.data.keyword.icpfull_notm}} Admin `username` and `password`, Event Streams release name, and Event Streams namespace.
 
   Default values are provided wherever possible. You should use the default values if you follow the installation steps for {{site.data.keyword.icpfull_notm}} for Data, Watson Machine Learning, and Event Streams, as defined in this document.
 
-## Post-installation
+## Verifying your installation
 {: #inst-po}
 
 - Log into the {{site.data.keyword.icpfull_notm}} for Data [Management Console ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.3/manage_cluster/cfc_gui.html), then go to the *Add-ons* page by clicking the icon in the upper-right corner of the screen.
@@ -823,7 +830,7 @@ When configuring this package, Db2 **must** have the non-SSL port enabled.
 
 1.  Run `./uninstall_aios.sh`
 
-The uninstallation will prompt for {{site.data.keyword.icpfull_notm}} username and password.
+The uninstallation will prompt for {{site.data.keyword.icpfull_notm}} Admin `username` and `password`.
 
 ## Next steps
 {: #inst-next}
