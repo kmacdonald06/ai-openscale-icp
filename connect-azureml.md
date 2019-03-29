@@ -52,4 +52,4 @@ Your first step in the {{site.data.keyword.aios_short}} tool is to specify a Mic
 ## Next steps
 {: #caz-next}
 
-{{site.data.keyword.aios_short}} is now ready for you to [specify your database](docs/services/ai-openscale-icp?topic=ai-openscale-icp-cdb-connect).
+{{site.data.keyword.aios_short}} is now ready for you to [specify your database](ai-openscale-icp?topic=ai-openscale-icp-cdb-connect).
