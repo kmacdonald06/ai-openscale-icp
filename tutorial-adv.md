@@ -31,51 +31,59 @@ To provide credit access to a wider and riskier population, applicant credit his
 
 The data science techniques most suited to these diverse datasets, such as gradient boosted trees and neural networks, can generate highly accurate risk models, but at a cost. Such "black box" models generate opaque predictions that must somehow become transparent, to ensure regulatory approval such as Article 22 of the General Data Protection Regulation (GDPR), or the federal Fair Credit Reporting Act (FCRA) managed by the Consumer Financial Protection Bureau.
 
-The credit risk model provided in this tutorial uses a training dataset that contains 20 attributes about each loan applicant. Two of those attributes - age and sex - can be tested for bias. For this tutorial, the focus will be on bias against sex and age.
+The credit risk model provided in this tutorial uses a training dataset that contains 20 attributes about each loan applicant. Two of those attributes - age and sex - can be tested for bias. For this tutorial, the focus is on bias against sex and age.
 
-{{site.data.keyword.aios_short}} will monitor the deployed model's propensity for a favorable outcome ("No Risk") for one group (the Reference Group) over another (the Monitored Group). In this tutorial, the Monitored Group for sex is `female`, while the Monitored Group for age is `18 to 25`.
+{{site.data.keyword.aios_short}} monitors the deployed model's propensity for a favorable outcome ("No Risk") for one group (the Reference Group) over another (the Monitored Group). In this tutorial, the Monitored Group for sex is `female`, while the Monitored Group for age is `18 to 25`.
 
 ## Prerequisites
 {: #crt-prereqs}
 
-This tutorial uses a Jupyter notebook that should be run using a "Python 3.5 with Spark" runtime environment. It requires service credentials for the following {{site.data.keyword.cloud_notm}} services:
+This tutorial uses a Jupyter notebook that should be run by using the "Python 3.5 with Spark" runtime environment. It requires service credentials for the following {{site.data.keyword.cloud_notm}} services:
 
 - {{site.data.keyword.aios_short}}
 - {{site.data.keyword.pm_full}}
 - {{site.data.keyword.dashdblong}}
 
-The Jupyter notebook will train, create and deploy a German Credit Risk model, configure {{site.data.keyword.aios_short}} to monitor that deployment, and provide seven days' worth of historical records and measurements for viewing in the {{site.data.keyword.aios_short}} Insights dashboard.
+Use the Jupyter notebook to train, create and deploy a German credit risk model, configure {{site.data.keyword.aios_short}} to monitor that deployment, and provide seven days' worth of historical records and measurements for viewing in the {{site.data.keyword.aios_short}} Insights dashboard.
 
 ## Introduction
 {: #crt-intro}
 
 In this tutorial, you learn to perform the following tasks:
 
-- Provision {{site.data.keyword.cloud_notm}} machine learning and storage services
-- Run a Python notebook to create, train and deploy a machine learning model. Then, create a data mart, configure performance, accuracy, and fairness monitors, and create data to monitor
-- View results in the {{site.data.keyword.aios_short}} Insights tab
+- Provision {{site.data.keyword.cloud_notm}} machine learning and storage services.
+- Run a Python notebook to create, train and deploy a machine learning model. 
+- Create a data mart, configure performance, accuracy, and fairness monitors, and create data to monitor
+- View results in the {{site.data.keyword.aios_short}} Insights tab.
 
 ## Provision {{site.data.keyword.cloud_notm}} Services
 {: #crt-services}
 
-Login to your [{{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}) with your {{site.data.keyword.ibmid}}. When provisioning services, particularly in the case of Db2 Warehouse, verify that your selected organization and space are the same for all services.
+Log on to your [{{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}) with your {{site.data.keyword.ibmid}}. When provisioning services, particularly in the case of {{site.data.keyword.dashdblong}}, verify that your selected organization and space are the same for all services.
+
+When you choose a plan for each of the following {{site.data.keyword.cloud_notm}} services, there are several options, including a Lite plan. Although the Lite plan is free, it is restricted and provides only enough processing to run through the tutorial a couple of times before the montly limit is reached.
+{: note}
 
 ### Provision a {{site.data.keyword.pm_short}} service
 {: #crt-wml}
 
-- [Provision a {{site.data.keyword.pm_short}} instance ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/machine-learning) if you do not already have one associated with your account:
+If you do not already have a {{site.data.keyword.pm_short}} service, you must provision one. If you have a service that was provisioned as part of your {{site.data.keyword.icpfull}} for Data installation, you must ensure that it is part of the same organization and space.
+
+1. [Provision a {{site.data.keyword.pm_short}} instance ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/machine-learning) if you do not already have one associated with your account:
 
   ![Machine Learning](images/machine_learning.png)
 
-- Give your service a name, choose the Lite (free) plan, and click the **Create** button.
+2. Give your service a name, choose the plan, and click the **Create** button.
 
 ### Provision a {{site.data.keyword.dashdblong_notm}} service
 {: #crt-db2}
 
-- [Provision a {{site.data.keyword.dashdblong_notm}} service ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/db2-warehouse) if you do not already have one associated with your account. {{site.data.keyword.dashdblong_notm}} is included (at no cost) for {{site.data.keyword.aios_short}} customers on {{site.data.keyword.icpfull}} for Data. You can choose to use the version that is included with {{site.data.keyword.icpfull}} for Data or use an existing installed version that you might have. 
+If you do not already have a {{site.data.keyword.dashdblong_notm}} service, you must provision one. If you have a service that was provisioned as part of your {{site.data.keyword.icpfull}} for Data installation, you must ensure that it is part of the same organization and space.
+
+1. [Provision a {{site.data.keyword.dashdblong_notm}} service ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/db2-warehouse) if you do not already have one associated with your account. 
   ![Db2 Warehouse](images/db2_warehouse.png)
 
-- Give your service a name, choose the Entry plan, and click the **Create** button.
+2. Give your service a name, select the plan, and click the **Create** button.
 
 ## Create and deploy a machine learning model
 {: #crt-make-model}
@@ -90,15 +98,12 @@ Login to your [{{site.data.keyword.cloud_notm}} account ![External link icon](..
 
 The `IBM Watson OpenScale Lab instructions` notebook contains detailed instructions for each step in the Python code you will run. As you work through the notebook, take some time to understand what each command is doing. Open the notebook in {{site.data.keyword.DSX}} or any Jupyter notebook editor. For more information about working with notebooks in {{site.data.keyword.DSX_full}}, see [Notebooks](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/dsx/notebooks-parent.html).
 
-- In the "Provision services and configure credentials" section, make the following changes:
+1. In the **Provision services and configure credentials** section, make the following changes:
+    1. Follow the instructions to create, copy, and paste an {{site.data.keyword.cloud_notm}} API key.
+    2. Replace the {{site.data.keyword.pm_full}} and {{site.data.keyword.dashdblong}} service credentials with the ones you created previously.
+    3. Replace the database credentials with the ones you created for {{site.data.keyword.dashdblong}}.
 
-    - Follow the instructions to create, copy, and paste an {{site.data.keyword.cloud_notm}} API key.
-
-    - Replace the {{site.data.keyword.pm_full}} and {{site.data.keyword.dashdblong}} service credentials with the ones you created previously.
-
-    - Replace the database credentials with the ones you created for {{site.data.keyword.dashdblong}}.
-
-- After you provision your services and enter your credentials, your notebook is ready to run. Run each step of the notebook in sequence. Notice what is happening at each step, as described. Complete all the steps, up through and including the steps in the "Additional data to help debugging" section.
+2. After you provision your services and enter your credentials, your notebook is ready to run. Run each step of the notebook in sequence. Notice what is happening at each step, as described. Complete all the steps, including the steps in the **Additional data to help debugging** section.
 
 The net result is that you will have created, trained, and deployed the **Spark German Risk Deployment** model to your {{site.data.keyword.aios_short}} service instance. {{site.data.keyword.aios_short}} will be configured to check the model for bias against sex (in this case, Female) or age (In this case, 18-25 years old).
 
@@ -108,37 +113,37 @@ The net result is that you will have created, trained, and deployed the **Spark 
 ### View insights for your deployment
 {: #crt-view-insights}
 
-Using the [{{site.data.keyword.aios_short}} dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://aiopenscale.cloud.ibm.com/aiopenscale/){: new_window}, click on the **Insights** tab:
+From the [{{site.data.keyword.aios_short}} dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://aiopenscale.cloud.ibm.com/aiopenscale/){: new_window}, click the **Insights** tab:
 
   ![Insights](images/insight-dash-tab.png)
 
-The Insights page provides an overview of metrics for your deployed models. You can easily see alerts for Fairness or Accuracy metrics that have fallen below the threshold set when running the notebook. The data and settings used in this tutorial will have created Accuracy and Fairness metrics similar to the ones shown here.
+The Insights page provides an overview of metrics for your deployed models. You can view alerts for Fairness or Accuracy metrics that have fallen below the threshold set when running the notebook. The data and settings used in this tutorial create Accuracy and Fairness metrics similar to the ones shown here.
 
   ![Insight overview](images/insight-overview-adv-tutorial-2.png)
 
 ### View monitoring data for your deployment
 {: #crt-view-mon-data}
 
-Select a deployment by clicking the tile on the Insights page. The monitoring data for that deployment will appear. Slide the marker across the chart to select data for a specific one-hour window. Then select the **View details** link.
+Select a deployment by clicking the tile on the **Insights** page. The monitoring data for that deployment will appear. Slide the marker across the chart to select data for a specific one-hour window. Then select the **View details** link.
 
   ![Monitor data](images/insight-monitor-data2.png)
 
-Now, you can review the charts for the data you monitored. For this example, you can see that for the "Sex" feature, the group `female` received the favorable outcome "No Risk" slightly less (74%) than the group `male` (78%).
+As you review the charts for the data you monitored, you can see that for the "Sex" feature, the group `female` received the favorable outcome "No Risk" slightly less (74%) than the group `male` (78%).
 
   ![Insight overview](images/insight-review-charts2.png)
 
 ### View explainability for a model transaction
 {: #crt-view-explain}
 
-Select the **View transactions** button from the charts for the latest biased data.
+For the latest biased data, from the charts, click the **View transactions** button.
 
   ![View transactions](images/view_transactions.png)
 
-  A list of transactions where the deployment has acted in a biased manner is listed. Select one of the transactions and click the **Explain** link.
+  A list of transactions where the deployment has acted in a biased manner appears. Select one of the transactions and click the **Explain** link.
 
   ![Transaction list](images/transaction_list_cr.png)
 
-You will now see an explanation of how the model arrived at its conclusion, including how confident the model was, the factors that contributed to the confidence level, and the attributes fed to the model.
+An explanation of how the model arrived at its conclusion appears. This includes how confident the model was, the factors that contributed to the confidence level, and the attributes fed to the model.
 
   ![View Transaction](images/view_transaction_cr.png)
 
