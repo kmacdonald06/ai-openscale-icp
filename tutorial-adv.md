@@ -22,6 +22,12 @@ lastupdated: "2019-03-28"
 # Tutorial - (Advanced)
 {: #crt-ov}
 
+In this tutorial, you learn to perform the following tasks:
+
+- Run a Python notebook to create, train and deploy a machine learning model. 
+- Create a data mart, configure performance, accuracy, and fairness monitors, and create data to monitor.
+- View results in the {{site.data.keyword.aios_short}} Insights tab.
+
 ## Scenario
 {: #crt-scenario}
 
@@ -33,57 +39,30 @@ The data science techniques most suited to these diverse datasets, such as gradi
 
 The credit risk model provided in this tutorial uses a training dataset that contains 20 attributes about each loan applicant. Two of those attributes - age and sex - can be tested for bias. For this tutorial, the focus is on bias against sex and age.
 
-{{site.data.keyword.aios_short}} monitors the deployed model's propensity for a favorable outcome ("No Risk") for one group (the Reference Group) over another (the Monitored Group). In this tutorial, the Monitored Group for sex is `female`, while the Monitored Group for age is `18 to 25`.
+{{site.data.keyword.aios_full}} for {{site.data.keyword.icpfull}} for Data monitors the deployed model's propensity for a favorable outcome ("No Risk") for one group (the Reference Group) over another (the Monitored Group). In this tutorial, the Monitored Group for sex is `female`, while the Monitored Group for age is `18 to 25`.
 
 ## Prerequisites
 {: #crt-prereqs}
 
-This tutorial uses a Jupyter notebook that should be run by using the "Python 3.5 with Spark" runtime environment. It requires service credentials for the following {{site.data.keyword.cloud_notm}} services:
+This tutorial uses a Jupyter notebook that should be run by using the “Python 3.5 with Spark” runtime environment. It requires service credentials for the following {{site.data.keyword.icpfull}} for Data services:
 
 - {{site.data.keyword.aios_short}}
-- {{site.data.keyword.pm_full}}
-- {{site.data.keyword.dashdblong}}
 
-Use the Jupyter notebook to train, create and deploy a German credit risk model, configure {{site.data.keyword.aios_short}} to monitor that deployment, and provide seven days' worth of historical records and measurements for viewing in the {{site.data.keyword.aios_short}} Insights dashboard.
+- {{site.data.keyword.pm_full}}
+
+  You must associate a {{site.data.keyword.pm_short}} instance if you do not already have one associated with your account. If you have a [machine learning service that was provisioned as part of your {{site.data.keyword.icpfull}} for Data installation](ai-openscale-icp?topic=ai-openscale-icp-inst-install-icp#inst-wml), you must ensure that it is part of the same organization and space. 
+  
+- Db2 Warehouse
+  
+  You must associate a Db2 Warehouse service with your account if you do not already have one. If you have a [Db2 Warehouse service that was provisioned as part of your {{site.data.keyword.icpfull}} for Data installation](ai-openscale-icp?topic=ai-openscale-icp-inst-install-icp#inst-db2), you must ensure that it is part of the same organization and space.
+
+When you choose a plan for each of the preceding {{site.data.keyword.icpfull_notm}} for Data services, there are several options, including a Lite plan. Although the Lite plan is free, it is restricted and provides only enough processing to run through the tutorial a couple of times before the montly limit is reached.
+{: note}
 
 ## Introduction
 {: #crt-intro}
 
-In this tutorial, you learn to perform the following tasks:
-
-- Provision {{site.data.keyword.cloud_notm}} machine learning and storage services.
-- Run a Python notebook to create, train and deploy a machine learning model. 
-- Create a data mart, configure performance, accuracy, and fairness monitors, and create data to monitor
-- View results in the {{site.data.keyword.aios_short}} Insights tab.
-
-## Provision {{site.data.keyword.cloud_notm}} Services
-{: #crt-services}
-
-Log on to your [{{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}) with your {{site.data.keyword.ibmid}}. When provisioning services, particularly in the case of {{site.data.keyword.dashdblong}}, verify that your selected organization and space are the same for all services.
-
-When you choose a plan for each of the following {{site.data.keyword.cloud_notm}} services, there are several options, including a Lite plan. Although the Lite plan is free, it is restricted and provides only enough processing to run through the tutorial a couple of times before the montly limit is reached.
-{: note}
-
-### Provision a {{site.data.keyword.pm_short}} service
-{: #crt-wml}
-
-If you do not already have a {{site.data.keyword.pm_short}} service, you must provision one. If you have a service that was provisioned as part of your {{site.data.keyword.icpfull}} for Data installation, you must ensure that it is part of the same organization and space.
-
-1. [Provision a {{site.data.keyword.pm_short}} instance ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/machine-learning) if you do not already have one associated with your account:
-
-  ![Machine Learning](images/machine_learning.png)
-
-2. Give your service a name, choose the plan, and click the **Create** button.
-
-### Provision a {{site.data.keyword.dashdblong_notm}} service
-{: #crt-db2}
-
-If you do not already have a {{site.data.keyword.dashdblong_notm}} service, you must provision one. If you have a service that was provisioned as part of your {{site.data.keyword.icpfull}} for Data installation, you must ensure that it is part of the same organization and space.
-
-1. [Provision a {{site.data.keyword.dashdblong_notm}} service ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/db2-warehouse) if you do not already have one associated with your account. 
-  ![Db2 Warehouse](images/db2_warehouse.png)
-
-2. Give your service a name, select the plan, and click the **Create** button.
+Use the Jupyter notebook to train, create and deploy a German credit risk model, configure {{site.data.keyword.aios_short}} to monitor that deployment, and provide seven days' worth of historical records and measurements for viewing in the {{site.data.keyword.aios_short}} Insights dashboard.
 
 ## Create and deploy a machine learning model
 {: #crt-make-model}
@@ -91,17 +70,18 @@ If you do not already have a {{site.data.keyword.dashdblong_notm}} service, you 
 ### Add the `IBM Watson OpenScale Lab instructions` notebook to your favorite editor
 {: #crt-add-notebook}
 
-- Download the [IBM Watson OpenScale Lab instructions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/emartensibm/german-credit/blob/master/german_credit_lab.ipynb){: new_window}
+1. Download the [IBM Watson OpenScale Lab instructions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/emartensibm/german-credit/blob/master/german_credit_lab.ipynb).{: new_window}
+2. Open the notebook in {{site.data.keyword.DSX}} or any Jupyter or Zeppelin notebook editor. For more information about working with notebooks in {{site.data.keyword.DSX_full}}, see [Notebooks](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/dsx/notebooks-parent.html).
 
 ### Edit and run the `IBM Watson OpenScale Lab instructions` notebook
 {: #crt-edit-notebook}
 
-The `IBM Watson OpenScale Lab instructions` notebook contains detailed instructions for each step in the Python code you will run. As you work through the notebook, take some time to understand what each command is doing. Open the notebook in {{site.data.keyword.DSX}} or any Jupyter notebook editor. For more information about working with notebooks in {{site.data.keyword.DSX_full}}, see [Notebooks](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/dsx/notebooks-parent.html).
+The `IBM Watson OpenScale Lab instructions` notebook contains detailed instructions for each step in the Python code you will run. As you work through the notebook, take some time to understand what each command is doing.
 
 1. In the **Provision services and configure credentials** section, make the following changes:
-    1. Follow the instructions to create, copy, and paste an {{site.data.keyword.cloud_notm}} API key.
-    2. Replace the {{site.data.keyword.pm_full}} and {{site.data.keyword.dashdblong}} service credentials with the ones you created previously.
-    3. Replace the database credentials with the ones you created for {{site.data.keyword.dashdblong}}.
+    1. Follow the instructions to create, copy, and paste an API key.
+    2. Replace the {{site.data.keyword.pm_full}} and Db2 Warehouse service credentials with the ones you created previously.
+    3. Replace the database credentials with the ones you created for Db2 Warehouse.
 
 2. After you provision your services and enter your credentials, your notebook is ready to run. Run each step of the notebook in sequence. Notice what is happening at each step, as described. Complete all the steps, including the steps in the **Additional data to help debugging** section.
 
