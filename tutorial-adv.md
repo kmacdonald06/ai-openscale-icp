@@ -115,6 +115,11 @@ As you review the charts for the data you monitored, you can see that for the "S
 ### View explainability for a model transaction
 {: #crt-view-explain}
 
+For each deployment, you can see explainability data for specific transactions.
+
+If you already know which transaction you want to view, there's a quick way to look it up with the transaction ID. After you click the deployment tile, from the navigator, click the **Explain a transaction** ![Explain a transaction tab](images/insight-transact-tab.png) icon, type the transaction ID, and press **Enter**.
+{: tip}
+
 For the latest biased data, from the charts, click the **View transactions** button.
 
   ![View transactions](images/view_transactions.png)
