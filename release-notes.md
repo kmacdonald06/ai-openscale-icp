@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-04-11"
 
 ---
 
@@ -21,39 +21,13 @@ lastupdated: "2019-03-28"
 This document outlines new features and known issues for {{site.data.keyword.aios_full_notm}}.
 {: shortdesc}
 
-## 5 March 2019
-{: #rn-5March2019}
+## 12 February 2019
+{: #rn-12February2019}
 
 The following new features and changes to the service are available.
 
 ### New features and changes
-{: #rn-5March2019nf}
-
-{{site.data.keyword.aios_short}} features that have been added or enhanced since the previous release include:
-
-- __*New Credit Risk model*__: A new Credit Risk model example/tutorial is supported for all scoring engines. For more information see the [Getting started](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-gs-get-started#gs-get-started) and [Additional resources](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-arsc-ov#arsc-ov) topics.
-
-- __*Computing debias*__: You can toggle between your production model and a de-biased model created by {{site.data.keyword.aios_short}}. See [Production model and De-biased model](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-itc-timechart#itc-prdb) and [Understanding how de-biasing works](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-mf-monitor#mf-debias) for more information.
-
-## 22 February 2019
-{: #rn-22February2019}
-
-The following new features and changes to the service are available.
-
-### New features and changes
-{: #rn-22February2019nf}
-
-{{site.data.keyword.aios_short}} features that have been added or enhanced since the previous release include:
-
-- __*UI updates*__: You can import a JSON file to programmatically configure all monitors and features during subscription creation. You can also export the configuration file. See the [Configure deployment subscription using JSON files](/docs/services/ai-openscale?topic=ai-openscale-cf-ov) topic for more information.
-
-## 7 February 2019
-{: #rn-7February2019}
-
-The following new features and changes to the service are available.
-
-### New features and changes
-{: #rn-7February2019nf}
+{: #rn-12February2019nf}
 
 {{site.data.keyword.aios_short}} features that have been added or enhanced since the previous release include:
 
@@ -68,11 +42,11 @@ The following new features and changes to the service are available.
 - __*IBM Cloud Database support*__: {{site.data.keyword.aios_short}} now supports Databases for PostgreSQL, in addition to Compose for PostgreSQL and Db2)
 
 ### Known issues
-{: #rn-7February2019ki}
+{: #rn-12February2019ki}
 
 - **Python functions not supported**
 
-    -  Bias checking, de-biasing, and explainability is not supported for Python functions, in the current release.
+    - Bias checking, de-biasing, and explainability is not supported for Python functions, in the current release.
 
 - **Explainability support limitations**
 
