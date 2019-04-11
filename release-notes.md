@@ -39,8 +39,6 @@ The following new features and changes to the service are available.
 
 - __*Db2 SSL support*__: {{site.data.keyword.aios_short}} supports passing self-signed certificates (Base-64 encoded) with Db2 credentials.
 
-- __*IBM Cloud Database support*__: {{site.data.keyword.aios_short}} now supports Databases for PostgreSQL, in addition to Compose for PostgreSQL and Db2)
-
 ### Known issues
 {: #rn-12February2019ki}
 
