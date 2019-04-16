@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-04-16"
 
 ---
 
@@ -20,6 +20,45 @@ lastupdated: "2019-04-11"
 
 This document outlines new features and known issues for {{site.data.keyword.aios_full_notm}}.
 {: shortdesc}
+
+## 16 April 2019
+{: #rn-16April2019}
+
+The following new features and changes to the service are available.
+
+### New features and changes
+{: #rn-16April2019nf}
+
+{{site.data.keyword.aios_short}} features that have been added or enhanced since the previous release include:
+
+- __*UI updates*__: You can import a JSON file to programmatically configure all monitors and features during subscription creation. You can also export the configuration file. See the [Configure deployment subscription using JSON files](/docs/services/ai-openscale?topic=ai-openscale-cf-ov) topic for more information.
+
+- __*New Credit Risk model*__: A new Credit Risk model example/tutorial is supported for all scoring engines. For more information see the [Getting started](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-gs-get-started#gs-get-started) and [Additional resources](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-arsc-ov#arsc-ov) topics.
+
+- __*Computing debias*__: You can toggle between your production model and a de-biased model created by {{site.data.keyword.aios_short}}. See [Production model and De-biased model](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-itc-timechart#itc-prdb) and [Understanding how de-biasing works](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-mf-monitor#mf-debias) for more information.
+
+- __*UI-based "fast path" demo*__: You now have the option run a demo scenario when you first log into the {{site.data.keyword.aios_short}} UI, to quickly see how {{site.data.keyword.aios_short}} monitors a model. Technical users can still choose instead to install a Python module that automates the configuration of {{site.data.keyword.aios_short}} and other services, and provides sample data. See the [Getting Started](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-gs-get-started#gs-get-started) topic for more information.
+
+### Known issues
+{: #rn-16April2019ki}
+
+- **Row size limitation using Db2**
+
+    - There is a 1 MB row size limit for Db2. When there are multiple (greater than 30) text columns (32000 bytes for each VARCHAR), the limit is exceeded. This limitation is most noticeable when using AWS SageMaker, as SageMaker native format has all columns as string format. To work around this issue, convert columns to proper format.
+
+       Note that the actual limits may depend on your database configuration, as {{site.data.keyword.aios_short}} is always using default tablespace for creating database objects. Additional information about this limitation is available in the [IBM Knowledge Center Db2 documentation](https://www.ibm.com/support/knowledgecenter/SSEPGG_11.1.0/com.ibm.db2.luw.sql.ref.doc/doc/r0001029.html).
+
+- **IBM SPSS C&DS (Binary-type only) requires additional payload request to be made**
+
+    - For IBM SPSS Collaboration & Deployment Services binary subscriptions, you must make another [payload logging (scoring) request](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-cdb-connect#cdb-scoring) after [preparing monitors for a deployment](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-mo-config#mo-config), or after all monitors are configured. This ensures that [Explainability](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-ie-ov#ie-ov) will be accurate.
+
+- **IBM SPSS C&DS (Binary-type only) corrected records count may be wrong**
+
+    - For IBM SPSS Collaboration & Deployment Services binary subscriptions, the *Corrected Records* count might not be right when viewed using the **View Transactions** button.
+
+- **WML performance metrics not collected**
+
+    - In an {{site.data.keyword.icpfull_notm}} environment, performance metrics from Watson Machine Learning (WML) are not collected.
 
 ## 12 February 2019
 {: #rn-12February2019}

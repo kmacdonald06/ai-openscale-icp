@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-04-16"
 
 ---
 
@@ -19,12 +19,12 @@ lastupdated: "2019-03-28"
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Tutorial - (Advanced)
+# Python SDK Tutorial (Advanced)
 {: #crt-ov}
 
 In this tutorial, you learn to perform the following tasks:
 
-- Run a Python notebook to create, train and deploy a machine learning model. 
+- Run a Python notebook to create, train and deploy a machine learning model.
 - Create a data mart, configure performance, accuracy, and fairness monitors, and create data to monitor.
 - View results in the {{site.data.keyword.aios_short}} Insights tab.
 
@@ -44,19 +44,19 @@ The credit risk model provided in this tutorial uses a training dataset that con
 ## Prerequisites
 {: #crt-prereqs}
 
-This tutorial uses a Jupyter notebook that should be run by using the “Python 3.5 with Spark” runtime environment. It requires service credentials for the following {{site.data.keyword.icpfull}} for Data services:
+This tutorial uses a Jupyter notebook that should be run by using the “Python 3.x with Spark” runtime environment. It requires service credentials for the following {{site.data.keyword.icpfull}} for Data services:
 
 - {{site.data.keyword.aios_short}}
 
 - {{site.data.keyword.pm_full}}
 
-  You must associate a {{site.data.keyword.pm_short}} instance if you do not already have one associated with your account. If you have a [machine learning service that was provisioned as part of your {{site.data.keyword.icpfull}} for Data installation](ai-openscale-icp?topic=ai-openscale-icp-inst-install-icp#inst-wml), you must ensure that it is part of the same organization and space. 
+  You must associate a {{site.data.keyword.pm_short}} instance if you do not already have one associated with your account. If you have a [machine learning service that was provisioned as part of your {{site.data.keyword.icpfull}} for Data installation](ai-openscale-icp?topic=ai-openscale-icp-inst-install-icp#inst-wml), you must ensure that it is part of the same organization and space.
   
 - Db2 Warehouse
   
   You must associate a Db2 Warehouse service with your account if you do not already have one. If you have a [Db2 Warehouse service that was provisioned as part of your {{site.data.keyword.icpfull}} for Data installation](ai-openscale-icp?topic=ai-openscale-icp-inst-install-icp#inst-db2), you must ensure that it is part of the same organization and space.
 
-When you choose a plan for each of the preceding {{site.data.keyword.icpfull_notm}} for Data services, there are several options, including a Lite plan. Although the Lite plan is free, it is restricted and provides only enough processing to run through the tutorial a couple of times before the montly limit is reached.
+When you choose a plan for each of the preceding {{site.data.keyword.icpfull_notm}} for Data services, there are several options, including a Lite plan. Although the Lite plan is free, it is restricted and provides only enough processing to run through the tutorial a couple of times before the monthly limit is reached.
 {: note}
 
 ## Introduction
@@ -67,25 +67,25 @@ Use the Jupyter notebook to train, create and deploy a German credit risk model,
 ## Create and deploy a machine learning model
 {: #crt-make-model}
 
-### Add the `IBM Watson OpenScale Lab instructions` notebook to your favorite editor
+### Add the  `Working with Watson Machine Learning` notebook to your favorite editor
 {: #crt-add-notebook}
 
-1. Download the [IBM Watson OpenScale Lab instructions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/emartensibm/german-credit/blob/master/german_credit_lab.ipynb).{: new_window}
-2. Open the notebook in {{site.data.keyword.DSX}} or any Jupyter or Zeppelin notebook editor. For more information about working with notebooks in {{site.data.keyword.DSX_full}}, see [Notebooks](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/dsx/notebooks-parent.html).
+1.  Download the {{site.data.keyword.icpfull}} [Working with Watson Machine Learning notebook ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/pmservice/ai-openscale-tutorials/blob/master/notebooks/Watson%20OpenScale%20and%20Watson%20ML%20Engine%20-%20ICP.ipynb){: new_window}.
+1.  Open the notebook in {{site.data.keyword.DSX}} or any Jupyter or Zeppelin notebook editor. For more information about working with notebooks in {{site.data.keyword.DSX_full}}, see [Notebooks](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/dsx/notebooks-parent.html).
 
-### Edit and run the `IBM Watson OpenScale Lab instructions` notebook
+### Edit and run the `Working with Watson Machine Learning` notebook
 {: #crt-edit-notebook}
 
-The `IBM Watson OpenScale Lab instructions` notebook contains detailed instructions for each step in the Python code you will run. As you work through the notebook, take some time to understand what each command is doing.
+The {{site.data.keyword.icpfull}} `Working with Watson Machine Learning` notebook contains detailed instructions for each step in the Python code you will run. As you work through the notebook, take some time to understand what each command is doing.
 
-1. In the **Provision services and configure credentials** section, make the following changes:
-    1. Follow the instructions to create, copy, and paste an API key.
-    2. Replace the {{site.data.keyword.pm_full}} and Db2 Warehouse service credentials with the ones you created previously.
-    3. Replace the database credentials with the ones you created for Db2 Warehouse.
+1.  In the **Configure credentials** section, make the following changes:
+    1.  Replace the {{site.data.keyword.aios_short}} and {{site.data.keyword.pm_full}} credentials with your actual credentials.
+    1.  Replace the database credentials with the ones you created for Db2 Warehouse.
+    1.  Add the created schema name.
 
-2. After you provision your services and enter your credentials, your notebook is ready to run. Run each step of the notebook in sequence. Notice what is happening at each step, as described. Complete all the steps, including the steps in the **Additional data to help debugging** section.
+1.  After you enter your credentials, your notebook is ready to run. Run each step of the notebook in sequence. Notice what is happening at each step, as described. Complete all the steps, including the steps in the **Additional data to help debugging** section.
 
-The net result is that you will have created, trained, and deployed the **Spark German Risk Deployment** model to your {{site.data.keyword.aios_short}} service instance. {{site.data.keyword.aios_short}} will be configured to check the model for bias against sex (in this case, Female) or age (In this case, 18-25 years old).
+The net result is that you will have created, trained, and deployed the **Spark German Risk Deployment- Final** model to your {{site.data.keyword.aios_short}} service instance. {{site.data.keyword.aios_short}} will be configured to check the model for bias against sex (in this case, Female) or age (In this case, 18-25 years old).
 
 ## Viewing results
 {: #crt-view-results}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-04-15"
 
 ---
 
@@ -40,11 +40,39 @@ Get a quick overview of {{site.data.keyword.aios_short}} by watching this video.
 ## Automated setup
 {: #gs-module}
 
-To quickly see how {{site.data.keyword.aios_short}} monitors a model, technical users can install a Python module that automates the configuration of {{site.data.keyword.aios_short}} and other services. Sample data is included.
+To quickly see how {{site.data.keyword.aios_short}} monitors a model, run the demo scenario option that is provided when you first log into the {{site.data.keyword.aios_short}} UI.  See [Working with the UI demo](#gs-work-demo).
+
+Technical users can choose to install a Python module that automates the configuration of {{site.data.keyword.aios_short}} and other services, and provides sample data. See [Running the Python module](#gs-run).
 
 Additional tutorial links may be found in the [Additional resources](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-arsc-ov) topic.
 
-## Before you begin
+## Working with the UI demo
+{: #gs-work-demo}
+
+1.  Sign into your {{site.data.keyword.aios_short}} instance on {{site.data.keyword.icpfull}} for Data.
+
+    ![OpenScale cluster signin](images/icp4d_sign_in.png)
+
+1.  To work with the demo scenario, select **Next**.
+
+    ![Demo welcome](images/demo_welcome.png)
+
+1.  Now, provide the Host name/IP address, Port, Username, and Password for your Db2 database. Create a Database name for the demo, then click **Prepare**.
+
+    ![Demo connect to database](images/demo_connect_db2.png)
+
+As the {{site.data.keyword.aios_short}} services are being provisioned, you can review the demo scenario:
+
+  ![Demo scenario](images/demo_wait.png)
+
+When provisioning is complete, select **Let's Go** to exit to the {{site.data.keyword.aios_short}} dashboard, and then proceed with [Viewing results in {{site.data.keyword.aios_short}}](#gs-open) below.
+
+  ![Demo Lets go](images/demo_go.png)
+
+## Running the Python module
+{: #gs-run}
+
+### Before you begin
 {: #gs-prereqs}
 
 1.  [Install {{site.data.keyword.aios_short}} into {{site.data.keyword.icpfull}} for Data](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-inst-install-icp).
@@ -60,8 +88,11 @@ Additional tutorial links may be found in the [Additional resources](/docs/servi
     ```
     {: codeblock}
 
-## Running the module
-{: #gs-run}
+### Run the command
+{: #gs-command}
+
+If you have previously run this Python module, be aware that running it again will create new tables and override any previous data in the `AIOSFASTPATHICP` schema. To clear the schema manually, see [Delete sample database and schemas](#gs-cleanup) below.
+{: note}
 
 Run the command with the following required arguments, substituting the necessary information as indicated:
 
@@ -73,18 +104,32 @@ ibm-ai-openscale-cli --apikey None --db2 <path to IBM DB2 credentials file> --en
 Regarding the optional `--datamart-name <datamart name>` argument, when you run the module, it creates a `datamart-name` value called `aiosfastpath`, which is a schema that must be reserved exclusively for use by {{site.data.keyword.aios_short}}. If you rerun the module, it programmatically deletes and recreates the `datamart-name` schema, so you can't use the schema for any other purpose.
 {: note}
 
-To successfully run the module, the value of the two Db2 database configuration parameters `SORTHEAP` and `LOGFILSIZ` must be increased. Run the following commands from your Db2 database environment command window:
+To successfully run the module, the value of several Db2 parameters must be changed. Run the following commands from your Db2 database environment command window for Db2 organized **_by row_**:
 
 ```bash
 db2 connect to [dbname] user [db username] using [db password]
 ```
 
 ```bash
-db2 update db cfg for [dbname] using SORTHEAP 1024
+db2 update db cfg for [dbname] using SELF_TUNING_MEM ON
+```
+
+```bash
+db2 update db cfg for [dbname] using SORTHEAP 1024 AUTOMATIC
+```
+
+```bash
+db2 update db cfg for [dbname] using SHEAPTHRES_SHR 5000 AUTOMATIC
 ```
 
 ```bash
 db2 update db cfg for [dbname] using LOGFILSIZ 5000
+```
+
+Run the following commands from your Db2 database environment command window for Db2 organized **_by column_**:
+
+```bash
+db2  AUTOCONFIGURE APPLY DB AND DBM
 ```
 {: important}
 
@@ -94,13 +139,11 @@ Your IBM DB2 credentials file might look something like the following `db2-vcap.
 
 ```bash
 {
-  "db_type": "db2",
   "hostname": "<DB2 IP address>",
   "password": "<your password>",
   "port": 50000,
   "db": "FASTPATH",
-  "username": "<DB2 user name>",
-  "url": "<Address to of DB2 on your system>"
+  "username": "<DB2 user name>"
 }
 ```
 {: codeblock}
@@ -117,14 +160,14 @@ From the {{site.data.keyword.aios_short}} dashboard click the **Insights** tab, 
 
 - At a glance, the Insights page shows any issues with fairness and accuracy, as determined by the thresholds that are configured.
 
-- Each deployment is shown as a tile. The module configured a deployment called `GermanCreditRiskModel`, as shown in the following screen capture:
+- Each deployment is shown as a tile. The module configured a deployment called `GermanCreditRiskModelICP`, as shown in the following screen capture:
 
   ![Insight overview](images/setup01-0206.png)
 
 ### View monitoring data
 {: #gs-monitoring}
 
-1.  From the Insights page, click the `GermanCreditRiskModel` tile to view details about the monitored data.
+1.  From the Insights page, click the `GermanCreditRiskModelICP` tile to view details about the monitored data.
 1.  Click and drag the marker across the chart to view a day and time period that shows data and then click the **View details** link. Alternatively, you can click different time periods in the chart to change the data that you see.
 
      - For example, the following screen shows data for a specific date and time. The dates and times vary, depending on when you run the module.
@@ -151,6 +194,15 @@ Transaction IDs for the past hour are listed for those transactions that have bi
   ![Transaction list with no transactions](images/setup06-0206.png)
 
 For information about finding and explaining transactions, see [Monitoring explainability](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-ie-ov).
+
+## Delete sample database and schemas
+{: #gs-cleanup}
+
+To delete the sample database and its schemas, run the following command:
+
+```bash
+ibm-ai-openscale-cli -i <iam-token> --datamart-reset --datamart-name <datamart name>
+```
 
 ## Related information
 {: #gs-info}

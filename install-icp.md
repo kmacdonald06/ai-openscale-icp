@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-04-15"
 
 ---
 
@@ -47,7 +47,7 @@ This configuration requires a minimum of four servers, either physical or virtua
 
 | Node type | Number of servers (BM/VM) | CPU | RAM | Disk partition
 |:---|:---:|:---:|:---:|:---
-| Master/worker | 3 | 32 cores | 128 GB | 100GB for root file system |
+| Master/worker | 3 | 32 cores | 128 GB | 100GB for /[root] file system |
 | | | | | Minimum of 400 GB mounted XFS file system for the installation path. This path is for the installer data storage on each node. Must be high-performance disk drive, such as SSD. |
 | | | | | Minimum of 400 GB mounted XFS file system for the data path. The data path is for user data storage. This amount provides 400 GB usable space for user data with 3x replication. Depending on the user workload, more disk space might be required. |
 | | | | | Optional: 200GB raw disk for the Docker devicemapper. If you do not provide this raw disk, you must have 600 GB minimum for the installation path. |
@@ -56,23 +56,23 @@ This configuration requires a minimum of four servers, either physical or virtua
 ### Hardware and software requirements for a six-node configuration
 {: #inst-hws}
 
-This configuration requires a minimum of seven servers, either physical or virtual machines, three acting as `master` nodes, three acting as `worker` nodes, and one acting as load balancer. 
+This configuration requires a minimum of seven servers, either physical or virtual machines, three acting as `master` nodes, three acting as `worker` nodes, and one acting as load balancer.
 
 | Node type | Number of servers (BM/VM) | CPU | RAM | Disk partition
 |:---|:---:|:---:|:---:|:---
-| Master | 3 | 16 cores | 32 GB | 100 GB for root file system |
+| Master | 3 | 16 cores | 32 GB | 100 GB for /[root] file system |
 | | | | | 400 GB mounted XFS file system for the installation path. This path is for the installer data storage on each node. Must be high-performance disk drive, such as SSD. |
 | | | | | 400 GB mounted XFS file system for the data path. The data path is for user data storage. This amount provides 500 GB usable space for user data with 3x replication. Depending on the user workload, more disk space might be required. |
 | | | | | Optional: 200 GB raw disk for the Docker devicemapper. If you do not provide this raw disk, you must have 600 GB minimum for the installation path. |
-| Worker | 3 | 16 cores | 128 GB | 100 GB for root file system |
+| Worker | 3 | 16 cores | 128 GB | 100 GB for /[root] file system |
 | | | | | 400 GB mounted XFS file system for the installation path. This path is for the installer data storage on each node. |
 | | | | | 400 GB mounted XFS file system for the data path. The data path is for user data storage on each of the three worker nodes in the cluster. This amount provides 400 GB usable space for user data with 3x replication. Depending on the user workload, more disk space might be required. |
 | | | | | Optional: 200 GB raw disk for the Docker devicemapper. If you do not provide this raw disk, you must have 600 GB minimum for the installation path. |
 
-### Db2 Warehouse requirements
+### (Optional) Db2 Warehouse requirements
 {: #inst-hwd}
 
-If you plan to deploy a Db2 Warehouse database in your IBM Cloud Private for Data cluster, you must create a dedicated worker node with the following specifications.
+If you plan to deploy a Db2 Warehouse database in your {{site.data.keyword.icpfull_notm}} for Data cluster, you must create a dedicated worker node with the following specifications.
 
 | Node type | Number of servers (BM/VM) | CPU | RAM | Disk partition
 |:---|:---:|:---:|:---|:---
@@ -85,25 +85,36 @@ If you plan to deploy a Db2 Warehouse database in your IBM Cloud Private for Dat
 
 Download the appropriate package, by part number, from [IBM Passport Advantage ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/pao_customer.html){: new_window}.
 
-1.  {{site.data.keyword.icpfull_notm}} for Data version 1.2, running on {{site.data.keyword.icpfull_notm}} version 3.1.0.
+Part numbers noted below differ based on whether you downloaded {{site.data.keyword.aios_full_notm}} for {{site.data.keyword.icpfull_notm}} for Data prior to April 16, 2019, or afterwards. Please be sure to select the right part number.
+{: important}
 
-    - **Standalone**: The standalone {{site.data.keyword.icpfull_notm}} for Data package, part number *CNY56EN*. This is a `.bin` file that includes both the {{site.data.keyword.icpfull_notm}} 3.1.0 platform, and {{site.data.keyword.icpfull_notm}} for Data 1.2 Enterprise Edition. The part number is for the {{site.data.keyword.icpfull_notm}} for Data Enterprise Edition package.
+1.  {{site.data.keyword.icpfull_notm}} for Data, running on {{site.data.keyword.icpfull_notm}}.
+
+    - **_Prior to_** April 16, 2019: Download the standalone {{site.data.keyword.icpfull_notm}} for Data package, part number *CNY56EN*. This is a `.bin` file that includes both the {{site.data.keyword.icpfull_notm}} 3.1.2 platform, and {{site.data.keyword.icpfull_notm}} for Data 1.2 Enterprise Edition. The part number is for the {{site.data.keyword.icpfull_notm}} for Data Enterprise Edition package.
+
+    - **_After_** April 16, 2019: Download {{site.data.keyword.icpfull_notm}} for Data Version 1.2.1.1, which is no longer bundled with the {{site.data.keyword.icpfull_notm}} platform, part number *CC11KML*.
 
 1.  {{site.data.keyword.icpfull_notm}} for Data Watson Machine Learning Extension package
 
-    - For version 1.2.0.1, download part number *CC092EN*. This is a `.bin` file.
+    - **_Prior to_** April 16, 2019 - Download the file associated with Version 1.2.0.1, part number *CC092EN*.
+
+    - **_After_** April 16, 2019 - Download the file associated with Version 1.2.1, part number *CC0ENEN*.
 
 1.  IBM Event Streams V2018.3.1 for Linux on x86 64-bit Multilingual
 
-    - Download part number *CNXJ8ML*. This is a `tar.gz` file.
+    - Download part number *CNXJ8ML*.
 
-1.  IBM Db2 Warehouse V3.0 for {{site.data.keyword.icpfull_notm}} for Data 1.2 (Optional)
+1.  IBM Db2 Warehouse for {{site.data.keyword.icpfull_notm}} for Data 1.2.1 (Optional)
 
-    - Download part number *CNY5DEN*. This is a `tar.gz` file.
+    - **_Prior to_** April 16, 2019 - Download the file associated with Version 3.0, part number *CNY5DEN*.
 
-1.  {{site.data.keyword.aios_full_notm}} for {{site.data.keyword.icpfull_notm}} V1.0.1 Linux 64-bit system
+    - **_After_** April 16, 2019 - Download the file associated with Version 3.3.0, part number *CC0EMEN*.
 
-    - Download the file associated with part number *CNZC1EN*. This is a `tar.gz` file.
+1.  {{site.data.keyword.aios_full_notm}} for {{site.data.keyword.icpfull_notm}} for Data, Linux 64-bit system
+
+    - **_Prior to_** April 16, 2019 - Download the file associated with Version 1.0.1, part number *CNCZ1EN*.
+
+    - **_After_** April 16, 2019 - Download the file associated with Version 1.0.2, part number *CC16SEN*.
 
 <!---
 MIKE: After April 16th change 3.1.0 to 3.1.2
@@ -130,10 +141,79 @@ MIKE: After April 16th change 3.1.0 to 3.1.2
 
 --->
 
-## Install {{site.data.keyword.icpfull_notm}} for Data
+## Configuration requirements
+{: #inst-conf}
+
+The following configuration notes must be observed when installing {{site.data.keyword.icpfull_notm}} for Data.
+
+- Public IP addresses of all cluster nodes must be static.
+- Private IP addresses of all cluster nodes must be static. If an IP address is changing from one machine reboot to another, the system cannot be used.
+- All cluster nodes must enable root login.
+- All cluster nodes must have the same root password during installation time.
+- The following ports must be opened on the Load Balancer node:
+
+| Ports |  |  |  |  |
+|:---:|:---:|:---:|:---:|:---:
+| 8001 | 8443 | 9443 | 8500 | 8600 |
+| 80 | 443 | 31843 | 32448 | 31962 |
+| 31030 | 31031 | 30836 | 31002 | 32006 |
+
+- If DB2 Warehouse is used, then the DB2 node port should also be opened on load balancer.
+
+## I have **_already installed_** {{site.data.keyword.icpfull_notm}} for Data
+{: #inst-exist}
+
+If you already have an {{site.data.keyword.icpfull_notm}} for Data cluster installed, upgrade your embedded {{site.data.keyword.icpfull_notm}} and {{site.data.keyword.icpfull_notm}} for Data components by following the [Upgrading IBM Cloud Private for Data](https://www.ibm.com/support/knowledgecenter/en/SSQNUZ_1.2.1/com.ibm.icpdata.doc/zen/install/upgrade-overview.html) instructions. Ensure that you:
+
+- Upgrade {{site.data.keyword.icpfull_notm}} from version 3.1.0 to 3.1.2
+- Upgrade {{site.data.keyword.icpfull_notm}} for Data from version 1.2.0 to 1.2.1
+
+Once the nodes are provisioned, continue with [Install the Watson Machine Learning package](#inst-wml) below.
+
+## I have **_not yet installed_** {{site.data.keyword.icpfull_notm}} for Data
 {: #inst-icp4d}
 
-Follow the instructions for [Installing the stand-alone version of IBM Cloud Private for Data ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/zen/install/standovu.html), in the IBM Knowledge Center.
+Review the [Overview of IBM Cloud Private for Data ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/knowledgecenter/en/SSQNUZ_1.2.1/com.ibm.icpdata.doc/zen/overview/overview.html) topic, in the IBM Knowledge Center.
+
+Next, use automated scripts to prepare and install {{site.data.keyword.aios_short}} from scratch. Assume that you have a set of machines that have met the [hardware requirements](#inst-hw).
+
+Scripts are optimized for a virtual private cloud within IBM SoftLayer.
+{: note}
+
+- Download the {{site.data.keyword.aios_short}} tarball and save it to the machine to be used as the `master1` node, for example, `/openscale`.
+
+- Extract the automation scripts by running the following commands:
+
+  ```bash
+  tar -xzf <OpenScale.tar.gz file> utils/prepCluster.zip
+  cd utils
+  unzip prepCluster.zip
+  cd install
+  ```
+
+- Follow the `README.md` instructions under the install directory to prepare, validate, and install {{site.data.keyword.icpfull_notm}} for Data, Watson Machine Learning, Event Streams, and {{site.data.keyword.aios_short}}. Optionally, refer to the [Db2 Warehouse install guide](https://www.ibm.com/support/knowledgecenter/en/SSQNUZ_1.2.0/com.ibm.icpdata.doc/zen/admin/download-db-pkg.html) to install Db2.
+
+<!---
+
+1.  Ensure that you have downloaded the installation image(s) to the machine with your master (`master-1`) node.
+
+1.  SSH into the master (`master-1`) node of your cluster as root:
+
+    ```bash
+    ssh root@MASTER_1_IP
+    ```
+
+1.  Change to the file partition where you placed the installation file, for example: `/installer`.
+
+1.  Run the `installOpenScale.sh` script. You can select one of three options to provision:
+
+    - **3+1 servers**: load balancer + 3 master/worker nodes
+    - **6+1 servers**: load balancer + 3 master + 3 worker nodes
+    - **9+1 servers**: load balancer + 3 master + 6 worker nodes
+
+Once the nodes are provisioned, continue with [Install the Watson Machine Learning package](#inst-wml) below.
+
+--->
 
 <!---
 
@@ -736,12 +816,12 @@ To uninstall, run:
 
 --->
 
-## Install the IBM Db2 Warehouse package
+## (Optional) Install the IBM Db2 Warehouse package
 {: #inst-db2}
 
 Follow the instructions for [Downloading the database installation package ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/zen/admin/download-db-pkg.html#download-db2-warehouse-pkg), in the IBM Knowledge Center.
 
-## Log into the {{site.data.keyword.icpfull_notm}} for Data cluster 
+## Log into your {{site.data.keyword.icpfull_notm}} for Data cluster
 {: #log-cluster}
 
 Enter the following command:
@@ -753,9 +833,12 @@ When prompted, enter your ICP Admin username and password.
 ## Install IBM Event Streams V2018.3.1 for Linux and {{site.data.keyword.aios_full_notm}} for {{site.data.keyword.icpfull_notm}}
 {: #inst-es-aios}
 
+### Install Event Streams
+{: #inst-es}
+
 1.  Copy the IBM Event Streams V2018.3.1 for Linux on x86 64-bit Multilingual tarball to a directory on the {{site.data.keyword.icpfull_notm}} for Data cluster `master-1 node`, for example, `/ibm/ES`.
 
-1.  Untar the {{site.data.keyword.aios_full_notm}} for {{site.data.keyword.icpfull_notm}} 1.0.1 tarball to a directory on your {{site.data.keyword.icpfull_notm}} for Data cluster `master-1 node`, for example, `/ibm/AIOS`.
+1.  Untar the {{site.data.keyword.aios_full_notm}} for {{site.data.keyword.icpfull_notm}} 1.0.2 tarball to a directory on your {{site.data.keyword.icpfull_notm}} for Data cluster `master-1 node`, for example, `/ibm/AIOS`.
 
 1.  Log into your docker registry and {{site.data.keyword.aios_full_notm}} cluster from a command line window.
 
@@ -763,7 +846,7 @@ When prompted, enter your ICP Admin username and password.
 
     ```bash
     cd /ibm/AIOS
-    ./install_es.sh -f /ibm/ES/[<Event_ Streams_tarball_file_name>]
+    ./install_es.sh -f /ibm/ES/[<Event_Streams_tarball_file_name>]
     ```
 
 1.  When `install_es.sh` has finished executing, the following message will display. Complete the steps outlined in the message before proceeding to the next step:
@@ -778,7 +861,10 @@ When prompted, enter your ICP Admin username and password.
     If another load balancer is used, configure it to expose ports 31703, 31105, 31094, 32180, and 32036 for Event Stream to the master nodes.
     ```
 
-1.  Finally, install {{site.data.keyword.aios_short}}
+### Install {{site.data.keyword.aios_full_notm}}
+{: #inst-aios}
+
+1.  Install {{site.data.keyword.aios_short}}.
 
     If your cluster has not been installed using an embedded {{site.data.keyword.icpfull_notm}} for Data installation, you need to perform the following steps:
     {: important}
@@ -789,15 +875,15 @@ When prompted, enter your ICP Admin username and password.
 
         - Customize the `utils/etcd-pvc-template.yaml` file included in the {{site.data.keyword.aios_short}} tarball for your environment. Replace the `nfs` section in the template if you are using another storage type.
 
-    - To use NFS volumes:
+          - To use NFS volumes:
 
-        - Replace the `NFS_SERVER_IP` with your NFS host IP address
+            - Replace the `NFS_SERVER_IP` with your NFS host IP address
 
-        - Replace `/data/aios-etcd-0`, `/data/aios-etcd-1`, and `/data/aios-etcd-2`, if your NFS mount point is different.
+            - Replace `/data/aios-etcd-0`, `/data/aios-etcd-1`, and `/data/aios-etcd-2`, if your NFS mount point is different.
 
-        - Run `kubectl create namespace aiopenscale`
+            - Run `kubectl create namespace aiopenscale`
 
-        - Run `kubectl -n aiopenscale create -f etcd-pvc-template.yaml` to create `PersistentVolume` and `PersistentVolumeClaim`
+            - Run `kubectl -n aiopenscale create -f etcd-pvc-template.yaml` to create `PersistentVolume` and `PersistentVolumeClaim`
 
     - If you are using `DynamicProvisioning` with a `StorageClass`, replace `oketi-gluster` with your `StorageClass` name in the `common.sh` file.
 

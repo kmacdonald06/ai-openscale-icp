@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-04-15"
 
 ---
 
@@ -55,7 +55,7 @@ For numeric or categorical data, you need to provide information about the train
 
 - **Manually configure monitors** - Requires you to provide connection information to your training data.
 
-    - Select the [algorithm type](/docs/services/ai-openscale?topic=ai-openscale-acc-monitor#acc-understand), and click **Next**:
+    - Select the [algorithm type](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-acc-monitor#acc-understand), and click **Next**:
 
       ![Multi-class](images/multiclass.png)
 
@@ -147,6 +147,9 @@ For numeric or categorical data, you need to provide information about the train
 {: #mo-save}
 
 Review your selection summary and click **Save** to continue.
+
+For SPSS-binary subscriptions, you must make another [payload logging (scoring) request](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-cdb-connect#cdb-scoring) after clicking **Save**, before you begin configuring monitors. This ensures that [Explainability](/docs/services/ai-openscale-icp?topic=ai-openscale-icp-ie-ov#ie-ov) will be accurate.
+{: important}
 
   ![Select data table](images/config-summary-monitor.png)
 
